@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UsuarioService } from 'src/app/services/usuario.service';
 
 @Component({
   selector: 'app-registro',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegistroComponent implements OnInit {
 
-  constructor() { }
+  constructor(private user:UsuarioService) { }
 
 
   nombre: string="";
@@ -27,14 +28,19 @@ export class RegistroComponent implements OnInit {
   }
 
   registrarse(){
+    this.user.singup(this.username,this.nombre,this.apellidos,this.correo,this.password,this.genero,this.fechanac)
+    .subscribe((res)=>{
+      console.log("ya insertó");
+      console.log(res);      
+    })
   }
 
   
   Genero(tipo:string){
     if(tipo=="m"){
-      this.genero='masculino';
+      this.genero='M';
     }else if(tipo=="f"){
-      this.genero='femenino';
+      this.genero='F';
     }
   }
 

@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { HomeComponent } from './components/home/home.component';
 import { RegistroComponent } from './components/registro/registro.component';
+import {HttpClientModule,HttpClient} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { RegistroComponent } from './components/registro/registro.component';
     BrowserModule,
     AppRoutingModule,
     MDBBootstrapModule.forRoot(),
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
