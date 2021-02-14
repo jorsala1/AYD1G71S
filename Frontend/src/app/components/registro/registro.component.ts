@@ -10,7 +10,6 @@ export class RegistroComponent implements OnInit {
 
   constructor(private user:UsuarioService) { }
 
-
   nombre: string="";
   password: string="";
   apellidos: string=""; 
@@ -28,6 +27,7 @@ export class RegistroComponent implements OnInit {
   }
 
   registrarse(){
+   // console.log(this.fechanac);
     this.user.singup(this.username,this.nombre,this.apellidos,this.correo,this.password,this.genero,this.fechanac)
     .subscribe((res)=>{
       console.log("ya insertó");

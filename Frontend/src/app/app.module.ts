@@ -7,7 +7,7 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { HomeComponent } from './components/home/home.component';
 import { RegistroComponent } from './components/registro/registro.component';
 import {HttpClientModule,HttpClient} from '@angular/common/http';
-
+import { RouterModule } from "@angular/router";
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +19,8 @@ import {HttpClientModule,HttpClient} from '@angular/common/http';
     AppRoutingModule,
     MDBBootstrapModule.forRoot(),
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -2,7 +2,7 @@
 <mdb-navbar SideClass="navbar navbar-expand-lg #80cbc4 teal lighten-3">
 
     <!-- Navbar brand -->
-    <mdb-navbar-brand><a class="navbar-brand " style="font-size:30px ; color:black " href="#">Farmacia Seven</a>
+    <mdb-navbar-brand><a class="navbar-brand " style="font-size:30px ; color:darkslateblue " href="#"> Farma Seven</a>
     </mdb-navbar-brand>
   
   
@@ -20,9 +20,6 @@
         <li class="nav-item active">
           <a class="nav-link " mdbWavesEffect href=registro>Sign Up</a>
         </li>
-        <li class="nav-item active">
-          <a class="nav-link " mdbWavesEffect href=#>Productos</a>
-      </li>
   
       </ul>
       <!-- Links -->
@@ -40,8 +37,8 @@
   <!--/.Navbar-->
   
   <div class="row ">
-    <div class="col-md-12">
-      <h3 align=center class="text-danger" style="font-size: 30px; font-weight:bold"> Registro nuevo usuario </h3>
+    <div class="col-12">
+      <h3 align=center class="p-3 text "  style="font-size: 30px; font-weight:bold; color:darkslateblue "> Registro nuevo usuario </h3>
     </div>
   </div>
   
@@ -49,26 +46,50 @@
   
   <div class="container">
     <div class="row ">
-      <div class="col-md-3">
+      <div class="col-md-3 col-1">
   
       </div>
-      <div class="col-md-6">
+      <div class="col-md-6 col-10">
         <form>
           <!-- Grid row -->
           <div class="form-row">
             <!-- Grid column -->
-            <div class="col-md-6">
+            <div class="col-md-6 col-12">
               <!-- Material input -->
               <div class="md-form form-group">
-                <input  mdbInput  name="txtname" [(ngModel)]="nombre" type="email" class="form-control" id="inputname" placeholder="">
+                <input  mdbInput  name="txtname" [(ngModel)]="nombre" type="text" class="form-control" id="inputname" placeholder="">
                 <label for="inputEmail4MD">Nombre</label>
               </div>
             </div>
             <!-- Grid column -->
   
             <!-- Grid column -->
-            <div class="col-md-6">
-              <!-- Material input -->
+            <div class="col-md-6 col-12">
+              <div class="md-form form-group">
+                <input mdbInput name="txtapellidos" [(ngModel)]="apellidos" type="text" class="form-control" id="inputApellidos" placeholder="">
+                <label for="inputAddressMD">Apellidos</label>
+              </div>
+            
+            </div>
+            <!-- Grid column -->
+          </div>
+          <!-- Grid row -->
+  
+          <!-- Grid row -->
+          <div class="row">
+            <!-- Grid column -->
+            <div class="col-md-6 col-12">
+              <!-- Material input -->              
+              <div class="md-form form-group">
+                <input mdbInput name="txtcorreo" [(ngModel)]="correo" type="email" class="form-control" id="inputAddress2MD" placeholder="">
+                <label for="inputAddress2MD">Correo </label>
+              </div>
+            </div>
+            <!-- Grid column -->
+  
+            <!-- Grid column -->
+            <div class="col-md-6 col-12">
+              <!-- xxx Material input -->
               <div class="md-form form-group">
                 <input mdbInput name="txtpass" [(ngModel)]="password" type="password" class="form-control" id="inputPassword4MD" placeholder="Password">
                 <label for="inputPassword4MD">Password</label>
@@ -78,112 +99,71 @@
           </div>
           <!-- Grid row -->
   
-          <!-- Grid row -->
-          <div class="row">
-            <!-- Grid column -->
-            <div class="col-md-6">
-              <!-- Material input -->
-              <div class="md-form form-group">
-                <input mdbInput name="txtapellidos" [(ngModel)]="apellidos" type="text" class="form-control" id="inputApellidos" placeholder="">
-                <label for="inputAddressMD">Apellidos</label>
-              </div>
-            </div>
-            <!-- Grid column -->
-  
-            <!-- Grid column -->
-            <div class="col-md-6">
-              <!-- Material input -->
-              <div class="md-form form-group">
-                <input mdbInput name="txtcorreo" [(ngModel)]="correo" type="text" class="form-control" id="inputAddress2MD" placeholder="">
-                <label for="inputAddress2MD">Correo </label>
-              </div>
-            </div>
-            <!-- Grid column -->
-          </div>
+        
           <!-- Grid row -->
   
           <!-- Grid row -->
           <div class="form-row">
             <!-- Grid column -->
-            <div class="col-md-6">
+            <div class="col-md-6 col-12">
               <!-- Material input -->
+              <!-- Default inline 1-->
               <div class="md-form form-group">
-                <input mdbInput name="txttelefono" [(ngModel)]="telefono" type="text" class="form-control" id="inputtelefono" placeholder="">
-                <label for="inputCityMD">Telefono</label>
+                <input mdbInput name="txtusername" [(ngModel)]="username"  type="text" class="form-control" id="inputfechaNac" placeholder="">
+                <label for="inputZipMD">Username</label>
               </div>
+             
             </div>
             <!-- Grid column -->
   
+            <!-- xxxGrid column -->
+            <div class="md-form form-group">
+              <div class="btn-group" mdbDropdown>
+                <button type="button" mdbBtn color="secondary" class="waves-light" mdbWavesEffect>Genero</button>
+                <button type="button" mdbDropdownToggle mdbBtn color="secondary" class="dropdown-toggle dropdown-toggle-split px-3 waves-light"
+                  mdbWavesEffect></button>
+                <div class="dropdown-menu">  
+                  <a class="dropdown-item" (click)="Genero('m')" > Masculino </a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item"  (click)="Genero('f')" >Femenino</a>
+
+                </div>
+              </div>               
+          </div>
             <!-- Grid column -->
-            <div class="col-md-6">
+          </div>
+          <!-- Grid row -->
+          <!-- Grid row -->
+          <div class="row">
+            <!-- Grid column -->
+            <div class="col-md-6 col-12">
+              <!-- Material input -->
+             
+              <div class="col-md-8  col-12">            
+                <!-- Material input -->
+                <label for="inputZipMD">Fecha Nacimiento </label>
+                <input [(ngModel)]="fechanac" type="date" name="fecha">             
+              </div>
+            </div>
+            <!-- Grid column -->
+            <div class="col-md-4  col-12">
               <!-- Material input -->
              
             </div>
             <!-- Grid column -->
           </div>
           <!-- Grid row -->
-  
-          <!-- Grid row -->
-          <div class="form-row">
-            <!-- Grid column -->
-            <div class="col-md-6">
-              <!-- Material input -->
-              <!-- Default inline 1-->
-              <div class="md-form form-group">
-                <div class="btn-group" mdbDropdown>
-                  <button type="button" mdbBtn color="secondary" class="waves-light" mdbWavesEffect>Genero</button>
-                  <button type="button" mdbDropdownToggle mdbBtn color="secondary" class="dropdown-toggle dropdown-toggle-split px-3 waves-light"
-                    mdbWavesEffect></button>
-                  <div class="dropdown-menu">  
-                    <a class="dropdown-item" (click)="Genero('m')" > Masculino </a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item"  (click)="Genero('f')" >Femenino</a>
+          <div class="row  p-5">
+            <div class="col-md-2  col-12">
 
-                  </div>
-                </div>               
             </div>
+            <div class="col-md-10  col-12">
+             <button (click)="registrarse()" type="submit" mdbBtn color="secondary">Registrarse</button>
             </div>
-            <!-- Grid column -->
-  
-            <!-- Grid column -->
-            <div class="col-md-6">
-              <!-- Material input -->
-              <div class="md-form form-group">
-                <input mdbInput name="txtfechanac" [(ngModel)]="fechanac"  type="text" class="form-control" id="inputfechaNac" placeholder="">
-                <label for="inputZipMD">Fecha de Nacimiento</label>
-              </div>
-            </div>
-            <!-- Grid column -->
-          </div>
-          <!-- Grid row -->
-          <!-- Grid row -->
-          <div class="form-row">
-            <!-- Grid column -->
-            <div class="col-md-6">
-              <!-- Material input -->
-              <div class="md-form form-group">
-                <input mdbInput name="txtdireccion" [(ngModel)]="direccion" type="text" class="form-control" id="inputdireccion" placeholder="">
-                <label for="inputZipMD">Dirección</label>
-              </div>
-            </div>
-            <!-- Grid column -->
-            <div class="col-md-6">
-              <!-- Material input -->
-              <div class="md-form form-group">
-                <input mdbInput name="txtusername" [(ngModel)]="username"  type="text" class="form-control" id="inputfechaNac" placeholder="">
-                <label for="inputZipMD">Username</label>
-              </div>
-            </div>
-            <!-- Grid column -->
-          </div>
-          <!-- Grid row -->
-          
-          <button (click)="registrarse()"  type="submit" mdbBtn color="secondary">Registrarse</button>
+        </div>
         </form>
       </div>
-      <div class="col-md-3">
-  
-      </div>
+
     </div>
   </div>
   
