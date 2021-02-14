@@ -1,0 +1,73 @@
+<!--Navbar-->
+<mdb-navbar SideClass="navbar navbar-expand-lg #80cbc4 teal lighten-3">
+
+    <!-- Navbar brand -->
+    <mdb-navbar-brand><a class="navbar-brand " style="font-size:30px ; color:darkslateblue " href="#"> Farma Seven</a>
+    </mdb-navbar-brand>
+  
+  
+    <!-- Collapsible content -->
+    <links>
+  
+      <!-- Links -->
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link " mdbWavesEffect href="#">Home<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link " mdbWavesEffect href=#>Login</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link " mdbWavesEffect href=registro>Sign Up</a>
+        </li>
+  
+      </ul>
+      <!-- Links -->
+  
+      <!-- Search form -->
+      <form class="form-inline waves-light" mdbWavesEffect>
+        <div class="md-form my-0">
+          <input class="form-control mr-sm-2" type="text" placeholder="Search">
+        </div>
+      </form>
+    </links>
+    <!-- Collapsible content -->
+  
+  </mdb-navbar>
+  <!--/.Navbar-->
+  
+  <div class="row ">
+    <div class="col-12">
+      <h3 align=center class="p-3 text "  style="font-size: 30px; font-weight:bold; color:darkslateblue "> Inicio de Sesión</h3>
+    </div>
+  </div>
+  
+  <!-- Extended material form grid -->
+  <div class="container mt-5">
+    <div class="row  justify-content-center">
+        <div class="col-sm-12 col-md-5 ">
+            <!-- Default form login -->
+            <form class="text-center border border-light p-5">
+    
+                <p class="h4 mb-4">Ingrese sus datos:</p>
+    
+                <!-- Email -->
+                <input name="txtusername" [(ngModel)]="username" type="username" id="defaultLoginFormEmail" class="form-control mb-4" placeholder="Username">
+    
+                <!-- Password -->
+                <input name="txtpass" [(ngModel)]="password" type="password" id="defaultLoginFormPassword" class="form-control mb-4" placeholder="Password">
+    
+                <!-- Sign in button -->
+                <button (click)="logearse()"  mdbBtn color="secondary" block="true" class="my-4" type="submit">Sign in</button>
+    
+                <!-- Register -->
+                <p>¿No se ha registrado?
+                    <a href="registro">Regístrese aquí</a>
+                </p>
+               
+            </form>
+            <!-- Default form login -->
+        </div>
+    </div>
+    </div>
+  <!-- Extended material form grid -->
