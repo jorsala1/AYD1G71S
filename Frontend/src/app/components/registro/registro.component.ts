@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UsuarioService } from 'src/app/services/usuario.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-registro',
@@ -8,20 +9,15 @@ import { UsuarioService } from 'src/app/services/usuario.service';
 })
 export class RegistroComponent implements OnInit {
 
-  constructor(private user:UsuarioService) { }
+  constructor(private user:UsuarioService,public router: Router) { }
 
   nombre: string="";
   password: string="";
   apellidos: string=""; 
   correo: string="";
-  telefono: string="";
-  foto: string=""; 
   genero: string="";
   fechanac: string="";
-  direccion: string="";
   username : string="";
-  uploadedFiles: Array <File>;
-  fotografia: string="";
 
   ngOnInit(): void {
   }
@@ -31,8 +27,20 @@ export class RegistroComponent implements OnInit {
     this.user.singup(this.username,this.nombre,this.apellidos,this.correo,this.password,this.genero,this.fechanac)
     .subscribe((res)=>{
       console.log("ya insertó");
-      console.log(res);      
-    })
+      console.log(res);    
+      alert("USUARIO CREADO CON ÉXITO");
+      this.nombre="";
+      this.password="";
+      this.apellidos=""; 
+      this.correo="";
+      this.genero="";
+      this.fechanac="";
+      this.username="";
+      this.router.navigate(['/']);
+    },
+    err => {alert("NO SE PUDO CREAR EL USUARIO")}  
+    )
+ 
   }
 
   

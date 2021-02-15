@@ -8,11 +8,15 @@ import { HomeComponent } from './components/home/home.component';
 import { RegistroComponent } from './components/registro/registro.component';
 import {HttpClientModule,HttpClient} from '@angular/common/http';
 import { RouterModule } from "@angular/router";
+import { LoginComponent } from './components/login/login.component';
+import { PrincipalComponent } from './components/principal/principal.component';
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    RegistroComponent
+    RegistroComponent,
+    LoginComponent,
+    PrincipalComponent
   ],
   imports: [
     BrowserModule,
