@@ -17,7 +17,7 @@ const database_1 = __importDefault(require("../database"));
 class UserController {
     index(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            const respuesta = yield database_1.default.query('select * from usuario');
+            const respuesta = yield database_1.default.query('select * from Usuario');
             res.json(respuesta);
         });
     }
@@ -32,9 +32,10 @@ class UserController {
     login(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const { Username, Password } = req.body;
+            console.log(req.body);
             const jwt = require("jsonwebtoken");
-            const user = JSON.parse(JSON.stringify((yield database_1.default.query(`select * from usuario
-        where Username = '${Username}' and password = '${Password}';`))))[0];
+            const user = JSON.parse(JSON.stringify((yield database_1.default.query(`select * from Usuario
+        where Username = '${Username}' and Password = '${Password}';`))))[0];
             if (user == null) {
                 console.log("No se encontro el usuario");
                 return res.sendStatus(401);

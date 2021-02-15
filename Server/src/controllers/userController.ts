@@ -7,7 +7,7 @@ class UserController{
 
   
    public async index (req:Request,res:Response){
-       const respuesta = await pool.query('select * from usuario');
+       const respuesta = await pool.query('select * from Usuario');
         res.json(respuesta);
     }
 
@@ -21,10 +21,10 @@ class UserController{
     public async login(req:Request,res:Response){
         
         const {Username, Password} = req.body
-        
+        console.log(req.body);
         const jwt = require("jsonwebtoken")
-        const user = JSON.parse(JSON.stringify((await pool.query(`select * from usuario
-        where Username = '${Username}' and password = '${Password}';`))))[0]
+        const user = JSON.parse(JSON.stringify((await pool.query(`select * from Usuario
+        where Username = '${Username}' and Password = '${Password}';`))))[0]
         if (user == null) {
             console.log("No se encontro el usuario");
             return res.sendStatus(401);
