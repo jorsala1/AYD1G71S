@@ -12,6 +12,7 @@ class UserRoutes{
    config():void{
        //this.router.get('/', productController.index );
        this.router.post('/create',userController.create);
+       this.router.post('/log',userController.login);
    }
 }
 
