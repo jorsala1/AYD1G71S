@@ -13,6 +13,9 @@ class UserRoutes{
        //this.router.get('/', productController.index );
        this.router.post('/create',userController.create);
        this.router.post('/log',userController.login);
+       this.router.post('/getUsuario',userController.obtenerUs);
+       this.router.put('/update',userController.actualizarUs);
+       this.router.delete('/delete/:Username',userController.eliminarUsu);
    }
 }
 

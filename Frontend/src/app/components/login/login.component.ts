@@ -56,6 +56,7 @@ export class LoginComponent implements OnInit {
     localStorage.setItem('Correo',this.decoded.user.Correo);
     localStorage.setItem('Password',this.decoded.user.Password);
     localStorage.setItem('Fecha_Nac',this.decoded.user.Fecha_Nacimiento);
+    localStorage.setItem('Rol',this.decoded.user.rol);
   //  localStorage.setItem('roles', JSON.stringify(this.roles));
     
     

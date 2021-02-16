@@ -47,5 +47,42 @@ class UserController {
             });
         });
     }
+    // Obtener un usuario
+    obtenerUs(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const { Username } = req.body;
+            console.log(req.body);
+            const user = JSON.parse(JSON.stringify(yield database_1.default.query(`select * from Usuario
+        where Username = '${Username}' ;`)))[0];
+            if (user == null) {
+                console.log("No se encontro el usuario");
+                return res.sendStatus(404);
+            }
+            else {
+                res.json({ user });
+            }
+        });
+    }
+    //upddate del usuario
+    actualizarUs(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const { Username } = req.body['Username'];
+            console.log(req.body['Username']);
+            let u = req.body['Username'];
+            console.log(u);
+            yield database_1.default.query('update Usuario set ? where Username = ?', [req.body, u]);
+            res.json({ message: "El usuario fue actualizado" });
+        });
+    }
+    //eliminar un usuario
+    eliminarUsu(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            console.log("llego aqui");
+            const { Username } = req.params;
+            console.log(req.params);
+            yield database_1.default.query('DELETE FROM Usuario WHERE Username = ?', [Username]);
+            res.json({ message: "El usuario fue eliminado" });
+        });
+    }
 }
 exports.userController = new UserController();

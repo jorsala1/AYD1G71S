@@ -11,6 +11,9 @@ class UserRoutes {
         //this.router.get('/', productController.index );
         this.router.post('/create', userController_1.userController.create);
         this.router.post('/log', userController_1.userController.login);
+        this.router.post('/getUsuario', userController_1.userController.obtenerUs);
+        this.router.put('/update', userController_1.userController.actualizarUs);
+        this.router.delete('/delete/:Username', userController_1.userController.eliminarUsu);
     }
 }
 const userRoutes = new UserRoutes();

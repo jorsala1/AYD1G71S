@@ -1,10 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { HomeComponent } from './components/home/home.component';
+import { AdministrarUsuarioComponent } from './components/administrar-usuario/administrar-usuario.component';
+import { FormsModule } from '@angular/forms';
+
 import { RegistroComponent } from './components/registro/registro.component';
 import {HttpClientModule,HttpClient} from '@angular/common/http';
 import { RouterModule } from "@angular/router";
@@ -14,6 +17,7 @@ import { PrincipalComponent } from './components/principal/principal.component';
   declarations: [
     AppComponent,
     HomeComponent,
+    AdministrarUsuarioComponent,
     RegistroComponent,
     LoginComponent,
     PrincipalComponent
