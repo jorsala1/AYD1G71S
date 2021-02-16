@@ -43,14 +43,13 @@ export class UsuarioService {
     ).pipe(map(data => data));
   }
 
-  update(username : string, nombre: string,apellidos: string,correo : string, password: string, telefono:string ,genero: string,fechanac: string) {
+  update(username : string, nombre: string,apellidos: string,correo : string, password: string, genero: string,fechanac: string) {
     
     console.log("modificando " + username)
     console.log("nombre " + nombre)
     console.log("apellidos " + apellidos)
     console.log("correo " + correo)
     console.log("password " + password)
-    console.log("telefono " + telefono)
     console.log("genero " + genero)
     console.log("fecha de nacimiento " + fechanac)
     
@@ -65,8 +64,7 @@ export class UsuarioService {
         "Correo": correo,
         "Password": password,
         "Genero": genero,
-        "Fecha_Nacimiento": fechanac,
-        "Telefono": telefono  
+        "Fecha_Nacimiento": fechanac
       },
       {
         headers: this.headers
@@ -74,25 +72,26 @@ export class UsuarioService {
     ).pipe(map(data => data));
   }
 
-  delete(username:string){
-    console.log("Service delete " + username)
-    return this.http.delete(`http://${this.ip}:3000/user/delete/${username}`);
+  delete(Username:string){
+    console.log("Service delete " + Username)
+    return this.http.delete(`http://${this.ip}:3000/user/delete/${Username}`);
+    //return this.http.delete(`http://${this.ip}/user/delete${username}`);
   }
 
   getUsuario(username :string){
     console.log("Entro a getUsuario")
-    const url = "http://localhost:3000/app/getUsuario";
+    const url = "http://"+this.ip+":3000/user/getUsuario";
     //comienza el post
     return this.http.post(
       url,
       {
-        "username" : username
+        "Username" : username
       },
       {
         headers: this.headers
       }
       ).pipe(map(data => data));
-    }
+  }
 
     login(usuario){
 

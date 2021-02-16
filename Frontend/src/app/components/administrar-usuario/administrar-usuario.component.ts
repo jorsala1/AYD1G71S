@@ -27,7 +27,7 @@ export class AdministrarUsuarioComponent implements OnInit {
   }
 
   modificar(){
-    this.user.update(this.username,this.nombre,this.apellidos,this.correo,this.password, this.telefono,this.genero,this.fechanac)
+    this.user.update(this.username,this.nombre,this.apellidos,this.correo,this.password,this.genero, this.fechanac)
     .subscribe((res)=>{
       console.log("ya modifico");
       console.log(res);      
@@ -43,18 +43,36 @@ export class AdministrarUsuarioComponent implements OnInit {
   }
 
   buscarUsuario(){
+    this.limpiar();
     console.log("buscando " + this.username)
     if (this.username != "") {
       this.user.getUsuario(this.username).subscribe((res)=>{
-        console.log(res)  
+        let u = (res['user']);
+        this.nombre = u['Nombres'];
+        this.apellidos = u['Apellidos'];
+        this.correo = u['Correo'];
+        this.password = u['Password'];
+        this.genero = u['Genero'];
+        this.fechanac = u['Fecha_Nacimiento'].substring(0, 10);
+        console.log(u);
       })
     }
+  }
+
+  limpiar(){
+    this.nombre ="";
+    this.password="";
+    this.apellidos=""; 
+    this.correo="";
+    this.genero="";
+    this.fechanac="";
   }
 
   darBajaUsuario(){
     this.user.delete(this.username).subscribe(
       res => {
         console.log(res);
+        this.limpiar();
       },
       err => console.error(err)
     );

@@ -52,15 +52,19 @@ class UserController{
 
     //upddate del usuario
     public async actualizarUs(req:Request,res:Response){
-        const {Username} = req.body.Username
-        await pool.query('update Usuario set ? where Username = ?', [req.body, Username]);        
+        const {Username} = req.body['Username']
+        console.log(req.body['Username'])
+        let u = req.body['Username']
+        console.log(u)
+        await pool.query('update Usuario set ? where Username = ?', [req.body, u]);        
         res.json({message:"El usuario fue actualizado"});
     }
 
     //eliminar un usuario
     public async eliminarUsu(req:Request,res:Response){
-        const {Username} = req.body
-        console.log(req.body)
+        console.log("llego aqui")
+        const { Username } = req.params
+        console.log(req.params)
         await pool.query('DELETE FROM Usuario WHERE Username = ?',[Username]);
         res.json({message:"El usuario fue eliminado"});
     }
