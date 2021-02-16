@@ -21,6 +21,18 @@ class Server{
         this.app.use(cors());
         this.app.use(express.json());
         this.app.use(express.urlencoded({extended:true}));
+        this.app.use((req, res, next) => {
+            res.setHeader("Access-Control-Allow-Origin", "*");
+             res.setHeader(
+             "Access-Control-Allow-Headers",
+             "Origin, X-Requested-With, Content-Type, Accept, Authorization, AuthorizationReporter"
+                );
+             res.setHeader(
+             "Access-Control-Allow-Methods",
+             "GET, POST, PATCH, PUT, DELETE, OPTIONS"
+             );
+            next();
+            });
     }
 
     //Manejo de rutas 

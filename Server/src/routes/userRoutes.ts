@@ -1,6 +1,6 @@
 import {Router} from 'express';
 import Pool from '../database';
-import {productController} from '../controllers/productController'
+import {userController} from '../controllers/userController'
 
 class UserRoutes{
    public router : Router = Router();
@@ -11,6 +11,8 @@ class UserRoutes{
 
    config():void{
        //this.router.get('/', productController.index );
+       this.router.post('/create',userController.create);
+       this.router.post('/log',userController.login);
    }
 }
 
