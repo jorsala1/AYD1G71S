@@ -3,7 +3,6 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { map } from 'rxjs/operators';
 
 const baseUrl = 'http://localhost:3000';
-
 @Injectable({
   providedIn: 'root'
 })
@@ -11,7 +10,6 @@ export class UsuarioService {
 
   ip:string="localhost";
   //ip2:string="192.168.1.8";
-  
   constructor(private http: HttpClient) { }
   //para comunicarnos con json
   headers: HttpHeaders = new HttpHeaders({
@@ -21,8 +19,8 @@ export class UsuarioService {
   singup(username : string, nombre: string,apellidos: string,correo : string, password: string ,genero: string,fechanac: string) {
     //console.log(username,password);
     //const url = "http://"+this.puerto+":3000/app/registro";
-    const url = baseUrl+"/user/create";
-    
+
+    const url = "http://"+this.ip+":3000/user/create";
     //comienza el post
     return this.http.post(
       url,

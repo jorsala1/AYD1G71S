@@ -5,6 +5,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { HomeComponent } from './components/home/home.component';
+
+import { ModificarUsuarioComponent } from './components/modificar-usuario/modificar-usuario.component';
+
 import { AdministrarUsuarioComponent } from './components/administrar-usuario/administrar-usuario.component';
 import { FormsModule } from '@angular/forms';
 
@@ -17,6 +20,7 @@ import { PrincipalComponent } from './components/principal/principal.component';
   declarations: [
     AppComponent,
     HomeComponent,
+    ModificarUsuarioComponent,
     AdministrarUsuarioComponent,
     RegistroComponent,
     LoginComponent,
