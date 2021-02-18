@@ -10,9 +10,22 @@ export class PrincipalComponent implements OnInit {
 
   constructor( public router: Router) { }
   Nombres: string;
+  habilitacion: string;
+  
   ngOnInit(): void {
     this.Nombres=localStorage.getItem('Nombres');
+    this.habilitacion=localStorage.getItem('Rol');
+
+    if (this.habilitacion =="1"){
+      this.habilitacion="<div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  [routerLink]=\"['/modificarUsuario']\" >Usuarios</a>";
+    }else{
+      this.habilitacion="";
+    }
+
+
+   
   }
+
 
   Logout(){
     localStorage.removeItem('llave');
