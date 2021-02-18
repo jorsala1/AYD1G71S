@@ -7,7 +7,9 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "cordova": "ng build --base-href . --output-path CordobaApk/www",
+    "cordova-run": "npm run cordova && cd CordobaApk && cordova run android"
   },
   "private": true,
   "dependencies": {
@@ -53,6 +55,7 @@
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
     "typescript": "~3.8.3"
+    
   },
   "description": "This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.1.",
   "main": "karma.conf.js",
