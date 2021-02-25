@@ -8,7 +8,10 @@ import { Component, OnInit } from '@angular/core';
 export class RegistroProveedorComponent implements OnInit {
 
   constructor() { }
-
+  nombre: string="";
+  contacto: string="";
+  telefono: string="";
+  direccion: string="";
   ngOnInit(): void {
   }
 
