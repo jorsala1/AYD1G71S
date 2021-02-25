@@ -16,6 +16,7 @@ import {HttpClientModule,HttpClient} from '@angular/common/http';
 import { RouterModule } from "@angular/router";
 import { LoginComponent } from './components/login/login.component';
 import { PrincipalComponent } from './components/principal/principal.component';
+import { AdministrarProveedorComponent } from './components/administrar-proveedor/administrar-proveedor.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +25,8 @@ import { PrincipalComponent } from './components/principal/principal.component';
     AdministrarUsuarioComponent,
     RegistroComponent,
     LoginComponent,
-    PrincipalComponent
+    PrincipalComponent,
+    AdministrarProveedorComponent
   ],
   imports: [
     BrowserModule,
