@@ -7,6 +7,7 @@ import { AdministrarUsuarioComponent } from './components/administrar-usuario/ad
 import { RegistroComponent } from './components/registro/registro.component';
 import { LoginComponent } from './components/login/login.component';
 import { PrincipalComponent } from './components/principal/principal.component';
+import { RegistroProveedorComponent } from './registro-proveedor/registro-proveedor.component';
 
 
 
@@ -34,6 +35,10 @@ const routes: Routes = [
   {
     path: 'principal',
     component: PrincipalComponent,
+  },
+  {
+    path: 'registroProveedor',
+    component: RegistroProveedorComponent,
   }
 ];
 
