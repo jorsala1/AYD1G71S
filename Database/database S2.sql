@@ -6,7 +6,7 @@ create table Proveedor(
     nombre varchar(50) not null,
 	direccion varchar(50) not null,
 	telefono varchar(12) not null,
-	nombre_contacto varchar(10) 	
+	nombre_contacto varchar(50) 	
     
 );
 
