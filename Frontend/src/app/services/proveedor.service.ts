@@ -36,4 +36,9 @@ export class ProveedorService {
       }
     ).pipe(map(data => data));
   }
+
+  obtenerProveedores(){
+    const url= baseUrl+"/prov/";
+    return this.http.get(url);
+  }
 }

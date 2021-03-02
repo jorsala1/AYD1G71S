@@ -9,6 +9,7 @@ import { LoginComponent } from './components/login/login.component';
 import { PrincipalComponent } from './components/principal/principal.component';
 import { AdministrarProveedorComponent } from './components/administrar-proveedor/administrar-proveedor.component';
 import { RegistroProveedorComponent } from './registro-proveedor/registro-proveedor.component';
+import { VerProveedoresComponent } from './components/ver-proveedores/ver-proveedores.component';
 
 
 const routes: Routes = [
@@ -43,6 +44,10 @@ const routes: Routes = [
   {
     path: 'registroProveedor',
     component: RegistroProveedorComponent,
+  },
+  {
+    path: 'verProveedores',
+    component: VerProveedoresComponent,
   }
 ];
 

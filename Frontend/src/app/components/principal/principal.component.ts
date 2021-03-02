@@ -18,6 +18,9 @@ export class PrincipalComponent implements OnInit {
 
     if (this.habilitacion =="1"){
       this.habilitacion="<div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  [routerLink]=\"['/modificarUsuario']\" >Usuarios</a>";
+     // this.habilitacion+="<div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  [routerLink]=\"['/registroProveedor']\" >RegistrarProveedor</a>";
+     // this.habilitacion+="<div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  [routerLink]=\"['verProveedores']\" >VerProveedores</a>";
+
     }else{
       this.habilitacion="";
     }

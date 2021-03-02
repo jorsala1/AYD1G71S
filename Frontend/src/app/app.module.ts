@@ -18,6 +18,7 @@ import { LoginComponent } from './components/login/login.component';
 import { PrincipalComponent } from './components/principal/principal.component';
 import { AdministrarProveedorComponent } from './components/administrar-proveedor/administrar-proveedor.component';
 import { RegistroProveedorComponent } from './registro-proveedor/registro-proveedor.component';
+import { VerProveedoresComponent } from './components/ver-proveedores/ver-proveedores.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +29,8 @@ import { RegistroProveedorComponent } from './registro-proveedor/registro-provee
     LoginComponent,
     PrincipalComponent,
     AdministrarProveedorComponent,
-    RegistroProveedorComponent
+    RegistroProveedorComponent,
+    VerProveedoresComponent
   ],
   imports: [
     BrowserModule,
