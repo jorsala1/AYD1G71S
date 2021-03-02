@@ -36,4 +36,28 @@ export class ProveedorService {
       }
     ).pipe(map(data => data));
   }
+
+  update(id : string, nombre: string,direccion: string,telefono : string,nombre_contacto: string) {
+    
+    const url = "http://"+this.ip+":3000/proveedor/update";
+    //comienza el put
+    return this.http.put(
+      url,
+      {
+        "id": id,
+        "nombre": nombre,
+        "direccion": direccion,
+        "telefono": telefono,
+        "nombre_contacto": nombre_contacto
+      },
+      {
+        headers: this.headers
+      }
+    ).pipe(map(data => data));
+  }
+
+  delete(id:string){
+    console.log("Service delete " + id)
+    return this.http.delete(`http://${this.ip}:3000/proveedor/delete/${id}`);
+  }
 }
