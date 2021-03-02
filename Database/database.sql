@@ -45,4 +45,19 @@ create table Usuario(
     foreign key (rol) references Rol(CodigoRol)
 );
 -- select * from Usuario;
--- 
+
+
+-- Creacion tabla proveedores
+create table Proveedor(
+	id int not null auto_increment primary key,
+    nombre varchar(50) not null,
+	direccion varchar(50) not null,
+	telefono varchar(12) not null,
+	nombre_contacto varchar(10) 	
+    
+);
+
+describe Proveedor;
+
+/*Ingreso de primer dato para verificacion desde workbench*/
+-- insert into Proveedor values (1,'Proveedor1','direccion 1','123456789','Contacto');

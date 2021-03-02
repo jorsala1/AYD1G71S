@@ -17,6 +17,7 @@ import { RouterModule } from "@angular/router";
 import { LoginComponent } from './components/login/login.component';
 import { PrincipalComponent } from './components/principal/principal.component';
 import { AdministrarProveedorComponent } from './components/administrar-proveedor/administrar-proveedor.component';
+import { RegistroProveedorComponent } from './registro-proveedor/registro-proveedor.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +27,8 @@ import { AdministrarProveedorComponent } from './components/administrar-proveedo
     RegistroComponent,
     LoginComponent,
     PrincipalComponent,
-    AdministrarProveedorComponent
+    AdministrarProveedorComponent,
+    RegistroProveedorComponent
   ],
   imports: [
     BrowserModule,

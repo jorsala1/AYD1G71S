@@ -8,6 +8,7 @@ import { RegistroComponent } from './components/registro/registro.component';
 import { LoginComponent } from './components/login/login.component';
 import { PrincipalComponent } from './components/principal/principal.component';
 import { AdministrarProveedorComponent } from './components/administrar-proveedor/administrar-proveedor.component';
+import { RegistroProveedorComponent } from './registro-proveedor/registro-proveedor.component';
 
 
 const routes: Routes = [
@@ -38,6 +39,10 @@ const routes: Routes = [
   {
     path: 'administrarProveedor',
     component: AdministrarProveedorComponent,
+  },
+  {
+    path: 'registroProveedor',
+    component: RegistroProveedorComponent,
   }
 ];
 
