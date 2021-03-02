@@ -12,6 +12,9 @@ class ProvRoutes{
     config():void{
         this.router.get('/',provController.index); // visualizar listado de proveedores
         this.router.post('/create',provController.create);//crear un nuevo proveedor
+        this.router.post('/getProveedor',provController.obtenerProv);//obtener un proveedor
+        this.router.put('/updateProv',provController.actualizarProv); // actualizar un proveedor
+        this.router.delete('/delete',provController.eliminarProv);
     }
 }
 
