@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UsuarioService } from 'src/app/services/usuario.service';
+import { ProveedorService } from 'src/app/services/proveedor.service';
 
 @Component({
   selector: 'app-administrar-proveedor',
@@ -8,7 +8,7 @@ import { UsuarioService } from 'src/app/services/usuario.service';
 })
 export class AdministrarProveedorComponent implements OnInit {
 
-  constructor(private user:UsuarioService) { }
+  constructor(private proveedor:ProveedorService) { }
 
   nombre: string="";
   direccion: string="";
@@ -17,6 +17,11 @@ export class AdministrarProveedorComponent implements OnInit {
   id: string="";
 
   ngOnInit(): void {
+    this.id = localStorage.getItem('id_proveedor')
+    this.nombre = localStorage.getItem('nombre_proveedor')
+    this.direccion = localStorage.getItem('direccion_proveedor')
+    this.telefono = localStorage.getItem('telefono_proveedor')
+    this.nombre_contacto = localStorage.getItem('nombre_contacto')
   }
 
   limpiar(){
@@ -27,7 +32,7 @@ export class AdministrarProveedorComponent implements OnInit {
   }
 
   darBajaProveedor(){
-    this.user.delete(this.id).subscribe(
+    this.proveedor.delete(this.id).subscribe(
       res => {
         console.log(res);
         this.limpiar();
@@ -37,11 +42,12 @@ export class AdministrarProveedorComponent implements OnInit {
   }
 
   modificar(){
-    /*this.user.update(this.id,this.nombre,this.direccion,this.telefono,this.nombre_contacto)
+    console.log("se va a modificar a " + this.id)
+    this.proveedor.update(this.id,this.nombre,this.direccion,this.telefono,this.nombre_contacto)
     .subscribe((res)=>{
       console.log("ya modifico");
       console.log(res);      
-    })*/
+    })
   }
 
 }

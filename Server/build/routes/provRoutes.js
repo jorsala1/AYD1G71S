@@ -10,6 +10,9 @@ class ProvRoutes {
     config() {
         this.router.get('/', provController_1.provController.index); // visualizar listado de proveedores
         this.router.post('/create', provController_1.provController.create); //crear un nuevo proveedor
+        this.router.post('/getProveedor', provController_1.provController.obtenerProv); //obtener un proveedor
+        this.router.put('/updateProv', provController_1.provController.actualizarProv); // actualizar un proveedor
+        this.router.delete('/deleteProv/:id', provController_1.provController.eliminarProv);
     }
 }
 const provRoutes = new ProvRoutes();
