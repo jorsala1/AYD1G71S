@@ -60,7 +60,7 @@ class ProvController {
             const { id } = req.params;
             let u = req.body['id'];
             console.log(u);
-            yield database_1.default.query('DELETE FROM Proveedor WHERE id = ?', [u]);
+            yield database_1.default.query('DELETE FROM Proveedor WHERE id = ?', [id]);
             res.json({ message: "El proveedor fue eliminado" });
         });
     }

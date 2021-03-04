@@ -17,7 +17,10 @@ export class PrincipalComponent implements OnInit {
     this.habilitacion=localStorage.getItem('Rol');
 
     if (this.habilitacion =="1"){
-      this.habilitacion="<div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  [routerLink]=\"['/modificarUsuario']\" >Usuarios</a>";
+      this.habilitacion="<div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"administrarUsuario\" >Usuarios</a>";
+      this.habilitacion+="<div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"registroProveedor\" >RegistrarProveedor</a>";
+      this.habilitacion+="<div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"verProveedores\" >VerProveedores</a>";
+
     }else{
       this.habilitacion="";
     }

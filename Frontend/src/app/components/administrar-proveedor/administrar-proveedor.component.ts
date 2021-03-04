@@ -17,6 +17,11 @@ export class AdministrarProveedorComponent implements OnInit {
   id: string="";
 
   ngOnInit(): void {
+    this.id = localStorage.getItem('id_proveedor')
+    this.nombre = localStorage.getItem('nombre_proveedor')
+    this.direccion = localStorage.getItem('direccion_proveedor')
+    this.telefono = localStorage.getItem('telefono_proveedor')
+    this.nombre_contacto = localStorage.getItem('nombre_contacto')
   }
 
   limpiar(){
@@ -37,6 +42,7 @@ export class AdministrarProveedorComponent implements OnInit {
   }
 
   modificar(){
+    console.log("se va a modificar a " + this.id)
     this.proveedor.update(this.id,this.nombre,this.direccion,this.telefono,this.nombre_contacto)
     .subscribe((res)=>{
       console.log("ya modifico");

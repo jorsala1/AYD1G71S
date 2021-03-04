@@ -10,12 +10,14 @@ import { Router } from '@angular/router';
 export class RegistroProveedorComponent implements OnInit {
 
   constructor(private proveedor:ProveedorService,public router: Router) { }
+  Nombres: string;
   nombre: string="";
   contacto: string="";
   telefono: string="";
   direccion: string="";
   
   ngOnInit(): void {
+    this.Nombres=localStorage.getItem('Nombres');
   }
 
   registrarse(){
@@ -34,4 +36,15 @@ export class RegistroProveedorComponent implements OnInit {
      )
   
    }
+   Logout(){
+    localStorage.removeItem('llave');
+    localStorage.removeItem('CodigoUsuario');
+    localStorage.removeItem('Username');
+    localStorage.removeItem('Nombres');
+    localStorage.removeItem('Apellidos');
+    localStorage.removeItem('Correo');
+    localStorage.removeItem('Password');
+    localStorage.removeItem('Fecha_Nac');
+    this.router.navigate(['login']);
+  }
 }

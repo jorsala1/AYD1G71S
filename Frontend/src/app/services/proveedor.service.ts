@@ -39,8 +39,9 @@ export class ProveedorService {
 
   update(id : string, nombre: string,direccion: string,telefono : string,nombre_contacto: string) {
     
-    const url = "http://"+this.ip+":3000/proveedor/update";
+    const url = "http://"+this.ip+":3000/prov/updateProv";
     //comienza el put
+    console.log("actualizar " + id)
     return this.http.put(
       url,
       {
@@ -58,6 +59,10 @@ export class ProveedorService {
 
   delete(id:string){
     console.log("Service delete " + id)
-    return this.http.delete(`http://${this.ip}:3000/proveedor/delete/${id}`);
+    return this.http.delete(`http://${this.ip}:3000/prov/deleteProv/${id}`);
+  }
+  obtenerProveedores(){
+    const url= baseUrl+"/prov/";
+    return this.http.get(url);
   }
 }
