@@ -7,7 +7,9 @@ import { AdministrarUsuarioComponent } from './components/administrar-usuario/ad
 import { RegistroComponent } from './components/registro/registro.component';
 import { LoginComponent } from './components/login/login.component';
 import { PrincipalComponent } from './components/principal/principal.component';
-
+import { AdministrarProveedorComponent } from './components/administrar-proveedor/administrar-proveedor.component';
+import { RegistroProveedorComponent } from './registro-proveedor/registro-proveedor.component';
+import { VerProveedoresComponent } from './components/ver-proveedores/ver-proveedores.component';
 
 
 const routes: Routes = [
@@ -34,6 +36,18 @@ const routes: Routes = [
   {
     path: 'principal',
     component: PrincipalComponent,
+  },
+  {
+    path: 'administrarProveedor',
+    component: AdministrarProveedorComponent,
+  },
+  {
+    path: 'registroProveedor',
+    component: RegistroProveedorComponent,
+  },
+  {
+    path: 'verProveedores',
+    component: VerProveedoresComponent,
   }
 ];
 
