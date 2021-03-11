@@ -14,9 +14,20 @@ export class VerProveedoresComponent implements OnInit {
   Nombres: string;
   VectorProveedores: Proveedor[] =[];
   headElements = ['Nombre Proveedor', 'Dirección', 'Telefono','Editar'];
+  habilitacion: string;
 
   ngOnInit(): void {
     this.Nombres=localStorage.getItem('Nombres');
+    this.habilitacion=localStorage.getItem('Rol');
+
+    if (this.habilitacion =="1"){
+      this.habilitacion="<div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"administrarUsuario\" >Admin Usuarios</a>";
+      this.habilitacion+="<div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"registroProveedor\" >Registrar Proveedor</a>";
+
+    }else{
+      this.habilitacion="";
+    }
+
     this.Proveedores.obtenerProveedores().subscribe((res:any[])=>{
       console.log(res);
       this.VectorProveedores=res;

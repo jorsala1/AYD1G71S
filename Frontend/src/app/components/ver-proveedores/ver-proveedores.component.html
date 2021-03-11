@@ -1,42 +1,44 @@
 <!--Navbar-->
 <mdb-navbar SideClass="navbar navbar-expand-lg #80cbc4 teal lighten-3">
 
-    <!-- Navbar brand -->
-    <mdb-navbar-brand><a class="navbar-brand " style="font-size:30px ; color:darkslateblue " href="#"> Farma Seven</a>
-    </mdb-navbar-brand>
-  
-  
-    <!-- Collapsible content -->
-    <links>
-  
-      <!-- Links -->
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" mdbWavesEffect [routerLink]="['/home']">Home</a>
-        </li>
-  
-        <div class="btn-group" mdbDropdown>
-            <button type="button" mdbBtn color="danger" class="waves-light" mdbWavesEffect>{{Nombres}}</button>
-            <button type="button" mdbDropdownToggle mdbBtn color="danger" class="dropdown-toggle dropdown-toggle-split px-3 waves-light"
-              mdbWavesEffect></button>
-            <div class="dropdown-menu">  
-              <a class="dropdown-item"  [routerLink]="['/principal']">Principal</a>
-              <div class="dropdown-divider"></div>   
-              <a class="dropdown-item"  [routerLink]="['/registroProveedor']">RegistrarProveedor</a>
-              <div class="dropdown-divider"></div>   
-              <a class="dropdown-item"  [routerLink]="['/verProveedores']">VerProveedores</a>
-              <div class="dropdown-divider"></div>   
-              <a class="dropdown-item"   (click)="Logout()">Logout</a>
-            </div>
+  <!-- Navbar brand -->
+  <mdb-navbar-brand><a class="navbar-brand " style="font-size:30px ; color:darkslateblue " href="#"> Farma Seven</a>
+  </mdb-navbar-brand>
+
+
+  <!-- Collapsible content -->
+  <links>
+
+    <!-- Links -->
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" mdbWavesEffect [routerLink]="['/home']">Home</a>
+      </li>
+
+      <div class="btn-group" mdbDropdown>
+          <button type="button" mdbBtn color="danger" class="waves-light" mdbWavesEffect>{{Nombres}}</button>
+          <button type="button" mdbDropdownToggle mdbBtn color="danger" class="dropdown-toggle dropdown-toggle-split px-3 waves-light"
+            mdbWavesEffect></button>
+          <div class="dropdown-menu">  
+            <a class="dropdown-item"  [routerLink]="['/principal']">Principal</a>
+            <!-- <div class="dropdown-divider"></div>    -->
+            <!-- <a class="dropdown-item"  [routerLink]="['/registroProveedor']">RegistrarProveedor</a> -->
+            <!-- <div class="dropdown-divider"></div>    -->
+            <!-- <a class="dropdown-item"  [routerLink]="['/verProveedores']">VerProveedores</a> -->
+            <div [innerHTML]="habilitacion"></div>
+            
+            <div class="dropdown-divider"></div>   
+            <a class="dropdown-item"   (click)="Logout()">Logout</a>
           </div>
-      </ul>
-      <!-- Links -->
-  
-      
-    </links>
-    <!-- Collapsible content -->
-  
-  </mdb-navbar>
+        </div>
+    </ul>
+    <!-- Links -->
+
+    
+  </links>
+  <!-- Collapsible content -->
+
+</mdb-navbar>
   <!--/.Navbar-->
   <section class="text-center">
     <h1 class="text-danger" style="font-size: 40px; font-weight:bold"> PROVEEDORES  </h1>

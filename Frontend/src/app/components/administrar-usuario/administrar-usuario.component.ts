@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { UsuarioService } from 'src/app/services/usuario.service';
 
 @Component({
@@ -8,8 +9,10 @@ import { UsuarioService } from 'src/app/services/usuario.service';
 })
 export class AdministrarUsuarioComponent implements OnInit {
 
-  constructor(private user:UsuarioService) { }
-
+  constructor(private user:UsuarioService,public router: Router) { }
+  Nombres: string;
+  habilitacion: string;
+  
   nombre: string="";
   password: string="";
   apellidos: string=""; 
@@ -24,6 +27,17 @@ export class AdministrarUsuarioComponent implements OnInit {
   fotografia: string="";
 
   ngOnInit(): void {
+    this.Nombres=localStorage.getItem('Nombres');
+    this.habilitacion=localStorage.getItem('Rol');
+
+    if (this.habilitacion =="1"){
+      this.habilitacion="<div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"registroProveedor\" >Registrar Proveedor</a>";
+      this.habilitacion+="<div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"verProveedores\" >Ver Proveedores</a>";
+
+    }else{
+      this.habilitacion="";
+    }
+
   }
 
   modificar(){
@@ -42,6 +56,17 @@ export class AdministrarUsuarioComponent implements OnInit {
     }
   }
 
+  Logout(){
+    localStorage.removeItem('llave');
+    localStorage.removeItem('CodigoUsuario');
+    localStorage.removeItem('Username');
+    localStorage.removeItem('Nombres');
+    localStorage.removeItem('Apellidos');
+    localStorage.removeItem('Correo');
+    localStorage.removeItem('Password');
+    localStorage.removeItem('Fecha_Nac');
+    this.router.navigate(['login']);
+  }
   buscarUsuario(){
     this.limpiar();
     console.log("buscando " + this.username)

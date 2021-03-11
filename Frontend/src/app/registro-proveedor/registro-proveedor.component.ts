@@ -15,9 +15,18 @@ export class RegistroProveedorComponent implements OnInit {
   contacto: string="";
   telefono: string="";
   direccion: string="";
+  habilitacion: string;
   
   ngOnInit(): void {
     this.Nombres=localStorage.getItem('Nombres');
+    this.habilitacion=localStorage.getItem('Rol');
+    if (this.habilitacion =="1"){
+      this.habilitacion="<div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"administrarUsuario\" >Admin Usuarios</a>";
+      this.habilitacion+="<div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"verProveedores\" >Ver Proveedores</a>";
+
+    }else{
+      this.habilitacion="";
+    }
   }
 
   registrarse(){
