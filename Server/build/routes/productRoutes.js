@@ -9,6 +9,7 @@ class ProductRoutes {
     }
     config() {
         this.router.get('/', productController_1.productController.index);
+        this.router.post('/create', productController_1.productController.create);
     }
 }
 const productRoutes = new ProductRoutes();

@@ -61,3 +61,26 @@ describe Proveedor;
 
 /*Ingreso de primer dato para verificacion desde workbench*/
 -- insert into Proveedor values (1,'Proveedor1','direccion 1','123456789','Contacto');
+
+-- -------------------------- Para el Sprint 3 ------------------------------
+-- tabla categoria
+create table categoria(
+	id int not null auto_increment primary key,
+    categoria varchar(50) not null
+);
+
+-- insert into categoria values (1,'Categoria_1');
+
+-- tabla producto
+create table producto(
+	id int not null auto_increment primary key,
+    nombre_prod varchar(70) not null, 
+    descripcion varchar(200) not null,
+    cantidad int not null,
+    precio_compra double not null,
+    precio_venta double not null,
+    categoria int not null,
+    foreign key (categoria) references categoria(id)
+);
+
+-- insert into producto values (1,'product1','some description',100,125.00,150.00,1);

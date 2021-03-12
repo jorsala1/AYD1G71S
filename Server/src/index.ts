@@ -5,6 +5,7 @@ import indexRoutes from './routes/indexRoutes';
 import productRoutes from './routes/productRoutes';
 import userRoutes from './routes/userRoutes';
 import provRoutes from './routes/provRoutes';
+import categoriaRoutes from './routes/categoriaRoutes';
 
 class Server{
     //creando la aplicacion
@@ -42,6 +43,7 @@ class Server{
         this.app.use('/products',productRoutes)
         this.app.use('/user',userRoutes)
         this.app.use('/prov',provRoutes)
+        this.app.use('/categoria',categoriaRoutes)
     }
 
     //inicializar el server

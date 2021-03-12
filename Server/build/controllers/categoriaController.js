@@ -12,21 +12,14 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.productController = void 0;
+exports.categoriaController = void 0;
 const database_1 = __importDefault(require("../database"));
-class ProductController {
+class CategoriaController {
     index(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            const respuesta = yield database_1.default.query('select * from producto');
+            const respuesta = yield database_1.default.query('select * from categoria');
             res.json(respuesta);
         });
     }
-    // Creación de productos
-    create(req, res) {
-        return __awaiter(this, void 0, void 0, function* () {
-            yield database_1.default.query('insert into producto set ?', [req.body]);
-            res.json({ respuesta: 'Se creo un nuevo producto' });
-        });
-    }
 }
-exports.productController = new ProductController();
+exports.categoriaController = new CategoriaController();

@@ -1,0 +1,19 @@
+/************CATEGORIAS***************/
+-- listar categorias
+http://localhost:3000/categoria/
+
+/*************PRODUCTOS***************/
+-- listar productos
+http://localhost:3000/products/
+
+-- agregar productos
+http://localhost:3000/products/create
+-json para enviar
+   {       
+        "nombre_prod": "product2",
+        "descripcion": "some description from server",
+        "cantidad": 100,
+        "precio_compra": 125.00,
+        "precio_venta": 150.00,
+        "categoria": 1
+    }
