@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ProveedorService } from 'src/app/services/proveedor.service';
 
 @Component({
@@ -8,8 +9,9 @@ import { ProveedorService } from 'src/app/services/proveedor.service';
 })
 export class AdministrarProveedorComponent implements OnInit {
 
-  constructor(private proveedor:ProveedorService) { }
-
+  constructor(private proveedor:ProveedorService,public router: Router) { }
+  Nombres: string;
+  habilitacion: string;
   nombre: string="";
   direccion: string="";
   telefono: string=""; 
@@ -22,6 +24,20 @@ export class AdministrarProveedorComponent implements OnInit {
     this.direccion = localStorage.getItem('direccion_proveedor')
     this.telefono = localStorage.getItem('telefono_proveedor')
     this.nombre_contacto = localStorage.getItem('nombre_contacto')
+
+    this.Nombres=localStorage.getItem('Nombres');
+    this.habilitacion=localStorage.getItem('Rol');
+
+    if (this.habilitacion =="1"){
+      this.habilitacion="<div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"administrarUsuario\" >Admin Usuarios</a>";
+      this.habilitacion+="<div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"modificarUsuario\" >Modificar mis datos</a>";      
+      this.habilitacion+="<div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"verProveedores\" >Ver Proveedores</a>";
+      this.habilitacion+="<div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"registroProveedor\" >Agregar Proveedor</a>";
+      this.habilitacion+="<div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"agregarProducto\" >Agregar Producto</a>";
+    }else{
+      this.habilitacion="";
+    }
+
   }
 
   limpiar(){
@@ -48,6 +64,17 @@ export class AdministrarProveedorComponent implements OnInit {
       console.log("ya modifico");
       console.log(res);      
     })
+  }
+  Logout(){
+    localStorage.removeItem('llave');
+    localStorage.removeItem('CodigoUsuario');
+    localStorage.removeItem('Username');
+    localStorage.removeItem('Nombres');
+    localStorage.removeItem('Apellidos');
+    localStorage.removeItem('Correo');
+    localStorage.removeItem('Password');
+    localStorage.removeItem('Fecha_Nac');
+    this.router.navigate(['login']);
   }
 
 }
