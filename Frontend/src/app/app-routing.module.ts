@@ -10,6 +10,7 @@ import { PrincipalComponent } from './components/principal/principal.component';
 import { AdministrarProveedorComponent } from './components/administrar-proveedor/administrar-proveedor.component';
 import { RegistroProveedorComponent } from './registro-proveedor/registro-proveedor.component';
 import { VerProveedoresComponent } from './components/ver-proveedores/ver-proveedores.component';
+import { AgregarProductoComponent } from './components/agregar-producto/agregar-producto.component';
 
 
 const routes: Routes = [
@@ -48,6 +49,10 @@ const routes: Routes = [
   {
     path: 'verProveedores',
     component: VerProveedoresComponent,
+  },
+  {
+    path: 'agregarProducto',
+    component: AgregarProductoComponent,
   }
 ];
 
