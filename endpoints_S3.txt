@@ -17,3 +17,30 @@ http://localhost:3000/products/create
         "precio_venta": 150.00,
         "categoria": 1
     }
+
+-- obtener Producto especifico
+http://localhost:3000/products/getProduct
+--Tipo de metodo: post
+-json para enviar
+{
+    "id":2
+}
+
+-- Actualizar producto
+http://localhost:3000/products/updateProd
+--Tipo de metodo: put
+-json para enviar
+    {       
+        "id":1,
+        "nombre_prod": "product2",
+        "descripcion": "some description from server",
+        "cantidad": 100,
+        "precio_compra": 125.00,
+        "precio_venta": 150.00,
+        "categoria": 1
+    }
+
+    -- eliminar producto
+http://localhost:3000/products/deleteProd/:id
+--Tipo de metodo: delete
+-el parametro "id" se envia desde el url

@@ -28,5 +28,40 @@ class ProductController {
             res.json({ respuesta: 'Se creo un nuevo producto' });
         });
     }
+    obtenerProd(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const { id } = req.body;
+            console.log(req.body);
+            const prod = JSON.parse(JSON.stringify(yield database_1.default.query(`select * from producto
+      where id = '${id}' ;`)))[0];
+            if (prod == null) {
+                console.log("No se encontro el producto");
+                return res.sendStatus(404);
+            }
+            else {
+                res.json({ prod });
+            }
+        });
+    }
+    //upddate del producto
+    actualizarProd(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const { id } = req.body['id'];
+            console.log(req.body['id']);
+            let u = req.body['id'];
+            console.log(u);
+            yield database_1.default.query('update producto set ? where id = ?', [req.body, u]);
+            res.json({ message: "El producto fue actualizado" });
+        });
+    }
+    //eliminar un producto
+    eliminarProd(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const { id } = req.params;
+            console.log(req.params);
+            yield database_1.default.query('DELETE FROM producto WHERE id = ?', [id]);
+            res.json({ message: "El producto fue eliminado" });
+        });
+    }
 }
 exports.productController = new ProductController();
