@@ -27,7 +27,7 @@ class ProductController{
       }
   }
 
-  //upddate del usuario
+  //upddate del producto
   public async actualizarProd(req:Request,res:Response){
     const {id} = req.body['id']
     console.log(req.body['id'])
@@ -36,6 +36,15 @@ class ProductController{
     await pool.query('update producto set ? where id = ?', [req.body, u]);        
     res.json({message:"El producto fue actualizado"});
   }
+
+  //eliminar un producto
+  public async eliminarProd(req:Request,res:Response){
+   
+    const { id } = req.params
+    console.log(req.params)
+    await pool.query('DELETE FROM producto WHERE id = ?',[id]);
+    res.json({message:"El producto fue eliminado"});
+}
 
 }
 

@@ -39,3 +39,8 @@ http://localhost:3000/products/updateProd
         "precio_venta": 150.00,
         "categoria": 1
     }
+
+    -- eliminar producto
+http://localhost:3000/products/deleteProd/:id
+--Tipo de metodo: delete
+-el parametro "id" se envia desde el url

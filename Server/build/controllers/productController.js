@@ -43,7 +43,7 @@ class ProductController {
             }
         });
     }
-    //upddate del usuario
+    //upddate del producto
     actualizarProd(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const { id } = req.body['id'];
@@ -52,6 +52,15 @@ class ProductController {
             console.log(u);
             yield database_1.default.query('update producto set ? where id = ?', [req.body, u]);
             res.json({ message: "El producto fue actualizado" });
+        });
+    }
+    //eliminar un producto
+    eliminarProd(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const { id } = req.params;
+            console.log(req.params);
+            yield database_1.default.query('DELETE FROM producto WHERE id = ?', [id]);
+            res.json({ message: "El producto fue eliminado" });
         });
     }
 }
