@@ -43,5 +43,16 @@ class ProductController {
             }
         });
     }
+    //upddate del usuario
+    actualizarProd(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const { id } = req.body['id'];
+            console.log(req.body['id']);
+            let u = req.body['id'];
+            console.log(u);
+            yield database_1.default.query('update producto set ? where id = ?', [req.body, u]);
+            res.json({ message: "El producto fue actualizado" });
+        });
+    }
 }
 exports.productController = new ProductController();

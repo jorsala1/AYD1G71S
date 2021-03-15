@@ -26,6 +26,17 @@ class ProductController{
           res.json({prod});
       }
   }
+
+  //upddate del usuario
+  public async actualizarProd(req:Request,res:Response){
+    const {id} = req.body['id']
+    console.log(req.body['id'])
+    let u = req.body['id']
+    console.log(u)
+    await pool.query('update producto set ? where id = ?', [req.body, u]);        
+    res.json({message:"El producto fue actualizado"});
+  }
+
 }
 
 export const productController = new ProductController();
