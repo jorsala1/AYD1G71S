@@ -12,6 +12,7 @@ class ProductRoutes{
    config():void{
        this.router.get('/', productController.index );
        this.router.post('/create',productController.create);
+       this.router.post('/getProduct',productController.obtenerProd);
    }
 }
 

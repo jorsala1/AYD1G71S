@@ -28,5 +28,20 @@ class ProductController {
             res.json({ respuesta: 'Se creo un nuevo producto' });
         });
     }
+    obtenerProd(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const { id } = req.body;
+            console.log(req.body);
+            const prod = JSON.parse(JSON.stringify(yield database_1.default.query(`select * from producto
+      where id = '${id}' ;`)))[0];
+            if (prod == null) {
+                console.log("No se encontro el producto");
+                return res.sendStatus(404);
+            }
+            else {
+                res.json({ prod });
+            }
+        });
+    }
 }
 exports.productController = new ProductController();
