@@ -72,7 +72,6 @@ export class AgregarProductoComponent implements OnInit {
       },
       err => {alert("PRODUCTO INCORRECTO")}
     )
-
 }
     EligeCategoria(idcategoria:number){
       this.categoria = Number(idcategoria);

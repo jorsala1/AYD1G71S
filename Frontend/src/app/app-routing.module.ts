@@ -11,6 +11,7 @@ import { AdministrarProveedorComponent } from './components/administrar-proveedo
 import { RegistroProveedorComponent } from './registro-proveedor/registro-proveedor.component';
 import { VerProveedoresComponent } from './components/ver-proveedores/ver-proveedores.component';
 import { AgregarProductoComponent } from './components/agregar-producto/agregar-producto.component';
+import { AdministrarProductoComponent } from './components/administrar-producto/administrar-producto.component';
 
 
 const routes: Routes = [
@@ -53,6 +54,10 @@ const routes: Routes = [
   {
     path: 'agregarProducto',
     component: AgregarProductoComponent,
+  },
+  {
+    path: 'administrarProducto',
+    component: AdministrarProductoComponent,
   }
 ];
 
