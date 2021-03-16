@@ -46,30 +46,13 @@ describe('AgregarProductoComponent', () => {
 
       });  
   
-    /*  it('Prueba3 ',function()
-      {        
-        component.Registrar();
-        expect(component.existe_categoria()).toBeTruthy(); 
-      });  */
       it('Prueba4 ',function()
       {     
         expect(component.existe_categoria()).toBeFalsy(); 
       }); 
 
+    
       it('Prueba5 ',function()
-      { 
-        const ProductoEnviar = {
-          nombre_prod : 'Aspirina',
-          descripcion:'Acción analgésica: produce analgesia al actuar a nivel central sobre el hipotálamo y a nivel periférico bloqueando la generación de impulsos dolorosos',
-          cantidad: 300,
-          precio_compra: 30,
-          precio_venta: 35,
-          categoria: 1
-        };
-        expect(component.Registrar(ProductoEnviar)).toEqual(0); 
-      }); 
-
-      it('Prueba6 ',function()
       {       
         component.EnviarDato();
         expect(component.nombre_prod).toEqual(""); 

@@ -74,24 +74,17 @@ export class AgregarProductoComponent implements OnInit {
     
 }
 
-Registrar(ProductoEnviar2):number{
+Registrar(ProductoEnviar2){
     this.SProductos.registro(ProductoEnviar2)
     .subscribe(
       res => {
-        console.log(res);
-      //alert("PRODUCTO REGISTRAD0");
-       if(res!=""){
-         console.log("ffff");
-       }else {
-         console.log("jj");
-       }
+      //console.log(res);
+      alert("PRODUCTO REGISTRAD0");
       //console.log(this.respuesta.affectedRows);
       },
-      err => { //alert("PRODUCTO INCORRECTO")
-      return 0;
+      err => { alert("PRODUCTO INCORRECTO");
      }
     )
-    return 0;
 }
     EligeCategoria(idcategoria:number){
       this.categoria = Number(idcategoria);
