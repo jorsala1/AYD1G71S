@@ -14,6 +14,7 @@ export class AgregarProductoComponent implements OnInit {
 
   constructor(public SProductos:ProductoService,public router: Router) { }
   
+    categorias: boolean=false;
     cat: string ="Categoría";
     listacat : Categoria[]=[];
     Nombres: string;
@@ -48,31 +49,42 @@ export class AgregarProductoComponent implements OnInit {
      }else{
       this.habilitacion="";
     }
-
-    this.SProductos.obtenerCategorias().subscribe((res:any[])=>{
-      console.log(res);
-      this.listacat=res;
-    })
+    this.existe_categoria();
+    
   }
 
-  Registrar(){
+  existe_categoria(){
+    this.SProductos.obtenerCategorias().subscribe((res:any[])=>{
+      this.listacat=res;
+      this.categorias= true;
+    })
+    this.categorias= false;
+  }
 
-    this.ProductoEnviar.nombre_prod = this.nombre_prod;
-    this.ProductoEnviar.descripcion = this.descripcion;
-    this.ProductoEnviar.cantidad=Number(this.cantidad);
-    this.ProductoEnviar.precio_venta=Number(this.precio_venta);
-    this.ProductoEnviar.precio_compra=Number(this.precio_compra);
-    this.ProductoEnviar.categoria=Number(this.categoria);
-    this.SProductos.registro(this.ProductoEnviar)
+  EnviarDato(){
+    if(this.categorias){            
+      this.ProductoEnviar.nombre_prod = this.nombre_prod;
+      this.ProductoEnviar.descripcion = this.descripcion;
+      this.ProductoEnviar.cantidad=Number(this.cantidad);
+      this.ProductoEnviar.precio_venta=Number(this.precio_venta);
+      this.ProductoEnviar.precio_compra=Number(this.precio_compra);
+      this.ProductoEnviar.categoria=Number(this.categoria);    
+      console.log(this.Registrar(this.ProductoEnviar)); 
+    }
+    
+}
+
+Registrar(ProductoEnviar2){
+    this.SProductos.registro(ProductoEnviar2)
     .subscribe(
       res => {
-
-      alert("PRODUCTO REGISTRAD0")
-      // console.log(this.respuesta.affectedRows);
+      //console.log(res);
+      alert("PRODUCTO REGISTRAD0");
+      //console.log(this.respuesta.affectedRows);
       },
-      err => {alert("PRODUCTO INCORRECTO")}
+      err => { alert("PRODUCTO INCORRECTO");
+     }
     )
-
 }
     EligeCategoria(idcategoria:number){
       this.categoria = Number(idcategoria);
