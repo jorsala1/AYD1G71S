@@ -56,7 +56,7 @@ const routes: Routes = [
     component: AgregarProductoComponent,
   },
   {
-    path: 'verProductos',
+    path: 'VerProductosAdmin',
     component: VerProductoComponent,
   },
 ];
