@@ -30,4 +30,8 @@ export class ProductoService {
     const url= baseUrl+"/categoria/";
     return this.http.get(url);
   }
+  obtenerProductos(){
+    const url= baseUrl+"/products";
+    return this.http.get(url);
+  }
 }
