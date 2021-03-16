@@ -1,4 +1,5 @@
-export interface Proveedor {
+export interface Producto {
+    id: number;
     nombre_prod: string;
     descripcion: string;
     cantidad: number;
