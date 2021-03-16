@@ -81,4 +81,15 @@ export class AdministrarProductoComponent implements OnInit {
     );
   }
 
+  Logout(){
+    localStorage.removeItem('llave');
+    localStorage.removeItem('CodigoUsuario');
+    localStorage.removeItem('Username');
+    localStorage.removeItem('Nombres');
+    localStorage.removeItem('Apellidos');
+    localStorage.removeItem('Correo');
+    localStorage.removeItem('Password');
+    localStorage.removeItem('Fecha_Nac');
+    this.router.navigate(['login']);
+  }
 }
