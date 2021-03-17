@@ -13,6 +13,9 @@ import { VerProveedoresComponent } from './components/ver-proveedores/ver-provee
 import { AgregarProductoComponent } from './components/agregar-producto/agregar-producto.component';
 import { AdministrarProductoComponent } from './components/administrar-producto/administrar-producto.component';
 
+import { VerProductoComponent } from './components/ver-producto/ver-producto.component';
+import { ProductosClientesComponent } from './components/productos-clientes/productos-clientes.component';
+
 
 const routes: Routes = [
   {
@@ -58,6 +61,14 @@ const routes: Routes = [
   {
     path: 'administrarProducto',
     component: AdministrarProductoComponent,
+  },
+  {
+    path: 'VerProductosAdmin',
+    component: VerProductoComponent,
+  },
+  {
+    path: 'VerProductosCliente',
+    component: ProductosClientesComponent,
   }
 ];
 

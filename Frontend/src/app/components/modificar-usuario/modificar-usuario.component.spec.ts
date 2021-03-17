@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { ModificarUsuarioComponent } from './modificar-usuario.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RouterTestingModule } from '@angular/router/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe('ModificarUsuarioComponent', () => {
   let component: ModificarUsuarioComponent;
@@ -8,7 +10,11 @@ describe('ModificarUsuarioComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ModificarUsuarioComponent ]
+      declarations: [ ModificarUsuarioComponent ],
+      imports: [
+        HttpClientTestingModule, RouterTestingModule.withRoutes([]),
+        ReactiveFormsModule, FormsModule
+      ]
     })
     .compileComponents();
   });

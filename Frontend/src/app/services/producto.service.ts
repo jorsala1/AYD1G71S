@@ -56,4 +56,9 @@ export class ProductoService {
     console.log("Service delete " + id)
     return this.http.delete(`http://${baseUrl}/products/deleteProd/${id}`);
   }
+
+  obtenerProductos(){
+    const url= baseUrl+"/products";
+    return this.http.get(url);
+  }
 }
