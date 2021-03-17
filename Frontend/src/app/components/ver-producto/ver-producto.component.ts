@@ -46,7 +46,7 @@ export class VerProductoComponent implements OnInit {
         localStorage.setItem('precio_compra',Vector.precio_compra+"");
         localStorage.setItem('precio_venta',Vector.precio_venta+"");
         localStorage.setItem('categoria',Vector.categoria+"");
-        this.router.navigate(['/']); //acá va la página de modificación 
+        this.router.navigate(['/administrarProducto']); //acá va la página de modificación 
 
       }
     }
