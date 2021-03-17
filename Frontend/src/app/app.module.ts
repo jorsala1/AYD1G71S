@@ -21,6 +21,7 @@ import { RegistroProveedorComponent } from './registro-proveedor/registro-provee
 import { VerProveedoresComponent } from './components/ver-proveedores/ver-proveedores.component';
 import { AgregarProductoComponent } from './components/agregar-producto/agregar-producto.component';
 import { VerProductoComponent } from './components/ver-producto/ver-producto.component';
+import { ProductosClientesComponent } from './components/productos-clientes/productos-clientes.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +35,8 @@ import { VerProductoComponent } from './components/ver-producto/ver-producto.com
     RegistroProveedorComponent,
     VerProveedoresComponent,
     AgregarProductoComponent,
-    VerProductoComponent
+    VerProductoComponent,
+    ProductosClientesComponent
   ],
   imports: [
     BrowserModule,

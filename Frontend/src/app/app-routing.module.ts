@@ -12,6 +12,7 @@ import { RegistroProveedorComponent } from './registro-proveedor/registro-provee
 import { VerProveedoresComponent } from './components/ver-proveedores/ver-proveedores.component';
 import { AgregarProductoComponent } from './components/agregar-producto/agregar-producto.component';
 import { VerProductoComponent } from './components/ver-producto/ver-producto.component';
+import { ProductosClientesComponent } from './components/productos-clientes/productos-clientes.component';
 
 
 const routes: Routes = [
@@ -59,6 +60,10 @@ const routes: Routes = [
     path: 'VerProductosAdmin',
     component: VerProductoComponent,
   },
+  {
+    path: 'VerProductosCliente',
+    component: ProductosClientesComponent,
+  }
 ];
 
 @NgModule({

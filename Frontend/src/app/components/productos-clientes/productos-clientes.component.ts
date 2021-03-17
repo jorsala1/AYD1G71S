@@ -1,17 +1,20 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductoService } from 'src/app/services/producto.service';
+import { Producto } from 'src/app/models/producto';
 import { Router } from '@angular/router';
-
 @Component({
-  selector: 'app-principal',
-  templateUrl: './principal.component.html',
-  styleUrls: ['./principal.component.scss']
+  selector: 'app-productos-clientes',
+  templateUrl: './productos-clientes.component.html',
+  styleUrls: ['./productos-clientes.component.scss']
 })
-export class PrincipalComponent implements OnInit {
+export class ProductosClientesComponent implements OnInit {
 
-  constructor( public router: Router) { }
+  constructor(public router:Router, public Producto:ProductoService) { }
   Nombres: string;
+  VectorProductos: Producto[] =[];
+  headElements = ['Nombre Producto', 'Descripción', 'Cantidad','Precio Venta','Precio Compra','Comprar'];
   habilitacion: string;
-  
+
   ngOnInit(): void {
     this.Nombres=localStorage.getItem('Nombres');
     this.habilitacion=localStorage.getItem('Rol');
@@ -23,17 +26,18 @@ export class PrincipalComponent implements OnInit {
       this.habilitacion+="<div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"registroProveedor\" >Agregar Proveedor</a>";
       this.habilitacion+="<div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"administrarProveedor\" >Admin Proveedor</a>";
       this.habilitacion+="<div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"agregarProducto\" >Agregar Producto</a>";
-      this.habilitacion+="<div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"VerProductosAdmin\" >Admin Producto</a>";
-    }else{
+      
+     }else{
+      this.habilitacion="";
       this.habilitacion="<div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"modificarUsuario\" >Modificar Datos</a>";
-      this.habilitacion+="<div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"VerProductosCliente\" >Productos</a>";
     }
 
-
-   
+    this.Producto.obtenerProductos().subscribe((res:any[])=>{
+      console.log(res);
+      this.VectorProductos=res;
+     // console.log(this.Usuarios[0].dpi);
+    })
   }
-
-
   Logout(){
     localStorage.removeItem('llave');
     localStorage.removeItem('CodigoUsuario');
@@ -45,4 +49,5 @@ export class PrincipalComponent implements OnInit {
     localStorage.removeItem('Fecha_Nac');
     this.router.navigate(['login']);
   }
+
 }

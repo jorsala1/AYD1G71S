@@ -56,6 +56,7 @@ export class ModificarUsuarioComponent implements OnInit {
     
     }else{
       this.habilitacion="";
+      this.habilitacion+="<div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"VerProductosCliente\" >Productos</a>";
     }
   }
 
