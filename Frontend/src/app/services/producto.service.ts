@@ -32,7 +32,7 @@ export class ProductoService {
   }
 
   update(id : string, nombre: string,descripcion: string, cantidad:Number, compra:Number, venta:Number, categoria:Number) { 
-    const url = "http://"+ baseUrl +"/products/updateProd";
+    const url = baseUrl +"/products/updateProd";
     //comienza el put
     console.log("actualizar " + id)
     return this.http.put(
@@ -54,7 +54,7 @@ export class ProductoService {
 
   delete(id:string){
     console.log("Service delete " + id)
-    return this.http.delete(`http://${baseUrl}/products/deleteProd/${id}`);
+    return this.http.delete(`${baseUrl}/products/deleteProd/${id}`);
   }
 
   obtenerProductos(){

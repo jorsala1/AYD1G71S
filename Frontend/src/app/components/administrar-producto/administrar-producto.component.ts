@@ -52,6 +52,15 @@ export class AdministrarProductoComponent implements OnInit {
       console.log(res);
       this.listacat=res;
     })
+
+    this.id = localStorage.getItem('id_producto');
+    this.nombre_prod = localStorage.getItem('nombre_prod');
+    this.descripcion = localStorage.getItem('descripcion');
+    this.cantidad = Number(localStorage.getItem('cantidad'));
+    this.precio_compra = Number(localStorage.getItem('precio_compra'));
+    this.precio_venta = Number(localStorage.getItem('precio_venta'));
+    this.categoria = Number(localStorage.getItem('categoria'));
+
   }
 
   EligeCategoria(idcategoria:number){
@@ -65,10 +74,12 @@ export class AdministrarProductoComponent implements OnInit {
 
   Actualizar(){
     console.log("se va a modificar a " + this.id)
-    this.SProductos.update(this.id, this.nombre_prod,this.descripcion,Number(this.cantidad),Number(this.precio_compra), Number(this.precio_venta), Number(this.categoria))
+    this.SProductos.update(this.id, this.nombre_prod,this.descripcion, this.cantidad,this.precio_compra , this.precio_venta, this.categoria)
     .subscribe((res)=>{
       console.log("ya modifico");
-      console.log(res);      
+      console.log(res);     
+      alert("El producto fue actualizado exitosamente");
+      this.router.navigate(['/VerProductosAdmin']);
     })
   }
 
@@ -76,6 +87,8 @@ export class AdministrarProductoComponent implements OnInit {
     this.SProductos.delete(this.id).subscribe(
       res => {
         console.log(res);
+        alert("El producto fue eliminado exitosamente");
+        this.router.navigate(['/VerProductosAdmin']);
       },
       err => console.error(err)
     );
