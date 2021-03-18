@@ -2,13 +2,13 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { map } from 'rxjs/operators';
 
-const baseUrl = 'http://localhost:3000';
+const baseUrl = 'http://192.168.0.3:3000';
 @Injectable({
   providedIn: 'root'
 })
 export class UsuarioService {
 
-  ip:string="localhost";
+  ip:string="192.168.0.3";
   //ip2:string="192.168.1.8";
   constructor(private http: HttpClient) { }
   //para comunicarnos con json
