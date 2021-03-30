@@ -1,6 +1,6 @@
 <!--Navbar-->
 <mdb-navbar SideClass="navbar navbar-expand-lg #80cbc4 teal lighten-3">
-
+ 
     <!-- Navbar brand -->
     <mdb-navbar-brand><a class="navbar-brand " style="font-size:30px ; color:darkslateblue " href="#"> Farma Seven</a>
     </mdb-navbar-brand>
@@ -33,11 +33,14 @@
           </div>
       </ul>
       <!-- Links -->
-  
-      
+
+    <div class="contenedor">
+      <img src="https://icons.iconarchive.com/icons/graphicloads/100-flat/64/cart-icon.png" />
+      <div class="texto-encima">{{contador}}</div>
+    </div>
     </links>
     <!-- Collapsible content -->
-  
+    
   </mdb-navbar>
     <!--/.Navbar-->
     <section class="text-center">
@@ -55,7 +58,7 @@
             <td>{{vector.cantidad}}</td>
             <td>{{vector.precio_venta}}</td>
             <td>{{vector.precio_compra}}</td>
-            <td><button  type="button" mdbBtn color="danger" class="waves-light" mdbWavesEffect>Comprar</button></td>
+            <td><button   (click)="AgregarCarrito()" type="button" mdbBtn color="danger" class="waves-light" mdbWavesEffect>Agregar al Carrito</button></td>
           </tr>
         </tbody>
       </table>
