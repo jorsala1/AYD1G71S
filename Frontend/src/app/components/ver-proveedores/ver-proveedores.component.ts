@@ -27,7 +27,6 @@ export class VerProveedoresComponent implements OnInit {
     }
 
     this.Proveedores.obtenerProveedores().subscribe((res:any[])=>{
-      console.log(res);
       this.VectorProveedores=res;
      // console.log(this.Usuarios[0].dpi);
     })
@@ -41,7 +40,6 @@ export class VerProveedoresComponent implements OnInit {
         localStorage.setItem('telefono_proveedor',Vector.telefono);
         localStorage.setItem('nombre_contacto',Vector.nombre_contacto);
         this.router.navigate(['/administrarProveedor']); //acá va la página de modificación 
-
       }
     }
   }

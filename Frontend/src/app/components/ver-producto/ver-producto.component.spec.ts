@@ -49,5 +49,12 @@ describe('VerProductoComponent', () => {
       component.habilitacion="3";
       expect(component.habilitacion).toEqual("3");
     });
+    it('Comprobacion habilitacion 3 ', function () {
+      expect(component.habilitacion).not.toEqual("");
+    });
+    it('Comprobacion habilitacion 4', function () {
+      component.habilitacion="1";
+      expect(component.habilitacion).toEqual("1");
+    });
   });
 });

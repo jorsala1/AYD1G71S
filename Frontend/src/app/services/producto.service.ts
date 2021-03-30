@@ -15,7 +15,6 @@ export class ProductoService {
   })
   registro(producto){
 
-    console.log(producto);
     const url= baseUrl+"/products/create";
     return this.http.post(
       url,
@@ -34,7 +33,6 @@ export class ProductoService {
   update(id : string, nombre: string,descripcion: string, cantidad:Number, compra:Number, venta:Number, categoria:Number) { 
     const url = baseUrl +"/products/updateProd";
     //comienza el put
-    console.log("actualizar " + id)
     return this.http.put(
       url,
       {
@@ -53,7 +51,6 @@ export class ProductoService {
   }
 
   delete(id:string){
-    console.log("Service delete " + id)
     return this.http.delete(`${baseUrl}/products/deleteProd/${id}`);
   }
 

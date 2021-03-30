@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class RegistroProveedorComponent implements OnInit {
 
-  constructor(private proveedor:ProveedorService,public router: Router) { }
+  constructor(public proveedor:ProveedorService,public router: Router) { }
   Nombres: string;
   nombre: string="";
   contacto: string="";
@@ -34,10 +34,7 @@ export class RegistroProveedorComponent implements OnInit {
      .subscribe((res)=>{
    
        alert("PROVEEDOR REGISTRADO CON ÉXITO");
-       this.nombre="";
-       this.direccion="";
-       this.telefono=""; 
-       this.contacto="";
+       
      },
      err => {alert("NO SE PUDO REGISTRAR EL PROVEEDOR")}  
      )

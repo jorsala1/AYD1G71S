@@ -18,7 +18,7 @@ export class ProveedorService {
 
   RegistroProveedor(nombre: string,direccion: string,telefono: string,nombre_contacto: string) {
     //console.log(username,password);
-    const url = "http://"+baseUrl+"/prov/create";
+    const url = baseUrl+"/prov/create";
     //comienza el post
     return this.http.post(
       url,
@@ -37,9 +37,8 @@ export class ProveedorService {
 
   update(id : string, nombre: string,direccion: string,telefono : string,nombre_contacto: string) {
     
-    const url = "http://"+baseUrl+"/prov/updateProv";
+    const url = baseUrl+"/prov/updateProv";
     //comienza el put
-    console.log("actualizar " + id)
     return this.http.put(
       url,
       {
@@ -56,8 +55,7 @@ export class ProveedorService {
   }
 
   delete(id:string){
-    console.log("Service delete " + id)
-    return this.http.delete(`http://${baseUrl}/prov/deleteProv/${id}`);
+    return this.http.delete(`${baseUrl}/prov/deleteProv/${id}`);
   }
   obtenerProveedores(){
     const url= baseUrl+"/prov/";

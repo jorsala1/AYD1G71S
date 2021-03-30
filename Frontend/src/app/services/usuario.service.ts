@@ -20,7 +20,7 @@ export class UsuarioService {
     //console.log(username,password);
     //const url = "http://"+this.puerto+":3000/app/registro";
 
-    const url = "http://"+baseUrl+"/user/create";
+    const url = baseUrl+"/user/create";
     //comienza el post
     return this.http.post(
       url,
@@ -43,15 +43,8 @@ export class UsuarioService {
 
   update(username : string, nombre: string,apellidos: string,correo : string, password: string, genero: string,fechanac: string) {
     
-    console.log("modificando " + username)
-    console.log("nombre " + nombre)
-    console.log("apellidos " + apellidos)
-    console.log("correo " + correo)
-    console.log("password " + password)
-    console.log("genero " + genero)
-    console.log("fecha de nacimiento " + fechanac)
-    
-    const url = "http://"+baseUrl+"/user/update";
+      
+    const url = baseUrl+"/user/update";
     //comienza el put
     return this.http.put(
       url,
@@ -71,14 +64,12 @@ export class UsuarioService {
   }
 
   delete(Username:string){
-    console.log("Service delete " + Username)
-    return this.http.delete(`http://${baseUrl}/user/delete/${Username}`);
+    return this.http.delete(`${baseUrl}/user/delete/${Username}`);
     //return this.http.delete(`http://${this.ip}/user/delete${username}`);
   }
 
   getUsuario(username :string){
-    console.log("Entro a getUsuario")
-    const url = "http://"+baseUrl+"/user/getUsuario";
+    const url = baseUrl+"/user/getUsuario";
     //comienza el post
     return this.http.post(
       url,

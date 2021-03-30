@@ -90,6 +90,7 @@ Registrar(ProductoEnviar2){
       }
     }
 
+    
    Logout(){
     localStorage.clear();
     this.router.navigate(['login']);

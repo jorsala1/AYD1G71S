@@ -26,6 +26,9 @@ describe('AgregarProductoComponent', () => {
     fixture.detectChanges();
   });
 
+  beforeEach(() => {
+    component = new AgregarProductoComponent(component.SProductos, component.router);
+  });
   it('should create', () => {
     expect(component).toBeTruthy();
   });
@@ -36,6 +39,7 @@ describe('AgregarProductoComponent', () => {
   
       it('Prueba1 ',function()
       {
+        component.habilitacion="";
         expect(component.habilitacion).toEqual("");       
       });    
   
@@ -64,4 +68,20 @@ describe('AgregarProductoComponent', () => {
       }); 
 
     });
+
+    describe('Prueba Agregar Producto', () => {
+      it('Realizar prueba', function () {
+        const ProductoEnviar = {
+          nombre_prod : '',
+          descripcion:'',
+          cantidad: 0,
+          precio_compra: 0,
+          precio_venta: 0,
+          categoria: 0
+        };
+        component.Registrar(ProductoEnviar);
+        expect(component.ProductoEnviar).toEqual(ProductoEnviar);  
+      });
+    });
+  
 });

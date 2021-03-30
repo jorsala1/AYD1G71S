@@ -26,7 +26,21 @@ describe('RegistroProveedorComponent', () => {
     fixture.detectChanges();
   });
 
+  beforeEach(() => {
+    component = new RegistroProveedorComponent(component.proveedor, component.router);
+  });
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  describe('Verifica que los valores iniciales esten vacios', () => {
+    it('Se hace prueba verificando que los valores esten vacios', function () {
+      expect(component.contacto).toEqual("");
+      expect(component.direccion).toEqual("");
+      expect(component.nombre).toEqual("");
+      expect(component.telefono).toEqual("");
+    });
+  
+  
   });
 });

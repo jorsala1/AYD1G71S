@@ -30,7 +30,8 @@ export class ModificarUsuarioComponent implements OnInit {
   fotografia: string="";
 
   ngOnInit(): void {
-    this.username = localStorage.getItem('Username')
+    this.username = localStorage.getItem('Username');
+    console.log(this.username);
     if (this.username != "") {
       this.user.getUsuario(this.username).subscribe((res)=>{
         let u = (res['user']);
