@@ -41,12 +41,7 @@ export class AgregarProductoComponent implements OnInit {
     this.Nombres=localStorage.getItem('Nombres');
     this.habilitacion=localStorage.getItem('Rol');
     if (this.habilitacion =="1"){
-      this.habilitacion="<div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"administrarUsuario\" >Admin Usuarios</a>";
-      this.habilitacion+="<div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"modificarUsuario\" >Modificar mis datos</a>";      
-      this.habilitacion+="<div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"verProveedores\" >Ver Proveedores</a>";
-      this.habilitacion+="<div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"registroProveedor\" >Agregar Proveedor</a>";
-      this.habilitacion+="<div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"administrarProveedor\" >Admin Proveedor</a>";
-      this.habilitacion+="<div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"VerProductosAdmin\" >Admin Producto</a>";
+      this.habilitacion="<div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"administrarUsuario\" >Admin Usuarios</a> <div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"verProveedores\" >Ver Proveedores</a> <div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"registroProveedor\" >Agregar Proveedor</a> <div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"administrarProveedor\" >Admin Proveedor</a> <div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"VerProductosAdmin\" >Admin Producto</a>";
      }else{
       this.habilitacion="";
     }
@@ -70,7 +65,6 @@ export class AgregarProductoComponent implements OnInit {
       this.ProductoEnviar.precio_venta=Number(this.precio_venta);
       this.ProductoEnviar.precio_compra=Number(this.precio_compra);
       this.ProductoEnviar.categoria=Number(this.categoria);    
-      console.log(this.Registrar(this.ProductoEnviar)); 
     }
     
 }
@@ -97,14 +91,7 @@ Registrar(ProductoEnviar2){
     }
 
    Logout(){
-    localStorage.removeItem('llave');
-    localStorage.removeItem('CodigoUsuario');
-    localStorage.removeItem('Username');
-    localStorage.removeItem('Nombres');
-    localStorage.removeItem('Apellidos');
-    localStorage.removeItem('Correo');
-    localStorage.removeItem('Password');
-    localStorage.removeItem('Fecha_Nac');
+    localStorage.clear();
     this.router.navigate(['login']);
   }
 

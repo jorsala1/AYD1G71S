@@ -13,8 +13,10 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  username: string=""; 
-  password: string="";
+  public error=false;
+ 
+  username: string="JorgeS"; 
+  password: string="1234";
   decoded: any = [];
   respuesta: any = [];
   roles: any=[];
@@ -23,32 +25,47 @@ export class LoginComponent implements OnInit {
     Username: '',
     Password: ''
   };
-
+  userNameCorrecto(username: string): string {
+    if(username.length >= 4 && username.length <=15)
+    {
+      return 'Cumple con el rango'
+    }
+    
+    return 'No cumple con el rango';
+  }
   logearse(){
     this.datos.Username = this.username;
     this.datos.Password = this.password;
-   // console.log(this.datos);
+    if(this.userNameCorrecto(this.username)=="Cumple con el rango"){
     this.service.login(this.datos)
     .subscribe(
       res => {
-        this.respuesta = res;
-        console.log(this.respuesta);         
-        this.token=this.respuesta.token;
+        this.respuesta = res; 
         if(this.respuesta.token != "")
         {
-          this.decoded = jwt_decode(this.respuesta.token);
-         // console.log(this.decoded);
-          this.almacenar();            
-          this.router.navigate(['/principal']);
+          this.error=false;       
+          this.almacenar();   
         }
       },
-      err => {alert("USUARIO INCORRECTO")}
+      err => {this.error=true; 
+      this.almacenar(); }      
     )
+      }
   }
 
+  ObtenerDatos(){
+    if(!this.error){
+       this.decoded = jwt_decode(this.respuesta.token);       
+       return true;
+    }else {
+      return false ;
+    }
+  }
   almacenar()
   {
-    localStorage.setItem('llave',this.token);
+    if(this.ObtenerDatos()){
+   // localStorage.setItem('llave',this.token);
+    this.router.navigate(['/principal']);
     localStorage.setItem('CodigoUsuario',this.decoded.user.CodigoUsuario);
     localStorage.setItem('Username',this.decoded.user.Username);
     localStorage.setItem('Nombres',this.decoded.user.Nombres);
@@ -57,10 +74,9 @@ export class LoginComponent implements OnInit {
     localStorage.setItem('Password',this.decoded.user.Password);
     localStorage.setItem('Fecha_Nac',this.decoded.user.Fecha_Nacimiento);
     localStorage.setItem('Rol',this.decoded.user.rol);
-  //  localStorage.setItem('roles', JSON.stringify(this.roles));
-    
-    
-    
+    }else {
+      alert("USUARIO INCORRECTO");
+    }
   }
 
 }

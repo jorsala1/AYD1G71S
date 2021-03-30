@@ -2,14 +2,14 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { map } from 'rxjs/operators';
 
-const baseUrl = 'http://192.168.0.3:3000';
+//const baseUrl = 'http://192.168.0.3:3000';
+const baseUrl = 'http://localhost:3000';
 @Injectable({
   providedIn: 'root'
 })
 export class UsuarioService {
 
-  ip:string="192.168.0.3";
-  //ip2:string="192.168.1.8";
+ 
   constructor(private http: HttpClient) { }
   //para comunicarnos con json
   headers: HttpHeaders = new HttpHeaders({
@@ -20,7 +20,7 @@ export class UsuarioService {
     //console.log(username,password);
     //const url = "http://"+this.puerto+":3000/app/registro";
 
-    const url = "http://"+this.ip+":3000/user/create";
+    const url = "http://"+baseUrl+"/user/create";
     //comienza el post
     return this.http.post(
       url,
@@ -51,7 +51,7 @@ export class UsuarioService {
     console.log("genero " + genero)
     console.log("fecha de nacimiento " + fechanac)
     
-    const url = "http://"+this.ip+":3000/user/update";
+    const url = "http://"+baseUrl+"/user/update";
     //comienza el put
     return this.http.put(
       url,
@@ -72,13 +72,13 @@ export class UsuarioService {
 
   delete(Username:string){
     console.log("Service delete " + Username)
-    return this.http.delete(`http://${this.ip}:3000/user/delete/${Username}`);
+    return this.http.delete(`http://${baseUrl}/user/delete/${Username}`);
     //return this.http.delete(`http://${this.ip}/user/delete${username}`);
   }
 
   getUsuario(username :string){
     console.log("Entro a getUsuario")
-    const url = "http://"+this.ip+":3000/user/getUsuario";
+    const url = "http://"+baseUrl+"/user/getUsuario";
     //comienza el post
     return this.http.post(
       url,

@@ -26,7 +26,28 @@ describe('VerProductoComponent', () => {
     fixture.detectChanges();
   });
 
+  beforeEach(() => {
+    component = new VerProductoComponent(component.router,component.Producto );
+  });
+
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  describe('TDD PARA VERIFICAR PRODUCTO ', () => {
+    it('Comprobacion de id a modificar ', function () {
+      expect(component.Modifica(2)).toBeFalsy();
+    });
+
+  });
+
+  describe('TDD PARA VERIFICAR HABILITACION  ', () => {
+    it('Comprobacion habilitacion ', function () {
+      expect(component.habilitacion).not.toEqual("2");
+    });
+    it('Comprobacion habilitacion 2', function () {
+      component.habilitacion="3";
+      expect(component.habilitacion).toEqual("3");
+    });
   });
 });

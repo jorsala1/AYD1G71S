@@ -39,11 +39,7 @@ export class AdministrarProductoComponent implements OnInit {
     this.Nombres=localStorage.getItem('Nombres');
     this.habilitacion=localStorage.getItem('Rol');
     if (this.habilitacion =="1"){
-      this.habilitacion="<div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"administrarUsuario\" >Admin Usuarios</a>";
-      this.habilitacion+="<div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"modificarUsuario\" >Modificar mis datos</a>";      
-      this.habilitacion+="<div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"verProveedores\" >Ver Proveedores</a>";
-      this.habilitacion+="<div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"registroProveedor\" >Agregar Proveedor</a>";
-      this.habilitacion+="<div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"administrarProveedor\" >Admin Proveedor</a>";
+      this.habilitacion="<div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"administrarUsuario\" >Admin Usuarios</a> <div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"modificarUsuario\" >Modificar mis datos</a>  <div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"verProveedores\" >Ver Proveedores</a> <div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"registroProveedor\" >Agregar Proveedor</a> <div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"administrarProveedor\" >Admin Proveedor</a>"; 
      }else{
       this.habilitacion="";
     }
@@ -95,14 +91,7 @@ export class AdministrarProductoComponent implements OnInit {
   }
 
   Logout(){
-    localStorage.removeItem('llave');
-    localStorage.removeItem('CodigoUsuario');
-    localStorage.removeItem('Username');
-    localStorage.removeItem('Nombres');
-    localStorage.removeItem('Apellidos');
-    localStorage.removeItem('Correo');
-    localStorage.removeItem('Password');
-    localStorage.removeItem('Fecha_Nac');
+    localStorage.clear();
     this.router.navigate(['login']);
   }
 }
