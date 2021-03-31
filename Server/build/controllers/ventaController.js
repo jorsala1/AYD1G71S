@@ -40,7 +40,7 @@ class VentaController {
                 return res.sendStatus(404);
             }
             else {
-                res.json({ venta });
+                res.status(200).json({ venta });
             }
         });
     }

@@ -24,7 +24,7 @@ class VentaController{
           console.log("No se encontro el id de la venta");
           return res.sendStatus(404);
       }else{
-          res.json({venta});
+          res.status(200).json({venta});
       }
     }
 
