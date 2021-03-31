@@ -84,3 +84,15 @@ create table producto(
 );
 
 -- insert into producto values (1,'product1','some description',100,125.00,150.00,1);
+
+-- -------------------------- Para el Sprint 4 ------------------------------
+
+-- Tabla Direccion
+create table direccion(
+	id int not null auto_increment primary key,
+    direccion varchar(255) not null,
+    CodigoUsuario int not null,
+	foreign key (CodigoUsuario) references Usuario(CodigoUsuario)
+);
+
+-- insert into direccion values (1,'direccion1',1);

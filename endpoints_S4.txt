@@ -1,0 +1,35 @@
+/*******************DIRECCION***************************/
+-- listar direcciones
+-tipo de metodo GET
+http://localhost:3000/direccion/
+
+-- crear una direccion
+http://localhost:3000/direccion/createDir
+--tipo de metodo POST
+-json para enviar
+   {       
+        "direccion": "some direction",
+        "CodigoUsuario":1
+    }
+
+-- obtener una direccion
+http://localhost:3000/direccion/getDir
+--tipo de metodo POST
+-json para enviar
+   {       
+        "id":1
+    }
+
+-- Actualizar una direccion
+http://localhost:3000/direccion/updatedir
+--tipo de metodo PUT
+-json para enviar
+   {       
+        "id":1,
+        "direccion": "some direction",
+        "CodigoUsuario":1
+    }
+
+    
+
+    /**** VENTAS*************/
