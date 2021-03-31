@@ -13,6 +13,7 @@ class VentaRoutes{
        this.router.get('/', ventaController.index );
        this.router.get('/last',ventaController.getUltimaVenta);
        this.router.post('/crearVenta',ventaController.create);
+       this.router.post('/llenarDetalle',ventaController.llenarDetalle);
    }
 }
 

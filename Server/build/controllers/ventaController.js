@@ -44,5 +44,15 @@ class VentaController {
             }
         });
     }
+    //lenar el detalle de la venta
+    llenarDetalle(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const id_venta = req.body.id_venta;
+            const id_producto = req.body.id_producto;
+            const cantidad_prod = req.body.cantidad;
+            yield database_1.default.query(`CALL llenar_venta(${id_venta},${id_producto},${cantidad_prod});`);
+            res.status(200).json({ respuesta: 'Se lleno tupla de detalle de venta asociado a la venta ' + id_venta });
+        });
+    }
 }
 exports.ventaController = new VentaController();

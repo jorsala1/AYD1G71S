@@ -11,6 +11,7 @@ class VentaRoutes {
         this.router.get('/', ventaController_1.ventaController.index);
         this.router.get('/last', ventaController_1.ventaController.getUltimaVenta);
         this.router.post('/crearVenta', ventaController_1.ventaController.create);
+        this.router.post('/llenarDetalle', ventaController_1.ventaController.llenarDetalle);
     }
 }
 const ventaRoutes = new VentaRoutes();
