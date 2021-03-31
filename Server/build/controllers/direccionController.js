@@ -19,7 +19,7 @@ class DireccionController {
     index(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const respuesta = yield database_1.default.query('select * from direccion');
-            res.json(respuesta);
+            res.status(200).json(respuesta);
         });
     }
     //agregar direcciones a usuario
@@ -27,6 +27,31 @@ class DireccionController {
         return __awaiter(this, void 0, void 0, function* () {
             yield database_1.default.query('insert into direccion set ?', [req.body]);
             res.status(200).json({ respuesta: 'se creo una nueva direccion' });
+        });
+    }
+    //Obtener una direccion Especifica
+    obtenerDir(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const { id } = req.body;
+            console.log(req.body);
+            const dir = JSON.parse(JSON.stringify(yield database_1.default.query(`select * from direccion
+        where id = '${id}' ;`)))[0];
+            if (dir == null) {
+                console.log("No se encontro la direccion");
+                return res.sendStatus(404);
+            }
+            else {
+                res.status(200).json({ dir });
+            }
+        });
+    }
+    //actualizar direccion
+    actualizarDir(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const { id } = req.body['id'];
+            let u = req.body['id'];
+            yield database_1.default.query('update direccion set ? where id = ?', [req.body, u]);
+            res.status(200).json({ message: "La direccion fue actualizada" });
         });
     }
 }
