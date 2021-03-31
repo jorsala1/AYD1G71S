@@ -138,4 +138,11 @@ END$$
 DELIMITER ;
 
 -- drop procedure llenar_venta;
-CALL llenar_venta(1,1,3);
+-- CALL llenar_venta(1,1,3);
+
+/*select u.CodigoUsuario, sum(dv.monto_producto) as total from detalle_venta dv, ventas v, Usuario u
+where dv.id_venta  = v.id
+and v.CodigoUsuario  = u.CodigoUsuario
+and  u.CodigoUsuario = 1
+and v.id = 6
+group by u.CodigoUsuario;*/

@@ -13,7 +13,7 @@ class VentaController{
     public async create (req:Request,res:Response):Promise<void>{
         const usuario = req.body.CodigoUsuario;
         await pool.query(`insert into ventas ( CodigoUsuario ) values (${usuario});`)
-        res.json({respuesta: 'Se creo una nueva venta'});
+        res.status(200).json({respuesta: 'Se creo una nueva venta'});
     }
 
     //obtener ultima venta para la carga del detalle 
@@ -36,6 +36,20 @@ class VentaController{
 
         await pool.query(`CALL llenar_venta(${id_venta},${id_producto},${cantidad_prod});`)
         res.status(200).json({respuesta: 'Se lleno tupla de detalle de venta asociado a la venta '+ id_venta});
+    }
+
+    // mostrar el total de la venta 
+    public async valorTotal (req:Request, res:Response){
+        const usuario = req.body.CodigoUsuario;
+        const id_venta = req.body.id_venta;
+
+        const respuesta = await pool.query(`select u.CodigoUsuario, sum(dv.monto_producto) as total from detalle_venta dv, ventas v, Usuario u
+        where dv.id_venta  = v.id
+        and v.CodigoUsuario  = u.CodigoUsuario
+        and  u.CodigoUsuario = ${usuario}
+        and v.id = ${id_venta}
+        group by u.CodigoUsuario;`);
+        res.status(200).json(respuesta);
     }
 }
 
