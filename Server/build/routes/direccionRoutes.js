@@ -9,6 +9,7 @@ class DireccionRoutes {
     }
     config() {
         this.router.get('/', direccionController_1.direccionController.index);
+        this.router.post('/createDir', direccionController_1.direccionController.createDirection);
     }
 }
 const direccionRoutes = new DireccionRoutes();

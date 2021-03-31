@@ -15,10 +15,18 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.direccionController = void 0;
 const database_1 = __importDefault(require("../database"));
 class DireccionController {
+    //listar las direcciones
     index(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            const respuesta = yield database_1.default.query('select * from categoria');
+            const respuesta = yield database_1.default.query('select * from direccion');
             res.json(respuesta);
+        });
+    }
+    //agregar direcciones a usuario
+    createDirection(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            yield database_1.default.query('insert into direccion set ?', [req.body]);
+            res.status(200).json({ respuesta: 'se creo una nueva direccion' });
         });
     }
 }

@@ -11,6 +11,7 @@ class DireccionRoutes{
 
     config():void{
         this.router.get('/',direccionController.index);
+        this.router.post('/createDir',direccionController.createDirection);
     }
 }
 
