@@ -12,6 +12,7 @@ const userRoutes_1 = __importDefault(require("./routes/userRoutes"));
 const provRoutes_1 = __importDefault(require("./routes/provRoutes"));
 const categoriaRoutes_1 = __importDefault(require("./routes/categoriaRoutes"));
 const direccionRoutes_1 = __importDefault(require("./routes/direccionRoutes"));
+const ventaRoutes_1 = __importDefault(require("./routes/ventaRoutes"));
 class Server {
     constructor() {
         this.app = express_1.default();
@@ -40,6 +41,7 @@ class Server {
         this.app.use('/prov', provRoutes_1.default);
         this.app.use('/categoria', categoriaRoutes_1.default);
         this.app.use('/direccion', direccionRoutes_1.default);
+        this.app.use('/venta', ventaRoutes_1.default);
     }
     //inicializar el server
     start() {

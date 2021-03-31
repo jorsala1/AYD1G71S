@@ -6,7 +6,8 @@ import productRoutes from './routes/productRoutes';
 import userRoutes from './routes/userRoutes';
 import provRoutes from './routes/provRoutes';
 import categoriaRoutes from './routes/categoriaRoutes';
-import direccionRoutes from './routes/direccionRoutes'
+import direccionRoutes from './routes/direccionRoutes';
+import ventaRoutes from './routes/ventaRoutes';
 
 class Server{
     //creando la aplicacion
@@ -46,6 +47,7 @@ class Server{
         this.app.use('/prov',provRoutes)
         this.app.use('/categoria',categoriaRoutes)
         this.app.use('/direccion',direccionRoutes)
+        this.app.use('/venta',ventaRoutes)
     }
 
     //inicializar el server
