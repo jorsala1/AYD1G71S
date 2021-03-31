@@ -84,3 +84,65 @@ create table producto(
 );
 
 -- insert into producto values (1,'product1','some description',100,125.00,150.00,1);
+
+-- -------------------------- Para el Sprint 4 ------------------------------
+
+-- Tabla Direccion
+create table direccion(
+	id int not null auto_increment primary key,
+    direccion varchar(255) not null,
+    CodigoUsuario int not null,
+	foreign key (CodigoUsuario) references Usuario(CodigoUsuario)
+);
+
+-- insert into direccion values (1,'direccion1',1);
+
+-- tablas relacionadas a las ventas
+create table ventas(
+	id int not null auto_increment primary key,
+    CodigoUsuario int not null,
+    Fecha_Venta timestamp default current_timestamp not null, 
+    foreign key (CodigoUsuario) references Usuario(CodigoUsuario)
+);
+
+ -- insert into ventas ( CodigoUsuario ) values (1);
+-- select * from ventas;
+
+create table detalle_venta(
+	id int not null auto_increment primary key,
+    id_venta int not null,
+    id_producto int not null,
+    cantidad int not null,
+    precio_unitario int not null,
+    monto_producto int not null,
+    foreign key (id_venta) references ventas(id),
+    foreign key (id_producto) references producto(id)
+);
+
+
+/*insert into detalle_venta values(1,1,1,4,
+	(select precio_venta from producto where id = 1 ), 
+    (select precio_venta * 4  from producto where id = 1 ));*/
+    
+
+-- select * from detalle_venta;
+-- procedimiento para llenar tabla de detalle de ventas
+DELIMITER $$
+CREATE PROCEDURE llenar_venta(IN id_venta int, id_producto int , cantidad int )
+BEGIN
+    insert into detalle_venta (id_venta,id_producto,cantidad,precio_unitario,monto_producto)
+    values(id_venta,id_producto,cantidad,
+	(select precio_venta from producto where id = id_producto ), 
+    (select precio_venta * cantidad  from producto where id = id_producto ));
+END$$
+DELIMITER ;
+
+-- drop procedure llenar_venta;
+-- CALL llenar_venta(1,1,3);
+
+/*select u.CodigoUsuario, sum(dv.monto_producto) as total from detalle_venta dv, ventas v, Usuario u
+where dv.id_venta  = v.id
+and v.CodigoUsuario  = u.CodigoUsuario
+and  u.CodigoUsuario = 1
+and v.id = 6
+group by u.CodigoUsuario;*/

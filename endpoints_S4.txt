@@ -1,0 +1,71 @@
+/*******************DIRECCION***************************/
+-- listar direcciones
+-tipo de metodo GET
+http://localhost:3000/direccion/
+
+-- crear una direccion
+http://localhost:3000/direccion/createDir
+--tipo de metodo POST
+-json para enviar
+   {       
+        "direccion": "some direction",
+        "CodigoUsuario":1
+    }
+
+-- obtener una direccion
+http://localhost:3000/direccion/getDir
+--tipo de metodo POST
+-json para enviar
+   {       
+        "id":1
+    }
+
+-- Actualizar una direccion
+http://localhost:3000/direccion/updatedir
+--tipo de metodo PUT
+-json para enviar
+   {       
+        "id":1,
+        "direccion": "some direction",
+        "CodigoUsuario":1
+    }
+
+    
+
+/************ VENTAS*************/
+    -- listar ventas
+-tipo de metodo GET
+http://localhost:3000/venta/
+
+
+ -- Crear una nueva venta
+- tipo de metodo POST
+http://localhost:3000/venta/crearVenta
+-json para enviar
+{
+    "CodigoUsuario":1
+}
+
+   -- llenar detalles de venta
+   -tipo de metodo POST
+http://localhost:3000/venta/llenarDetalle
+-json para enviar
+{
+    "id_venta":6,
+    "id_producto":1,
+    "cantidad":10
+}
+
+  -- obtener la ultima venta para llenar detalles
+  -tipo de metodo GET
+  http://localhost:3000/venta/last
+
+
+   -- obtener el total de la venta
+  -tipo de Metodo GET
+http://localhost:3000/venta/valorTotal
+-json para enviar
+{
+    "CodigoUsuario":1,
+    "id_venta":6
+}
