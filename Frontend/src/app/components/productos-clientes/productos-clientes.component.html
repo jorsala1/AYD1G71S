@@ -26,7 +26,8 @@
               <!-- <div class="dropdown-divider"></div>    -->
               <!-- <a class="dropdown-item"  [routerLink]="['/verProveedores']">VerProveedores</a> -->
               <div [innerHTML]="habilitacion"></div>
-              
+              <div class="dropdown-divider"></div>   
+              <a class="dropdown-item"   (click)="Comprar()">Comprar</a>
               <div class="dropdown-divider"></div>   
               <a class="dropdown-item"   (click)="Logout()">Logout</a>
             </div>
@@ -58,7 +59,7 @@
             <td>{{vector.cantidad}}</td>
             <td>{{vector.precio_venta}}</td>
             <td>{{vector.precio_compra}}</td>
-            <td><button   (click)="AgregarCarrito()" type="button" mdbBtn color="danger" class="waves-light" mdbWavesEffect>Agregar al Carrito</button></td>
+            <td><button   (click)="AgregarCarrito(vector.id)" type="button" mdbBtn color="danger" class="waves-light" mdbWavesEffect>Agregar al Carrito</button></td>
           </tr>
         </tbody>
       </table>
