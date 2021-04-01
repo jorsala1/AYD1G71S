@@ -27,8 +27,6 @@
               <!-- <a class="dropdown-item"  [routerLink]="['/verProveedores']">VerProveedores</a> -->
               <div [innerHTML]="habilitacion"></div>
               <div class="dropdown-divider"></div>   
-              <a class="dropdown-item"  [routerLink]="['/Comprar']"  >Comprar</a>
-              <div class="dropdown-divider"></div>   
               <a class="dropdown-item"   (click)="Logout()">Logout</a>
             </div>
           </div>
@@ -43,24 +41,32 @@
     <!-- Collapsible content -->
     
   </mdb-navbar>
-    <!--/.Navbar-->
-    <section class="text-center">
-      <h1 class="text-danger" style="font-size: 40px; font-weight:bold"> PRODUCTOS  </h1>
-    <table mdbTable >
-        <thead class="black white-text">
-          <tr>
-            <th *ngFor="let head of headElements" scope="col-sm">{{head}} </th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr mdbTableCol *ngFor="let vector of VectorProductos" class="grey black-text">
-            <td>{{vector.nombre_prod}}</td>
-            <td>{{vector.descripcion}}</td>
-            <td>{{vector.cantidad}}</td>
-            <td>{{vector.precio_venta}}</td>
-            <td><button  (click)="AgregarCarrito(vector.id)" type="button" mdbBtn color="danger" class="waves-light" mdbWavesEffect>Agregar</button></td>
-            <td><button  type="button" mdbBtn color="danger" class="waves-light" mdbWavesEffect>Eliminar</button></td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
+  <section class="text-center">
+  <h1 class="text-danger" style="font-size: 30px; font-weight:bold"> Confirme su compra  </h1>
+  <table mdbTable >
+    <thead class="black white-text">
+      <tr>
+        <th *ngFor="let head of headElements" scope="col-sm">{{head}} </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr mdbTableCol *ngFor="let vector of VectorPComprar" class="grey black-text">
+        <td>{{vector.nombre_prod}}</td>
+        <td>{{vector.descripcion}}</td>
+        <td>{{vector.cantidad}}</td>
+        <td>{{vector.precio_venta}}</td>
+         </tr>
+    </tbody>
+  </table>
+  </section>
+  <div class="row">
+    <div class="col-sm-3">
+
+    </div>
+    <div class="col-sm-3">
+      <h4> Su TOTAL es: {{total}}</h4>
+    </div>
+  <div class="col-sm-3">
+    <button  type="button" mdbBtn color="danger" class="waves-light" (click)="Comprar()" mdbWavesEffect>COMPRAR</button>
+  </div> 
+  </div>

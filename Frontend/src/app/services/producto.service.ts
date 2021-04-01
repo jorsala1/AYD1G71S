@@ -13,6 +13,7 @@ export class ProductoService {
   headers: HttpHeaders = new HttpHeaders({
     "Content-Type": "application/json"
   })
+  
   registro(producto){
 
     const url= baseUrl+"/products/create";
@@ -55,7 +56,58 @@ export class ProductoService {
   }
 
   obtenerProductos(){
-    const url= baseUrl+"/products";
+    const url= baseUrl+"/products/";
     return this.http.get(url);
+  }
+
+  //***************************** VENTAS *********************************************** */
+
+  CrearVenta(idU: number) { 
+    const url = baseUrl +"/venta/crearVenta";
+    //comienza el put
+    return this.http.post(
+      url,
+      {
+        "CodigoUsuario": idU
+      },
+      {
+        headers: this.headers
+      }
+    ).pipe(map(data => data));
+  }
+
+  DetalleVenta(idventa: number,idp :number,cantidad:number) { 
+    const url = baseUrl +"/venta/llenarDetalle";
+    //comienza el put
+    return this.http.post(
+      url,
+      {
+        "id_venta":idventa,
+        "id_producto":idp,
+        "cantidad":cantidad
+      },
+      {
+        headers: this.headers
+      }
+    ).pipe(map(data => data));
+  }
+
+  ObtenerUltimaVenta(){
+    const url= baseUrl+"/venta/last";
+    return this.http.get(url);
+  }
+
+  ObtenerTotalVenta(idU:number, idventa:number){
+    const url= baseUrl+"/venta/valorTotal";
+    return this.http.post(
+      url,
+      {
+        "CodigoUsuario":idU,
+        "id_venta":idventa        
+      },
+      {
+        headers: this.headers
+      }
+    ).pipe(map(data => data));
   }
 }

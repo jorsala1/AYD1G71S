@@ -25,6 +25,7 @@ import { AdministrarProductoComponent } from './components/administrar-producto/
 
 import { VerProductoComponent } from './components/ver-producto/ver-producto.component';
 import { ProductosClientesComponent } from './components/productos-clientes/productos-clientes.component';
+import { ComprarComponent } from './components/comprar/comprar.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { ProductosClientesComponent } from './components/productos-clientes/prod
     AgregarProductoComponent,
     AdministrarProductoComponent,
     VerProductoComponent,
-    ProductosClientesComponent
+    ProductosClientesComponent,
+    ComprarComponent
   ],
   imports: [
     BrowserModule,

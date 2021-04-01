@@ -12,7 +12,7 @@ class VentaRoutes {
         this.router.get('/last', ventaController_1.ventaController.getUltimaVenta);
         this.router.post('/crearVenta', ventaController_1.ventaController.create);
         this.router.post('/llenarDetalle', ventaController_1.ventaController.llenarDetalle);
-        this.router.get('/valorTotal', ventaController_1.ventaController.valorTotal);
+        this.router.post('/valorTotal', ventaController_1.ventaController.valorTotal);
     }
 }
 const ventaRoutes = new VentaRoutes();

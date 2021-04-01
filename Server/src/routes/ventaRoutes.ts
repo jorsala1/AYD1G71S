@@ -14,7 +14,7 @@ class VentaRoutes{
        this.router.get('/last',ventaController.getUltimaVenta);
        this.router.post('/crearVenta',ventaController.create);
        this.router.post('/llenarDetalle',ventaController.llenarDetalle);
-       this.router.get('/valorTotal',ventaController.valorTotal);
+       this.router.post('/valorTotal',ventaController.valorTotal);
    }
 }
 

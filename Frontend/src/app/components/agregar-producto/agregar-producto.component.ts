@@ -66,7 +66,7 @@ export class AgregarProductoComponent implements OnInit {
       this.ProductoEnviar.precio_compra=Number(this.precio_compra);
       this.ProductoEnviar.categoria=Number(this.categoria);    
     }
-    
+    this.Registrar(this.ProductoEnviar);
 }
 
 Registrar(ProductoEnviar2){
