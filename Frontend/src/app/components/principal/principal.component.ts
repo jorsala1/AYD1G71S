@@ -21,6 +21,7 @@ export class PrincipalComponent implements OnInit {
 
     }else{
       this.habilitacion="<div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"modificarUsuario\" >Modificar Datos</a> <div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"VerProductosCliente\" >Productos</a>";
+      localStorage.setItem("contadorp","0");
     }
  
   }
