@@ -62,6 +62,37 @@ export class ProductosClientesComponent implements OnInit {
     localStorage.setItem('VectorProducto_C',JSON.stringify(this.Producto_Cantidad));
    
   }
+
+  EliminarDelCarrito(id: number){
+    
+    let cantidad =0;
+    
+    if(this.VerificarCantidad(id)){
+      var indice = 0;
+      for (const p of this.Producto_Cantidad) {
+        if(p[0]==id){
+          //Globo con cantidad
+          this.contador--;
+          localStorage.setItem("contadorp",this.contador+"");
+          
+          //modificar la cantidad
+          cantidad= p[1];
+          cantidad--;
+          p[1]=cantidad;
+          if(p[1]==0){
+            this.ProductosElegidos.splice(indice, 1);
+            this.Producto_Cantidad.splice(indice, 1);
+          }
+        }
+        indice++;
+      }
+    }else {
+      alert('El producto no existe en el carrito');
+    }
+   // console.log(this.Producto_Cantidad); 
+    localStorage.setItem('VectorProducto_C',JSON.stringify(this.Producto_Cantidad));
+   
+  }
  
 
   VerificarCantidad(id:number):boolean{
@@ -72,8 +103,4 @@ export class ProductosClientesComponent implements OnInit {
     }
     return false;
   }
-
-
-
-
 }

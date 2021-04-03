@@ -110,4 +110,22 @@ export class ProductoService {
       }
     ).pipe(map(data => data));
   }
+  /************************ DIRECCIONES *************************** */
+  CrearDireccion(idU:number, direccion:string){
+    const url = baseUrl + "/direccion/createDir";
+    return this.http.post(
+      url,
+      {
+        "CodigoUsuario":idU,
+        "direccion":direccion
+      },
+      {
+        headers: this.headers
+      }
+    ).pipe(map(data => data));
+  }
+
+  getDirecciones(id:string){
+    return this.http.get(`${baseUrl}/direccion/?id=${id}`);
+  }
 }
