@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { UsuarioService } from 'src/app/services/usuario.service';
 
 @Component({
@@ -8,8 +9,11 @@ import { UsuarioService } from 'src/app/services/usuario.service';
 })
 export class ModificarUsuarioComponent implements OnInit {
 
+  Nombres: string;
+  habilitacion: string;
+  
   constructor(
-      private user:UsuarioService
+      private user:UsuarioService,public router: Router
     ) { }
 
   nombre: string="";
@@ -26,7 +30,8 @@ export class ModificarUsuarioComponent implements OnInit {
   fotografia: string="";
 
   ngOnInit(): void {
-    this.username = localStorage.getItem('Username')
+    this.username = localStorage.getItem('Username');
+    console.log(this.username);
     if (this.username != "") {
       this.user.getUsuario(this.username).subscribe((res)=>{
         let u = (res['user']);
@@ -39,13 +44,23 @@ export class ModificarUsuarioComponent implements OnInit {
         console.log(u);
       })
     }
+    this.Nombres=localStorage.getItem('Nombres');
+    this.habilitacion=localStorage.getItem('Rol');
+
+    if (this.habilitacion =="1"){
+      this.habilitacion="<div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"administrarUsuario\" >Admin Usuarios</a> <div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"verProveedores\" >Ver Proveedores</a> <div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"registroProveedor\" >Agregar Proveedor</a> <div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"administrarProveedor\" >Admin Proveedor</a> <div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"agregarProducto\" >Agregar Producto</a>  <div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"VerProductosAdmin\" >Admin Producto</a>";   
+    
+    }else{
+      this.habilitacion="";
+      this.habilitacion+="<div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"VerProductosCliente\" >Productos</a>";
+    }
   }
 
   modificar(){
     this.user.update(this.username,this.nombre,this.apellidos,this.correo,this.password,this.genero, this.fechanac)
     .subscribe((res)=>{
-      console.log("ya modifico");
-      console.log(res);      
+      //console.log("ya modifico");
+      //console.log(res);      
     })
   }
 
@@ -57,4 +72,9 @@ export class ModificarUsuarioComponent implements OnInit {
     }
   }
 
+
+  Logout(){
+    localStorage.clear();
+    this.router.navigate(['login']);
+  }
 }

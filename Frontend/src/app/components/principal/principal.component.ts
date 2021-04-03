@@ -17,28 +17,18 @@ export class PrincipalComponent implements OnInit {
     this.habilitacion=localStorage.getItem('Rol');
 
     if (this.habilitacion =="1"){
-      this.habilitacion="<div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"administrarUsuario\" >Usuarios</a>";
-      this.habilitacion+="<div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"registroProveedor\" >RegistrarProveedor</a>";
-      this.habilitacion+="<div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"verProveedores\" >VerProveedores</a>";
+      this.habilitacion="<div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"administrarUsuario\" >Admin Usuarios</a> <div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"modificarUsuario\" >Modificar mis datos</a> <div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"verProveedores\" >Ver Proveedores</a> <div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"registroProveedor\" >Agregar Proveedor</a> <div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"administrarProveedor\" >Admin Proveedor</a> <div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"agregarProducto\" >Agregar Producto</a> <div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"VerProductosAdmin\" >Admin Producto</a>";
 
     }else{
-      this.habilitacion="";
+      this.habilitacion="<div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"modificarUsuario\" >Modificar Datos</a> <div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"VerProductosCliente\" >Productos</a>";
+      localStorage.setItem("contadorp","0");
     }
-
-
-   
+ 
   }
 
 
   Logout(){
-    localStorage.removeItem('llave');
-    localStorage.removeItem('CodigoUsuario');
-    localStorage.removeItem('Username');
-    localStorage.removeItem('Nombres');
-    localStorage.removeItem('Apellidos');
-    localStorage.removeItem('Correo');
-    localStorage.removeItem('Password');
-    localStorage.removeItem('Fecha_Nac');
+    localStorage.clear();
     this.router.navigate(['login']);
   }
 }

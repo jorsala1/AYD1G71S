@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { UsuarioService } from 'src/app/services/usuario.service';
 
 @Component({
@@ -8,8 +9,10 @@ import { UsuarioService } from 'src/app/services/usuario.service';
 })
 export class AdministrarUsuarioComponent implements OnInit {
 
-  constructor(private user:UsuarioService) { }
-
+  constructor(private user:UsuarioService,public router: Router) { }
+  Nombres: string;
+  habilitacion: string;
+  
   nombre: string="";
   password: string="";
   apellidos: string=""; 
@@ -24,6 +27,16 @@ export class AdministrarUsuarioComponent implements OnInit {
   fotografia: string="";
 
   ngOnInit(): void {
+    this.Nombres=localStorage.getItem('Nombres');
+    this.habilitacion=localStorage.getItem('Rol');
+
+    if (this.habilitacion =="1"){
+      this.habilitacion="<div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"modificarUsuario\" >Modificar mis datos</a> <div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"verProveedores\" >Ver Proveedores</a> <div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"registroProveedor\" >Agregar Proveedor</a> <div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"administrarProveedor\" >Admin Proveedor</a> <div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"agregarProducto\" >Agregar Producto</a> <div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"VerProductosAdmin\" >Admin Producto</a>";      
+
+    }else{
+      this.habilitacion="";
+    }
+
   }
 
   modificar(){
@@ -42,6 +55,10 @@ export class AdministrarUsuarioComponent implements OnInit {
     }
   }
 
+  Logout(){
+    localStorage.clear();
+    this.router.navigate(['login']);
+  }
   buscarUsuario(){
     this.limpiar();
     console.log("buscando " + this.username)

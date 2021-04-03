@@ -2,16 +2,14 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { map } from 'rxjs/operators';
 
+//const baseUrl = 'http://192.168.0.3:3000';
 const baseUrl = 'http://localhost:3000';
-
 @Injectable({
   providedIn: 'root'
 })
 
 export class ProveedorService {
 
-  ip:string="localhost";
-  //ip2:string="192.168.1.8";
   constructor(private http: HttpClient) { }
   //para comunicarnos con json
   headers: HttpHeaders = new HttpHeaders({
@@ -20,7 +18,7 @@ export class ProveedorService {
 
   RegistroProveedor(nombre: string,direccion: string,telefono: string,nombre_contacto: string) {
     //console.log(username,password);
-    const url = "http://"+this.ip+":3000/prov/create";
+    const url = baseUrl+"/prov/create";
     //comienza el post
     return this.http.post(
       url,
@@ -39,9 +37,8 @@ export class ProveedorService {
 
   update(id : string, nombre: string,direccion: string,telefono : string,nombre_contacto: string) {
     
-    const url = "http://"+this.ip+":3000/prov/updateProv";
+    const url = baseUrl+"/prov/updateProv";
     //comienza el put
-    console.log("actualizar " + id)
     return this.http.put(
       url,
       {
@@ -58,8 +55,7 @@ export class ProveedorService {
   }
 
   delete(id:string){
-    console.log("Service delete " + id)
-    return this.http.delete(`http://${this.ip}:3000/prov/deleteProv/${id}`);
+    return this.http.delete(`${baseUrl}/prov/deleteProv/${id}`);
   }
   obtenerProveedores(){
     const url= baseUrl+"/prov/";

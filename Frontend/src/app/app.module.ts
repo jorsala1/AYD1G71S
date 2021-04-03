@@ -19,6 +19,14 @@ import { PrincipalComponent } from './components/principal/principal.component';
 import { AdministrarProveedorComponent } from './components/administrar-proveedor/administrar-proveedor.component';
 import { RegistroProveedorComponent } from './registro-proveedor/registro-proveedor.component';
 import { VerProveedoresComponent } from './components/ver-proveedores/ver-proveedores.component';
+import { AgregarProductoComponent } from './components/agregar-producto/agregar-producto.component';
+
+import { AdministrarProductoComponent } from './components/administrar-producto/administrar-producto.component';
+
+import { VerProductoComponent } from './components/ver-producto/ver-producto.component';
+import { ProductosClientesComponent } from './components/productos-clientes/productos-clientes.component';
+import { ComprarComponent } from './components/comprar/comprar.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +38,12 @@ import { VerProveedoresComponent } from './components/ver-proveedores/ver-provee
     PrincipalComponent,
     AdministrarProveedorComponent,
     RegistroProveedorComponent,
-    VerProveedoresComponent
+    VerProveedoresComponent,
+    AgregarProductoComponent,
+    AdministrarProductoComponent,
+    VerProductoComponent,
+    ProductosClientesComponent,
+    ComprarComponent
   ],
   imports: [
     BrowserModule,

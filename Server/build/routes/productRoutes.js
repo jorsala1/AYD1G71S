@@ -9,6 +9,10 @@ class ProductRoutes {
     }
     config() {
         this.router.get('/', productController_1.productController.index);
+        this.router.post('/create', productController_1.productController.create);
+        this.router.post('/getProduct', productController_1.productController.obtenerProd);
+        this.router.put('/updateProd', productController_1.productController.actualizarProd);
+        this.router.delete('/deleteProd/:id', productController_1.productController.eliminarProd);
     }
 }
 const productRoutes = new ProductRoutes();

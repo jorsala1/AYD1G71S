@@ -9,42 +9,39 @@ import { Router } from '@angular/router';
 })
 export class RegistroProveedorComponent implements OnInit {
 
-  constructor(private proveedor:ProveedorService,public router: Router) { }
+  constructor(public proveedor:ProveedorService,public router: Router) { }
   Nombres: string;
   nombre: string="";
   contacto: string="";
   telefono: string="";
   direccion: string="";
+  habilitacion: string;
   
   ngOnInit(): void {
     this.Nombres=localStorage.getItem('Nombres');
+    this.habilitacion=localStorage.getItem('Rol');
+    if (this.habilitacion =="1"){
+      this.habilitacion="<div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"administrarUsuario\" >Admin Usuarios</a>  <div class=\"dropdown-divider\"></div>   </div><a class=\"dropdown-item\" href=\"modificarUsuario\" >Modificar mis datos</a>  <div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"verProveedores\" >Ver Proveedores</a>  <div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"administrarProveedor\" >Admin Proveedor</a>  <div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"agregarProducto\" >Agregar Producto</a>   <a class=\"dropdown-item\"  href=\"VerProductosAdmin\" >Admin Producto</a> ";
+    //  this.habilitacion+="<div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"VerProductosAdmin\" >Admin Producto</a>";
+    }else{
+      this.habilitacion="";
+    }
   }
 
   registrarse(){
     // console.log(this.fechanac);
      this.proveedor.RegistroProveedor(this.nombre,this.direccion,this.telefono,this.contacto)
      .subscribe((res)=>{
-       console.log("ya insertó");
-       console.log(res);    
+   
        alert("PROVEEDOR REGISTRADO CON ÉXITO");
-       this.nombre="";
-       this.direccion="";
-       this.telefono=""; 
-       this.contacto="";
+       
      },
      err => {alert("NO SE PUDO REGISTRAR EL PROVEEDOR")}  
      )
   
    }
    Logout(){
-    localStorage.removeItem('llave');
-    localStorage.removeItem('CodigoUsuario');
-    localStorage.removeItem('Username');
-    localStorage.removeItem('Nombres');
-    localStorage.removeItem('Apellidos');
-    localStorage.removeItem('Correo');
-    localStorage.removeItem('Password');
-    localStorage.removeItem('Fecha_Nac');
+    localStorage.clear();
     this.router.navigate(['login']);
   }
 }
