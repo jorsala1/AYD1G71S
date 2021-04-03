@@ -150,6 +150,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var _components_productos_clientes_productos_clientes_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(
     /*! ./components/productos-clientes/productos-clientes.component */
     "./src/app/components/productos-clientes/productos-clientes.component.ts");
+    /* harmony import */
+
+
+    var _components_comprar_comprar_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(
+    /*! ./components/comprar/comprar.component */
+    "./src/app/components/comprar/comprar.component.ts");
 
     var routes = [{
       path: '',
@@ -190,6 +196,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     }, {
       path: 'VerProductosCliente',
       component: _components_productos_clientes_productos_clientes_component__WEBPACK_IMPORTED_MODULE_14__["ProductosClientesComponent"]
+    }, {
+      path: 'Comprar',
+      component: _components_comprar_comprar_component__WEBPACK_IMPORTED_MODULE_15__["ComprarComponent"]
     }];
 
     var AppRoutingModule = function AppRoutingModule() {
@@ -444,6 +453,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var _components_productos_clientes_productos_clientes_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(
     /*! ./components/productos-clientes/productos-clientes.component */
     "./src/app/components/productos-clientes/productos-clientes.component.ts");
+    /* harmony import */
+
+
+    var _components_comprar_comprar_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(
+    /*! ./components/comprar/comprar.component */
+    "./src/app/components/comprar/comprar.component.ts");
 
     var AppModule = function AppModule() {
       _classCallCheck(this, AppModule);
@@ -463,7 +478,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     (function () {
       (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵsetNgModuleScope"](AppModule, {
-        declarations: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"], _components_home_home_component__WEBPACK_IMPORTED_MODULE_5__["HomeComponent"], _components_modificar_usuario_modificar_usuario_component__WEBPACK_IMPORTED_MODULE_6__["ModificarUsuarioComponent"], _components_administrar_usuario_administrar_usuario_component__WEBPACK_IMPORTED_MODULE_7__["AdministrarUsuarioComponent"], _components_registro_registro_component__WEBPACK_IMPORTED_MODULE_9__["RegistroComponent"], _components_login_login_component__WEBPACK_IMPORTED_MODULE_12__["LoginComponent"], _components_principal_principal_component__WEBPACK_IMPORTED_MODULE_13__["PrincipalComponent"], _components_administrar_proveedor_administrar_proveedor_component__WEBPACK_IMPORTED_MODULE_14__["AdministrarProveedorComponent"], _registro_proveedor_registro_proveedor_component__WEBPACK_IMPORTED_MODULE_15__["RegistroProveedorComponent"], _components_ver_proveedores_ver_proveedores_component__WEBPACK_IMPORTED_MODULE_16__["VerProveedoresComponent"], _components_agregar_producto_agregar_producto_component__WEBPACK_IMPORTED_MODULE_17__["AgregarProductoComponent"], _components_administrar_producto_administrar_producto_component__WEBPACK_IMPORTED_MODULE_18__["AdministrarProductoComponent"], _components_ver_producto_ver_producto_component__WEBPACK_IMPORTED_MODULE_19__["VerProductoComponent"], _components_productos_clientes_productos_clientes_component__WEBPACK_IMPORTED_MODULE_20__["ProductosClientesComponent"]],
+        declarations: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"], _components_home_home_component__WEBPACK_IMPORTED_MODULE_5__["HomeComponent"], _components_modificar_usuario_modificar_usuario_component__WEBPACK_IMPORTED_MODULE_6__["ModificarUsuarioComponent"], _components_administrar_usuario_administrar_usuario_component__WEBPACK_IMPORTED_MODULE_7__["AdministrarUsuarioComponent"], _components_registro_registro_component__WEBPACK_IMPORTED_MODULE_9__["RegistroComponent"], _components_login_login_component__WEBPACK_IMPORTED_MODULE_12__["LoginComponent"], _components_principal_principal_component__WEBPACK_IMPORTED_MODULE_13__["PrincipalComponent"], _components_administrar_proveedor_administrar_proveedor_component__WEBPACK_IMPORTED_MODULE_14__["AdministrarProveedorComponent"], _registro_proveedor_registro_proveedor_component__WEBPACK_IMPORTED_MODULE_15__["RegistroProveedorComponent"], _components_ver_proveedores_ver_proveedores_component__WEBPACK_IMPORTED_MODULE_16__["VerProveedoresComponent"], _components_agregar_producto_agregar_producto_component__WEBPACK_IMPORTED_MODULE_17__["AgregarProductoComponent"], _components_administrar_producto_administrar_producto_component__WEBPACK_IMPORTED_MODULE_18__["AdministrarProductoComponent"], _components_ver_producto_ver_producto_component__WEBPACK_IMPORTED_MODULE_19__["VerProductoComponent"], _components_productos_clientes_productos_clientes_component__WEBPACK_IMPORTED_MODULE_20__["ProductosClientesComponent"], _components_comprar_comprar_component__WEBPACK_IMPORTED_MODULE_21__["ComprarComponent"]],
         imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_2__["AppRoutingModule"], angular_bootstrap_md__WEBPACK_IMPORTED_MODULE_4__["MDBRootModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_8__["FormsModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_10__["HttpClientModule"], _angular_router__WEBPACK_IMPORTED_MODULE_11__["RouterModule"]]
       });
     })();
@@ -474,7 +489,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵsetClassMetadata"](AppModule, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"],
         args: [{
-          declarations: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"], _components_home_home_component__WEBPACK_IMPORTED_MODULE_5__["HomeComponent"], _components_modificar_usuario_modificar_usuario_component__WEBPACK_IMPORTED_MODULE_6__["ModificarUsuarioComponent"], _components_administrar_usuario_administrar_usuario_component__WEBPACK_IMPORTED_MODULE_7__["AdministrarUsuarioComponent"], _components_registro_registro_component__WEBPACK_IMPORTED_MODULE_9__["RegistroComponent"], _components_login_login_component__WEBPACK_IMPORTED_MODULE_12__["LoginComponent"], _components_principal_principal_component__WEBPACK_IMPORTED_MODULE_13__["PrincipalComponent"], _components_administrar_proveedor_administrar_proveedor_component__WEBPACK_IMPORTED_MODULE_14__["AdministrarProveedorComponent"], _registro_proveedor_registro_proveedor_component__WEBPACK_IMPORTED_MODULE_15__["RegistroProveedorComponent"], _components_ver_proveedores_ver_proveedores_component__WEBPACK_IMPORTED_MODULE_16__["VerProveedoresComponent"], _components_agregar_producto_agregar_producto_component__WEBPACK_IMPORTED_MODULE_17__["AgregarProductoComponent"], _components_administrar_producto_administrar_producto_component__WEBPACK_IMPORTED_MODULE_18__["AdministrarProductoComponent"], _components_ver_producto_ver_producto_component__WEBPACK_IMPORTED_MODULE_19__["VerProductoComponent"], _components_productos_clientes_productos_clientes_component__WEBPACK_IMPORTED_MODULE_20__["ProductosClientesComponent"]],
+          declarations: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"], _components_home_home_component__WEBPACK_IMPORTED_MODULE_5__["HomeComponent"], _components_modificar_usuario_modificar_usuario_component__WEBPACK_IMPORTED_MODULE_6__["ModificarUsuarioComponent"], _components_administrar_usuario_administrar_usuario_component__WEBPACK_IMPORTED_MODULE_7__["AdministrarUsuarioComponent"], _components_registro_registro_component__WEBPACK_IMPORTED_MODULE_9__["RegistroComponent"], _components_login_login_component__WEBPACK_IMPORTED_MODULE_12__["LoginComponent"], _components_principal_principal_component__WEBPACK_IMPORTED_MODULE_13__["PrincipalComponent"], _components_administrar_proveedor_administrar_proveedor_component__WEBPACK_IMPORTED_MODULE_14__["AdministrarProveedorComponent"], _registro_proveedor_registro_proveedor_component__WEBPACK_IMPORTED_MODULE_15__["RegistroProveedorComponent"], _components_ver_proveedores_ver_proveedores_component__WEBPACK_IMPORTED_MODULE_16__["VerProveedoresComponent"], _components_agregar_producto_agregar_producto_component__WEBPACK_IMPORTED_MODULE_17__["AgregarProductoComponent"], _components_administrar_producto_administrar_producto_component__WEBPACK_IMPORTED_MODULE_18__["AdministrarProductoComponent"], _components_ver_producto_ver_producto_component__WEBPACK_IMPORTED_MODULE_19__["VerProductoComponent"], _components_productos_clientes_productos_clientes_component__WEBPACK_IMPORTED_MODULE_20__["ProductosClientesComponent"], _components_comprar_comprar_component__WEBPACK_IMPORTED_MODULE_21__["ComprarComponent"]],
           imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_2__["AppRoutingModule"], angular_bootstrap_md__WEBPACK_IMPORTED_MODULE_4__["MDBBootstrapModule"].forRoot(), _angular_forms__WEBPACK_IMPORTED_MODULE_8__["FormsModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_10__["HttpClientModule"], _angular_router__WEBPACK_IMPORTED_MODULE_11__["RouterModule"]],
           providers: [],
           bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"]]
@@ -610,11 +625,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           this.habilitacion = localStorage.getItem('Rol');
 
           if (this.habilitacion == "1") {
-            this.habilitacion = "<div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"administrarUsuario\" >Admin Usuarios</a>";
-            this.habilitacion += "<div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"modificarUsuario\" >Modificar mis datos</a>";
-            this.habilitacion += "<div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"verProveedores\" >Ver Proveedores</a>";
-            this.habilitacion += "<div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"registroProveedor\" >Agregar Proveedor</a>";
-            this.habilitacion += "<div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"administrarProveedor\" >Admin Proveedor</a>";
+            this.habilitacion = "<div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"administrarUsuario\" >Admin Usuarios</a> <div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"modificarUsuario\" >Modificar mis datos</a>  <div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"verProveedores\" >Ver Proveedores</a> <div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"registroProveedor\" >Agregar Proveedor</a> <div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"administrarProveedor\" >Admin Proveedor</a>";
           } else {
             this.habilitacion = "";
           }
@@ -684,14 +695,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "Logout",
         value: function Logout() {
-          localStorage.removeItem('llave');
-          localStorage.removeItem('CodigoUsuario');
-          localStorage.removeItem('Username');
-          localStorage.removeItem('Nombres');
-          localStorage.removeItem('Apellidos');
-          localStorage.removeItem('Correo');
-          localStorage.removeItem('Password');
-          localStorage.removeItem('Fecha_Nac');
+          localStorage.clear();
           this.router.navigate(['login']);
         }
       }]);
@@ -1136,12 +1140,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           this.habilitacion = localStorage.getItem('Rol');
 
           if (this.habilitacion == "1") {
-            this.habilitacion = "<div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"administrarUsuario\" >Admin Usuarios</a>";
-            this.habilitacion += "<div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"modificarUsuario\" >Modificar mis datos</a>";
-            this.habilitacion += "<div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"verProveedores\" >Ver Proveedores</a>";
-            this.habilitacion += "<div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"registroProveedor\" >Agregar Proveedor</a>";
-            this.habilitacion += "<div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"agregarProducto\" >Agregar Producto</a>";
-            this.habilitacion += "<div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"VerProductosAdmin\" >Admin Producto</a>";
+            this.habilitacion = "<div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"administrarUsuario\" >Admin Usuarios</a> <div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"modificarUsuario\" >Modificar mis datos</a> <div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"verProveedores\" >Ver Proveedores</a> <div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"registroProveedor\" >Agregar Proveedor</a> <div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"agregarProducto\" >Agregar Producto</a> <div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"VerProductosAdmin\" >Admin Producto</a>";
           } else {
             this.habilitacion = "";
           }
@@ -1179,14 +1178,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "Logout",
         value: function Logout() {
-          localStorage.removeItem('llave');
-          localStorage.removeItem('CodigoUsuario');
-          localStorage.removeItem('Username');
-          localStorage.removeItem('Nombres');
-          localStorage.removeItem('Apellidos');
-          localStorage.removeItem('Correo');
-          localStorage.removeItem('Password');
-          localStorage.removeItem('Fecha_Nac');
+          localStorage.clear();
           this.router.navigate(['login']);
         }
       }]);
@@ -1588,12 +1580,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           this.habilitacion = localStorage.getItem('Rol');
 
           if (this.habilitacion == "1") {
-            this.habilitacion = "<div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"modificarUsuario\" >Modificar mis datos</a>";
-            this.habilitacion += "<div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"verProveedores\" >Ver Proveedores</a>";
-            this.habilitacion += "<div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"registroProveedor\" >Agregar Proveedor</a>";
-            this.habilitacion += "<div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"administrarProveedor\" >Admin Proveedor</a>";
-            this.habilitacion += "<div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"agregarProducto\" >Agregar Producto</a>";
-            this.habilitacion += "<div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"VerProductosAdmin\" >Admin Producto</a>";
+            this.habilitacion = "<div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"modificarUsuario\" >Modificar mis datos</a> <div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"verProveedores\" >Ver Proveedores</a> <div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"registroProveedor\" >Agregar Proveedor</a> <div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"administrarProveedor\" >Admin Proveedor</a> <div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"agregarProducto\" >Agregar Producto</a> <div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"VerProductosAdmin\" >Admin Producto</a>";
           } else {
             this.habilitacion = "";
           }
@@ -1618,14 +1605,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "Logout",
         value: function Logout() {
-          localStorage.removeItem('llave');
-          localStorage.removeItem('CodigoUsuario');
-          localStorage.removeItem('Username');
-          localStorage.removeItem('Nombres');
-          localStorage.removeItem('Apellidos');
-          localStorage.removeItem('Correo');
-          localStorage.removeItem('Password');
-          localStorage.removeItem('Fecha_Nac');
+          localStorage.clear();
           this.router.navigate(['login']);
         }
       }, {
@@ -2214,12 +2194,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           this.habilitacion = localStorage.getItem('Rol');
 
           if (this.habilitacion == "1") {
-            this.habilitacion = "<div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"administrarUsuario\" >Admin Usuarios</a>";
-            this.habilitacion += "<div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"modificarUsuario\" >Modificar mis datos</a>";
-            this.habilitacion += "<div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"verProveedores\" >Ver Proveedores</a>";
-            this.habilitacion += "<div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"registroProveedor\" >Agregar Proveedor</a>";
-            this.habilitacion += "<div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"administrarProveedor\" >Admin Proveedor</a>";
-            this.habilitacion += "<div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"VerProductosAdmin\" >Admin Producto</a>";
+            this.habilitacion = "<div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"administrarUsuario\" >Admin Usuarios</a> <div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"verProveedores\" >Ver Proveedores</a> <div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"registroProveedor\" >Agregar Proveedor</a> <div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"administrarProveedor\" >Admin Proveedor</a> <div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"VerProductosAdmin\" >Admin Producto</a>";
           } else {
             this.habilitacion = "";
           }
@@ -2247,8 +2222,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             this.ProductoEnviar.precio_venta = Number(this.precio_venta);
             this.ProductoEnviar.precio_compra = Number(this.precio_compra);
             this.ProductoEnviar.categoria = Number(this.categoria);
-            console.log(this.Registrar(this.ProductoEnviar));
           }
+
+          this.Registrar(this.ProductoEnviar);
         }
       }, {
         key: "Registrar",
@@ -2285,14 +2261,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "Logout",
         value: function Logout() {
-          localStorage.removeItem('llave');
-          localStorage.removeItem('CodigoUsuario');
-          localStorage.removeItem('Username');
-          localStorage.removeItem('Nombres');
-          localStorage.removeItem('Apellidos');
-          localStorage.removeItem('Correo');
-          localStorage.removeItem('Password');
-          localStorage.removeItem('Fecha_Nac');
+          localStorage.clear();
           this.router.navigate(['login']);
         }
       }]);
@@ -2647,6 +2616,617 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           type: src_app_services_producto_service__WEBPACK_IMPORTED_MODULE_1__["ProductoService"]
         }, {
           type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]
+        }];
+      }, null);
+    })();
+    /***/
+
+  },
+
+  /***/
+  "./src/app/components/comprar/comprar.component.ts":
+  /*!*********************************************************!*\
+    !*** ./src/app/components/comprar/comprar.component.ts ***!
+    \*********************************************************/
+
+  /*! exports provided: ComprarComponent */
+
+  /***/
+  function srcAppComponentsComprarComprarComponentTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "ComprarComponent", function () {
+      return ComprarComponent;
+    });
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+    /* harmony import */
+
+
+    var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! @angular/router */
+    "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
+    /* harmony import */
+
+
+    var src_app_services_producto_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! src/app/services/producto.service */
+    "./src/app/services/producto.service.ts");
+    /* harmony import */
+
+
+    var angular_bootstrap_md__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! angular-bootstrap-md */
+    "./node_modules/angular-bootstrap-md/__ivy_ngcc__/fesm2015/angular-bootstrap-md.js");
+    /* harmony import */
+
+
+    var _angular_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    /*! @angular/forms */
+    "./node_modules/@angular/forms/__ivy_ngcc__/fesm2015/forms.js");
+    /* harmony import */
+
+
+    var _angular_common__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+    /*! @angular/common */
+    "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js");
+
+    function ComprarComponent_a_31_Template(rf, ctx) {
+      if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "a", 28);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+      }
+
+      if (rf & 2) {
+        var dire_r3 = ctx.$implicit;
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", dire_r3.direccion, " ");
+      }
+    }
+
+    function ComprarComponent_th_37_Template(rf, ctx) {
+      if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "th", 29);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+      }
+
+      if (rf & 2) {
+        var head_r4 = ctx.$implicit;
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("", head_r4, " ");
+      }
+    }
+
+    function ComprarComponent_tr_39_Template(rf, ctx) {
+      if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "tr", 30);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "td");
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "td");
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](4);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "td");
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](6);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "td");
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](8);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+      }
+
+      if (rf & 2) {
+        var vector_r5 = ctx.$implicit;
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](vector_r5.nombre_prod);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](vector_r5.descripcion);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](vector_r5.cantidad);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](vector_r5.precio_venta);
+      }
+    }
+
+    var _c0 = function _c0() {
+      return ["/home"];
+    };
+
+    var _c1 = function _c1() {
+      return ["/principal"];
+    };
+
+    var ComprarComponent = /*#__PURE__*/function () {
+      function ComprarComponent(router, Producto) {
+        _classCallCheck(this, ComprarComponent);
+
+        this.router = router;
+        this.Producto = Producto;
+        this.idventa = 0;
+        this.total = 0;
+        this.VectorPComprar = [];
+        this.VectorProductos2 = [];
+        this.VectorProductos = [];
+        this.headElements = ['Nombre Producto', 'Descripción', 'Cantidad', 'Precio'];
+        this.Producto_Cantidad = []; //id producto, cantidad
+
+        this.listadir = [];
+      }
+
+      _createClass(ComprarComponent, [{
+        key: "ngOnInit",
+        value: function ngOnInit() {
+          this.Nombres = localStorage.getItem('Nombres');
+          this.habilitacion = localStorage.getItem('Rol');
+          this.contador = Number(localStorage.getItem("contadorp"));
+
+          if (this.habilitacion == "1") {
+            this.habilitacion = "<div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"administrarUsuario\" >Admin Usuarios</a> <div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"modificarUsuario\" >Modificar mis datos</a> <div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"verProveedores\" >Ver Proveedores</a> <div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"registroProveedor\" >Agregar Proveedor</a> <div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"administrarProveedor\" >Admin Proveedor</a> <div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"agregarProducto\" >Agregar Producto</a>";
+          } else {
+            this.habilitacion = "<div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"modificarUsuario\" >Modificar Datos</a> <div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"VerProductosCliente\" >Productos</a> ";
+          }
+
+          this.VectorProductos2 = JSON.parse(localStorage.getItem("PRODUCTOS"));
+          this.VectorProductos = JSON.parse(localStorage.getItem("PRODUCTOS"));
+          this.Producto_Cantidad = JSON.parse(localStorage.getItem("VectorProducto_C")); // console.log("AAAAA");
+          //console.log(this.Producto_Cantidad);
+
+          this.ProductosComprar();
+          this.CargarDirecciones();
+        }
+      }, {
+        key: "ProductosComprar",
+        value: function ProductosComprar() {
+          var _iterator3 = _createForOfIteratorHelper(this.Producto_Cantidad),
+              _step3;
+
+          try {
+            for (_iterator3.s(); !(_step3 = _iterator3.n()).done;) {
+              var productoc = _step3.value;
+
+              //console.log(productoc); 
+              var _iterator4 = _createForOfIteratorHelper(this.VectorProductos2),
+                  _step4;
+
+              try {
+                for (_iterator4.s(); !(_step4 = _iterator4.n()).done;) {
+                  var p = _step4.value;
+
+                  // console.log(p);
+                  if (productoc[0] == p.id) {
+                    p.cantidad = productoc[1];
+                    this.VectorPComprar.push(p);
+                    this.total = this.total + productoc[1] * p.precio_venta; //  console.log(this.VectorPComprar);
+                  }
+                }
+              } catch (err) {
+                _iterator4.e(err);
+              } finally {
+                _iterator4.f();
+              }
+            }
+          } catch (err) {
+            _iterator3.e(err);
+          } finally {
+            _iterator3.f();
+          }
+        }
+      }, {
+        key: "Comprar",
+        value: function Comprar() {
+          var _this8 = this;
+
+          this.RegistrarDireccion(Number(localStorage.getItem("CodigoUsuario")), this.direccion); //1. Verifcar que exista la cantidad del producto deseado 
+
+          if (this.VectorPComprar.length == this.VerificarTodos()) {
+            //significa que existen todas las cantidades que se necesitan 
+            //registramos la venta
+            var id = Number(localStorage.getItem("CodigoUsuario"));
+            this.Producto.CrearVenta(id).subscribe(function (res) {//alert("Se registró correctamente la venta");
+            }, function (err) {
+              alert("No se pudo registrar la venta");
+            }); //obtener ultima venta
+
+            this.Producto.ObtenerUltimaVenta().subscribe(function (res) {
+              _this8.idventa = res.id;
+
+              _this8.FinCompra(_this8.idventa);
+            });
+          } else {
+            alert("No hay suficiente producto para su compra.");
+          }
+        }
+      }, {
+        key: "RegistrarDireccion",
+        value: function RegistrarDireccion(id, direccion) {
+          if (this.direccion != "") {
+            this.Producto.CrearDireccion(id, direccion).subscribe(function (res) {
+              alert("DIRECCIÓN REGISTRADA CON ÉXITO");
+            }, function (err) {
+              alert("NO SE PUDO REGISTRAR LA DIRECCION");
+            });
+          } else {
+            alert("Ingrese una dirección de entrega");
+          }
+        }
+      }, {
+        key: "CargarDirecciones",
+        value: function CargarDirecciones() {
+          var _this9 = this;
+
+          this.Producto.getDirecciones(localStorage.getItem("CodigoUsuario")).subscribe(function (res) {
+            _this9.listadir = res;
+            console.log(_this9.listadir);
+          });
+        }
+      }, {
+        key: "FinCompra",
+        value: function FinCompra(idv) {
+          // llenar los detalles 
+          var contador = 0;
+
+          var _iterator5 = _createForOfIteratorHelper(this.VectorPComprar),
+              _step5;
+
+          try {
+            for (_iterator5.s(); !(_step5 = _iterator5.n()).done;) {
+              var producto = _step5.value;
+              console.log("id venta: " + idv + producto.id + producto.nombre_prod + " cantidad: " + producto.cantidad);
+              this.Producto.DetalleVenta(idv, producto.id, producto.cantidad).subscribe(function (res) {}, function (err) {
+                contador++;
+              });
+            }
+          } catch (err) {
+            _iterator5.e(err);
+          } finally {
+            _iterator5.f();
+          }
+
+          console.log(contador);
+
+          if (contador > 0) {
+            alert("No se pudo registrar la compra");
+          } else {
+            alert("Su compra se registró correctamente");
+          }
+        }
+      }, {
+        key: "VerificarTodos",
+        value: function VerificarTodos() {
+          var cuenta = 0;
+
+          var _iterator6 = _createForOfIteratorHelper(this.Producto_Cantidad),
+              _step6;
+
+          try {
+            for (_iterator6.s(); !(_step6 = _iterator6.n()).done;) {
+              var prod = _step6.value;
+
+              if (this.VerificaCantidadStock(prod[0], prod[1])) {
+                cuenta++;
+              }
+            }
+          } catch (err) {
+            _iterator6.e(err);
+          } finally {
+            _iterator6.f();
+          }
+
+          return cuenta;
+        }
+      }, {
+        key: "VerificaCantidadStock",
+        value: function VerificaCantidadStock(id, cantidad) {
+          var _iterator7 = _createForOfIteratorHelper(this.VectorProductos),
+              _step7;
+
+          try {
+            for (_iterator7.s(); !(_step7 = _iterator7.n()).done;) {
+              var prod = _step7.value;
+
+              if (prod.id == id) {
+                //console.log("hola"+ id + prod.id);  
+                //console.log("stock: "+ prod.cantidad + " cantidad: "+cantidad) ;
+                if (prod.cantidad > cantidad) {
+                  return true;
+                }
+              }
+            }
+          } catch (err) {
+            _iterator7.e(err);
+          } finally {
+            _iterator7.f();
+          }
+
+          return false;
+        }
+      }, {
+        key: "Logout",
+        value: function Logout() {
+          localStorage.clear();
+          this.router.navigate(['login']);
+        }
+      }]);
+
+      return ComprarComponent;
+    }();
+
+    ComprarComponent.ɵfac = function ComprarComponent_Factory(t) {
+      return new (t || ComprarComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](src_app_services_producto_service__WEBPACK_IMPORTED_MODULE_2__["ProductoService"]));
+    };
+
+    ComprarComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
+      type: ComprarComponent,
+      selectors: [["app-comprar"]],
+      decls: 48,
+      vars: 12,
+      consts: [["SideClass", "navbar navbar-expand-lg #80cbc4 teal lighten-3"], ["href", "#", 1, "navbar-brand", 2, "font-size", "30px", "color", "darkslateblue"], [1, "navbar-nav", "mr-auto"], [1, "nav-item", "active"], ["mdbWavesEffect", "", 1, "nav-link", 3, "routerLink"], ["mdbDropdown", "", 1, "btn-group"], ["type", "button", "mdbBtn", "", "color", "danger", "mdbWavesEffect", "", 1, "waves-light"], ["type", "button", "mdbDropdownToggle", "", "mdbBtn", "", "color", "danger", "mdbWavesEffect", "", 1, "dropdown-toggle", "dropdown-toggle-split", "px-3", "waves-light"], [1, "dropdown-menu"], [1, "dropdown-item", 3, "routerLink"], [3, "innerHTML"], [1, "dropdown-divider"], [1, "dropdown-item", 3, "click"], [1, "contenedor"], ["src", "https://icons.iconarchive.com/icons/graphicloads/100-flat/64/cart-icon.png"], [1, "texto-encima"], [1, "text-center"], [1, "text-danger", 2, "font-size", "30px", "font-weight", "bold"], ["mdbInput", "", "name", "txtDireccion", "type", "text", "id", "txtdireccion", "placeholder", "Ingrese direcci\xF3n", 3, "ngModel", "ngModelChange"], [1, "md-form", "form-group"], ["class", "dropdown-item", 4, "ngFor", "ngForOf"], ["mdbTable", ""], [1, "black", "white-text"], ["scope", "col-sm", 4, "ngFor", "ngForOf"], ["mdbTableCol", "", "class", "grey black-text", 4, "ngFor", "ngForOf"], [1, "row"], [1, "col-sm-3"], ["type", "button", "mdbBtn", "", "color", "danger", "mdbWavesEffect", "", 1, "waves-light", 3, "click"], [1, "dropdown-item"], ["scope", "col-sm"], ["mdbTableCol", "", 1, "grey", "black-text"]],
+      template: function ComprarComponent_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mdb-navbar", 0);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "mdb-navbar-brand");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "a", 1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3, " Farma Seven");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "links");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "ul", 2);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "li", 3);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "a", 4);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](8, "Home");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "div", 5);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](10, "button", 6);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](11);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](12, "button", 7);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](13, "div", 8);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](14, "a", 9);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](15, "Principal");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](16, "div", 10);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](17, "div", 11);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](18, "a", 12);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function ComprarComponent_Template_a_click_18_listener() {
+            return ctx.Logout();
+          });
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](19, "Logout");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](20, "div", 13);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](21, "img", 14);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](22, "div", 15);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](23);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](24, "section", 16);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](25, "h1", 17);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](26, " Confirme su compra ");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](27, "input", 18);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("ngModelChange", function ComprarComponent_Template_input_ngModelChange_27_listener($event) {
+            return ctx.direccion = $event;
+          });
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](28, "br");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](29, "div", 19);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](30, "div", 8);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](31, ComprarComponent_a_31_Template, 2, 1, "a", 20);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](32, "div", 11);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](33, "br");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](34, "table", 21);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](35, "thead", 22);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](36, "tr");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](37, ComprarComponent_th_37_Template, 2, 1, "th", 23);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](38, "tbody");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](39, ComprarComponent_tr_39_Template, 9, 4, "tr", 24);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](40, "div", 25);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](41, "div", 26);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](42, "div", 26);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](43, "h4");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](44);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](45, "div", 26);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](46, "button", 27);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function ComprarComponent_Template_button_click_46_listener() {
+            return ctx.Comprar();
+          });
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](47, "COMPRAR");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        }
+
+        if (rf & 2) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](7);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](10, _c0));
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.Nombres);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](11, _c1));
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("innerHTML", ctx.habilitacion, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeHtml"]);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](7);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.contador);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngModel", ctx.direccion);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx.listadir);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](6);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx.headElements);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx.VectorPComprar);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" Su TOTAL es: ", ctx.total, "");
+        }
+      },
+      directives: [angular_bootstrap_md__WEBPACK_IMPORTED_MODULE_3__["NavbarComponent"], angular_bootstrap_md__WEBPACK_IMPORTED_MODULE_3__["LogoComponent"], angular_bootstrap_md__WEBPACK_IMPORTED_MODULE_3__["LinksComponent"], _angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterLinkWithHref"], angular_bootstrap_md__WEBPACK_IMPORTED_MODULE_3__["WavesDirective"], angular_bootstrap_md__WEBPACK_IMPORTED_MODULE_3__["BsDropdownDirective"], angular_bootstrap_md__WEBPACK_IMPORTED_MODULE_3__["MdbBtnDirective"], angular_bootstrap_md__WEBPACK_IMPORTED_MODULE_3__["BsDropdownToggleDirective"], _angular_forms__WEBPACK_IMPORTED_MODULE_4__["DefaultValueAccessor"], angular_bootstrap_md__WEBPACK_IMPORTED_MODULE_3__["MdbInput"], _angular_forms__WEBPACK_IMPORTED_MODULE_4__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_4__["NgModel"], _angular_common__WEBPACK_IMPORTED_MODULE_5__["NgForOf"], angular_bootstrap_md__WEBPACK_IMPORTED_MODULE_3__["MdbTableDirective"]],
+      styles: [".contenedor[_ngcontent-%COMP%] {\n  position: relative;\n  display: inline-block;\n  text-align: center;\n}\n\n.texto-encima[_ngcontent-%COMP%] {\n  position: absolute;\n  color: #052e49;\n  top: 10px;\n  left: 48px;\n}\n\n.centrado[_ngcontent-%COMP%] {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9jb21wcmFyL0Q6XFxEb2N1bWVudG9zXFxHaXRIdWJcXEFZRDFHNzFTXFxGcm9udGVuZC9zcmNcXGFwcFxcY29tcG9uZW50c1xcY29tcHJhclxcY29tcHJhci5jb21wb25lbnQuc2NzcyIsInNyYy9hcHAvY29tcG9uZW50cy9jb21wcmFyL2NvbXByYXIuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxrQkFBQTtFQUNBLHFCQUFBO0VBQ0Esa0JBQUE7QUNDSjs7QURDQTtFQUNJLGtCQUFBO0VBQ0EsY0FBQTtFQUNBLFNBQUE7RUFDQSxVQUFBO0FDRUo7O0FEQUE7RUFDSSxrQkFBQTtFQUNBLFFBQUE7RUFDQSxTQUFBO0VBQ0EsZ0NBQUE7QUNHSiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvY29tcHJhci9jb21wcmFyLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmNvbnRlbmVkb3J7XHJcbiAgICBwb3NpdGlvbjogcmVsYXRpdmU7XHJcbiAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbn1cclxuLnRleHRvLWVuY2ltYXtcclxuICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICAgIGNvbG9yOiByZ2IoNSwgNDYsIDczKTtcclxuICAgIHRvcDogMTBweDtcclxuICAgIGxlZnQ6IDQ4cHg7XHJcbn1cclxuLmNlbnRyYWRve1xyXG4gICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgdG9wOiA1MCU7XHJcbiAgICBsZWZ0OiA1MCU7XHJcbiAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZSgtNTAlLCAtNTAlKTtcclxufSIsIi5jb250ZW5lZG9yIHtcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xuICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbn1cblxuLnRleHRvLWVuY2ltYSB7XG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgY29sb3I6ICMwNTJlNDk7XG4gIHRvcDogMTBweDtcbiAgbGVmdDogNDhweDtcbn1cblxuLmNlbnRyYWRvIHtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICB0b3A6IDUwJTtcbiAgbGVmdDogNTAlO1xuICB0cmFuc2Zvcm06IHRyYW5zbGF0ZSgtNTAlLCAtNTAlKTtcbn0iXX0= */"]
+    });
+    /*@__PURE__*/
+
+    (function () {
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](ComprarComponent, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
+        args: [{
+          selector: 'app-comprar',
+          templateUrl: './comprar.component.html',
+          styleUrls: ['./comprar.component.scss']
+        }]
+      }], function () {
+        return [{
+          type: _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]
+        }, {
+          type: src_app_services_producto_service__WEBPACK_IMPORTED_MODULE_2__["ProductoService"]
         }];
       }, null);
     })();
@@ -3079,8 +3659,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
         this.service = service;
         this.router = router;
-        this.username = "";
-        this.password = "";
+        this.error = false;
+        this.username = "JorgeS";
+        this.password = "1234";
         this.decoded = [];
         this.respuesta = [];
         this.roles = [];
@@ -3095,41 +3676,65 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         key: "ngOnInit",
         value: function ngOnInit() {}
       }, {
+        key: "userNameCorrecto",
+        value: function userNameCorrecto(username) {
+          if (username.length >= 4 && username.length <= 15) {
+            return 'Cumple con el rango';
+          }
+
+          return 'No cumple con el rango';
+        }
+      }, {
         key: "logearse",
         value: function logearse() {
-          var _this8 = this;
+          var _this10 = this;
 
           this.datos.Username = this.username;
-          this.datos.Password = this.password; // console.log(this.datos);
+          this.datos.Password = this.password;
 
-          this.service.login(this.datos).subscribe(function (res) {
-            _this8.respuesta = res;
-            console.log(_this8.respuesta);
-            _this8.token = _this8.respuesta.token;
+          if (this.userNameCorrecto(this.username) == "Cumple con el rango") {
+            this.service.login(this.datos).subscribe(function (res) {
+              _this10.respuesta = res;
 
-            if (_this8.respuesta.token != "") {
-              _this8.decoded = Object(jwt_decode__WEBPACK_IMPORTED_MODULE_1__["default"])(_this8.respuesta.token); // console.log(this.decoded);
+              if (_this10.respuesta.token != "") {
+                _this10.error = false;
 
-              _this8.almacenar();
+                _this10.almacenar();
+              }
+            }, function (err) {
+              _this10.error = true;
 
-              _this8.router.navigate(['/principal']);
-            }
-          }, function (err) {
-            alert("USUARIO INCORRECTO");
-          });
+              _this10.almacenar();
+            });
+          }
+        }
+      }, {
+        key: "ObtenerDatos",
+        value: function ObtenerDatos() {
+          if (!this.error) {
+            this.decoded = Object(jwt_decode__WEBPACK_IMPORTED_MODULE_1__["default"])(this.respuesta.token);
+            return true;
+          } else {
+            return false;
+          }
         }
       }, {
         key: "almacenar",
         value: function almacenar() {
-          localStorage.setItem('llave', this.token);
-          localStorage.setItem('CodigoUsuario', this.decoded.user.CodigoUsuario);
-          localStorage.setItem('Username', this.decoded.user.Username);
-          localStorage.setItem('Nombres', this.decoded.user.Nombres);
-          localStorage.setItem('Apellidos', this.decoded.user.Apellidos);
-          localStorage.setItem('Correo', this.decoded.user.Correo);
-          localStorage.setItem('Password', this.decoded.user.Password);
-          localStorage.setItem('Fecha_Nac', this.decoded.user.Fecha_Nacimiento);
-          localStorage.setItem('Rol', this.decoded.user.rol); //  localStorage.setItem('roles', JSON.stringify(this.roles));
+          if (this.ObtenerDatos()) {
+            // localStorage.setItem('llave',this.token);
+            this.router.navigate(['/principal']);
+            localStorage.setItem('CodigoUsuario', this.decoded.user.CodigoUsuario);
+            localStorage.setItem('Username', this.decoded.user.Username);
+            localStorage.setItem('Nombres', this.decoded.user.Nombres);
+            localStorage.setItem('Apellidos', this.decoded.user.Apellidos);
+            localStorage.setItem('Correo', this.decoded.user.Correo);
+            localStorage.setItem('Password', this.decoded.user.Password);
+            localStorage.setItem('Fecha_Nac', this.decoded.user.Fecha_Nacimiento);
+            localStorage.setItem('Rol', this.decoded.user.rol);
+          } else {
+            alert("USUARIO INCORRECTO");
+          }
         }
       }]);
 
@@ -3412,19 +4017,20 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(ModificarUsuarioComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this9 = this;
+          var _this11 = this;
 
           this.username = localStorage.getItem('Username');
+          console.log(this.username);
 
           if (this.username != "") {
             this.user.getUsuario(this.username).subscribe(function (res) {
               var u = res['user'];
-              _this9.nombre = u['Nombres'];
-              _this9.apellidos = u['Apellidos'];
-              _this9.correo = u['Correo'];
-              _this9.password = u['Password'];
-              _this9.genero = u['Genero'];
-              _this9.fechanac = u['Fecha_Nacimiento'].substring(0, 10);
+              _this11.nombre = u['Nombres'];
+              _this11.apellidos = u['Apellidos'];
+              _this11.correo = u['Correo'];
+              _this11.password = u['Password'];
+              _this11.genero = u['Genero'];
+              _this11.fechanac = u['Fecha_Nacimiento'].substring(0, 10);
               console.log(u);
             });
           }
@@ -3433,12 +4039,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           this.habilitacion = localStorage.getItem('Rol');
 
           if (this.habilitacion == "1") {
-            this.habilitacion = "<div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"administrarUsuario\" >Admin Usuarios</a>";
-            this.habilitacion += "<div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"verProveedores\" >Ver Proveedores</a>";
-            this.habilitacion += "<div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"registroProveedor\" >Agregar Proveedor</a>";
-            this.habilitacion += "<div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"administrarProveedor\" >Admin Proveedor</a>";
-            this.habilitacion += "<div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"agregarProducto\" >Agregar Producto</a>";
-            this.habilitacion += "<div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"VerProductosAdmin\" >Admin Producto</a>";
+            this.habilitacion = "<div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"administrarUsuario\" >Admin Usuarios</a> <div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"verProveedores\" >Ver Proveedores</a> <div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"registroProveedor\" >Agregar Proveedor</a> <div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"administrarProveedor\" >Admin Proveedor</a> <div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"agregarProducto\" >Agregar Producto</a>  <div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"VerProductosAdmin\" >Admin Producto</a>";
           } else {
             this.habilitacion = "";
             this.habilitacion += "<div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"VerProductosCliente\" >Productos</a>";
@@ -3447,9 +4048,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "modificar",
         value: function modificar() {
-          this.user.update(this.username, this.nombre, this.apellidos, this.correo, this.password, this.genero, this.fechanac).subscribe(function (res) {
-            console.log("ya modifico");
-            console.log(res);
+          this.user.update(this.username, this.nombre, this.apellidos, this.correo, this.password, this.genero, this.fechanac).subscribe(function (res) {//console.log("ya modifico");
+            //console.log(res);      
           });
         }
       }, {
@@ -3464,14 +4064,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "Logout",
         value: function Logout() {
-          localStorage.removeItem('llave');
-          localStorage.removeItem('CodigoUsuario');
-          localStorage.removeItem('Username');
-          localStorage.removeItem('Nombres');
-          localStorage.removeItem('Apellidos');
-          localStorage.removeItem('Correo');
-          localStorage.removeItem('Password');
-          localStorage.removeItem('Fecha_Nac');
+          localStorage.clear();
           this.router.navigate(['login']);
         }
       }]);
@@ -3895,29 +4488,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           this.habilitacion = localStorage.getItem('Rol');
 
           if (this.habilitacion == "1") {
-            this.habilitacion = "<div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"administrarUsuario\" >Admin Usuarios</a>";
-            this.habilitacion += "<div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"modificarUsuario\" >Modificar mis datos</a>";
-            this.habilitacion += "<div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"verProveedores\" >Ver Proveedores</a>";
-            this.habilitacion += "<div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"registroProveedor\" >Agregar Proveedor</a>";
-            this.habilitacion += "<div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"administrarProveedor\" >Admin Proveedor</a>";
-            this.habilitacion += "<div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"agregarProducto\" >Agregar Producto</a>";
-            this.habilitacion += "<div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"VerProductosAdmin\" >Admin Producto</a>";
+            this.habilitacion = "<div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"administrarUsuario\" >Admin Usuarios</a> <div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"modificarUsuario\" >Modificar mis datos</a> <div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"verProveedores\" >Ver Proveedores</a> <div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"registroProveedor\" >Agregar Proveedor</a> <div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"administrarProveedor\" >Admin Proveedor</a> <div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"agregarProducto\" >Agregar Producto</a> <div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"VerProductosAdmin\" >Admin Producto</a>";
           } else {
-            this.habilitacion = "<div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"modificarUsuario\" >Modificar Datos</a>";
-            this.habilitacion += "<div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"VerProductosCliente\" >Productos</a>";
+            this.habilitacion = "<div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"modificarUsuario\" >Modificar Datos</a> <div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"VerProductosCliente\" >Productos</a>";
+            localStorage.setItem("contadorp", "0");
           }
         }
       }, {
         key: "Logout",
         value: function Logout() {
-          localStorage.removeItem('llave');
-          localStorage.removeItem('CodigoUsuario');
-          localStorage.removeItem('Username');
-          localStorage.removeItem('Nombres');
-          localStorage.removeItem('Apellidos');
-          localStorage.removeItem('Correo');
-          localStorage.removeItem('Password');
-          localStorage.removeItem('Fecha_Nac');
+          localStorage.clear();
           this.router.navigate(['login']);
         }
       }]);
@@ -4111,9 +4691,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*! @angular/common */
     "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js");
 
-    function ProductosClientesComponent_th_26_Template(rf, ctx) {
+    function ProductosClientesComponent_th_33_Template(rf, ctx) {
       if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "th", 19);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "th", 22);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
 
@@ -4129,9 +4709,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }
     }
 
-    function ProductosClientesComponent_tr_28_Template(rf, ctx) {
+    function ProductosClientesComponent_tr_35_Template(rf, ctx) {
       if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "tr", 20);
+        var _r5 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "tr", 23);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "td");
 
@@ -4159,15 +4741,39 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "td");
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](10);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](10, "button", 24);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function ProductosClientesComponent_tr_35_Template_button_click_10_listener() {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r5);
+
+          var vector_r3 = ctx.$implicit;
+
+          var ctx_r4 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+
+          return ctx_r4.AgregarCarrito(vector_r3.id);
+        });
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](11, "Agregar");
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](11, "td");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](12, "button", 6);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](12, "td");
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](13, "Comprar");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](13, "button", 24);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function ProductosClientesComponent_tr_35_Template_button_click_13_listener() {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r5);
+
+          var vector_r3 = ctx.$implicit;
+
+          var ctx_r6 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+
+          return ctx_r6.EliminarDelCarrito(vector_r3.id);
+        });
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](14, "Eliminar");
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -4194,10 +4800,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](vector_r3.precio_venta);
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](vector_r3.precio_compra);
       }
     }
 
@@ -4209,53 +4811,153 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       return ["/principal"];
     };
 
+    var _c2 = function _c2() {
+      return ["/Comprar"];
+    };
+
     var ProductosClientesComponent = /*#__PURE__*/function () {
       function ProductosClientesComponent(router, Producto) {
         _classCallCheck(this, ProductosClientesComponent);
 
         this.router = router;
         this.Producto = Producto;
+        this.Producto_Cantidad = []; //id producto, cantidad
+
+        this.ProductosElegidos = [];
         this.VectorProductos = [];
-        this.headElements = ['Nombre Producto', 'Descripción', 'Cantidad', 'Precio Venta', 'Precio Compra', 'Comprar'];
+        this.headElements = ['Nombre Producto', 'Descripción', 'Cantidad', 'Precio', 'Agregar al Carrito', 'Eliminar del carrito'];
       }
 
       _createClass(ProductosClientesComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this10 = this;
+          var _this12 = this;
 
           this.Nombres = localStorage.getItem('Nombres');
           this.habilitacion = localStorage.getItem('Rol');
+          this.contador = Number(localStorage.getItem("contadorp"));
 
           if (this.habilitacion == "1") {
-            this.habilitacion = "<div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"administrarUsuario\" >Admin Usuarios</a>";
-            this.habilitacion += "<div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"modificarUsuario\" >Modificar mis datos</a>";
-            this.habilitacion += "<div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"verProveedores\" >Ver Proveedores</a>";
-            this.habilitacion += "<div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"registroProveedor\" >Agregar Proveedor</a>";
-            this.habilitacion += "<div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"administrarProveedor\" >Admin Proveedor</a>";
-            this.habilitacion += "<div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"agregarProducto\" >Agregar Producto</a>";
+            this.habilitacion = "<div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"administrarUsuario\" >Admin Usuarios</a> <div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"modificarUsuario\" >Modificar mis datos</a> <div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"verProveedores\" >Ver Proveedores</a> <div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"registroProveedor\" >Agregar Proveedor</a> <div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"administrarProveedor\" >Admin Proveedor</a> <div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"agregarProducto\" >Agregar Producto</a>";
           } else {
-            this.habilitacion = "";
-            this.habilitacion = "<div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"modificarUsuario\" >Modificar Datos</a>";
+            this.habilitacion = "<div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"modificarUsuario\" >Modificar Datos</a> ";
           }
 
           this.Producto.obtenerProductos().subscribe(function (res) {
-            console.log(res);
-            _this10.VectorProductos = res; // console.log(this.Usuarios[0].dpi);
+            _this12.VectorProductos = res;
+            localStorage.setItem('PRODUCTOS', JSON.stringify(_this12.VectorProductos));
           });
+          this.Producto_Cantidad = JSON.parse(localStorage.getItem("VectorProducto_C"));
+
+          if (this.Producto_Cantidad == null) {
+            this.Producto_Cantidad = [];
+          }
         }
       }, {
         key: "Logout",
         value: function Logout() {
-          localStorage.removeItem('llave');
-          localStorage.removeItem('CodigoUsuario');
-          localStorage.removeItem('Username');
-          localStorage.removeItem('Nombres');
-          localStorage.removeItem('Apellidos');
-          localStorage.removeItem('Correo');
-          localStorage.removeItem('Password');
-          localStorage.removeItem('Fecha_Nac');
+          localStorage.clear();
           this.router.navigate(['login']);
+        }
+      }, {
+        key: "AgregarCarrito",
+        value: function AgregarCarrito(id) {
+          this.contador++;
+          var cantidad = 0;
+          localStorage.setItem("contadorp", this.contador + "");
+
+          if (this.VerificarCantidad(id)) {
+            var _iterator8 = _createForOfIteratorHelper(this.Producto_Cantidad),
+                _step8;
+
+            try {
+              for (_iterator8.s(); !(_step8 = _iterator8.n()).done;) {
+                var p = _step8.value;
+
+                if (p[0] == id) {
+                  cantidad = p[1];
+                  cantidad++;
+                  p[1] = cantidad;
+                }
+              }
+            } catch (err) {
+              _iterator8.e(err);
+            } finally {
+              _iterator8.f();
+            }
+          } else {
+            this.ProductosElegidos.push(id);
+            this.Producto_Cantidad.push([id, 1]);
+          } // console.log(this.Producto_Cantidad); 
+
+
+          localStorage.setItem('VectorProducto_C', JSON.stringify(this.Producto_Cantidad));
+        }
+      }, {
+        key: "EliminarDelCarrito",
+        value: function EliminarDelCarrito(id) {
+          var cantidad = 0;
+
+          if (this.VerificarCantidad(id)) {
+            var indice = 0;
+
+            var _iterator9 = _createForOfIteratorHelper(this.Producto_Cantidad),
+                _step9;
+
+            try {
+              for (_iterator9.s(); !(_step9 = _iterator9.n()).done;) {
+                var p = _step9.value;
+
+                if (p[0] == id) {
+                  //Globo con cantidad
+                  this.contador--;
+                  localStorage.setItem("contadorp", this.contador + ""); //modificar la cantidad
+
+                  cantidad = p[1];
+                  cantidad--;
+                  p[1] = cantidad;
+
+                  if (p[1] == 0) {
+                    this.ProductosElegidos.splice(indice, 1);
+                    this.Producto_Cantidad.splice(indice, 1);
+                  }
+                }
+
+                indice++;
+              }
+            } catch (err) {
+              _iterator9.e(err);
+            } finally {
+              _iterator9.f();
+            }
+          } else {
+            alert('El producto no existe en el carrito');
+          } // console.log(this.Producto_Cantidad); 
+
+
+          localStorage.setItem('VectorProducto_C', JSON.stringify(this.Producto_Cantidad));
+        }
+      }, {
+        key: "VerificarCantidad",
+        value: function VerificarCantidad(id) {
+          var _iterator10 = _createForOfIteratorHelper(this.ProductosElegidos),
+              _step10;
+
+          try {
+            for (_iterator10.s(); !(_step10 = _iterator10.n()).done;) {
+              var prod = _step10.value;
+
+              if (prod == id) {
+                return true;
+              }
+            }
+          } catch (err) {
+            _iterator10.e(err);
+          } finally {
+            _iterator10.f();
+          }
+
+          return false;
         }
       }]);
 
@@ -4269,9 +4971,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     ProductosClientesComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
       type: ProductosClientesComponent,
       selectors: [["app-productos-clientes"]],
-      decls: 29,
-      vars: 8,
-      consts: [["SideClass", "navbar navbar-expand-lg #80cbc4 teal lighten-3"], ["href", "#", 1, "navbar-brand", 2, "font-size", "30px", "color", "darkslateblue"], [1, "navbar-nav", "mr-auto"], [1, "nav-item", "active"], ["mdbWavesEffect", "", 1, "nav-link", 3, "routerLink"], ["mdbDropdown", "", 1, "btn-group"], ["type", "button", "mdbBtn", "", "color", "danger", "mdbWavesEffect", "", 1, "waves-light"], ["type", "button", "mdbDropdownToggle", "", "mdbBtn", "", "color", "danger", "mdbWavesEffect", "", 1, "dropdown-toggle", "dropdown-toggle-split", "px-3", "waves-light"], [1, "dropdown-menu"], [1, "dropdown-item", 3, "routerLink"], [3, "innerHTML"], [1, "dropdown-divider"], [1, "dropdown-item", 3, "click"], [1, "text-center"], [1, "text-danger", 2, "font-size", "40px", "font-weight", "bold"], ["mdbTable", ""], [1, "black", "white-text"], ["scope", "col-sm", 4, "ngFor", "ngForOf"], ["mdbTableCol", "", "class", "grey black-text", 4, "ngFor", "ngForOf"], ["scope", "col-sm"], ["mdbTableCol", "", 1, "grey", "black-text"]],
+      decls: 36,
+      vars: 11,
+      consts: [["SideClass", "navbar navbar-expand-lg #80cbc4 teal lighten-3"], ["href", "#", 1, "navbar-brand", 2, "font-size", "30px", "color", "darkslateblue"], [1, "navbar-nav", "mr-auto"], [1, "nav-item", "active"], ["mdbWavesEffect", "", 1, "nav-link", 3, "routerLink"], ["mdbDropdown", "", 1, "btn-group"], ["type", "button", "mdbBtn", "", "color", "danger", "mdbWavesEffect", "", 1, "waves-light"], ["type", "button", "mdbDropdownToggle", "", "mdbBtn", "", "color", "danger", "mdbWavesEffect", "", 1, "dropdown-toggle", "dropdown-toggle-split", "px-3", "waves-light"], [1, "dropdown-menu"], [1, "dropdown-item", 3, "routerLink"], [3, "innerHTML"], [1, "dropdown-divider"], [1, "dropdown-item", 3, "click"], [1, "contenedor"], ["src", "https://icons.iconarchive.com/icons/graphicloads/100-flat/64/cart-icon.png"], [1, "texto-encima"], [1, "text-center"], [1, "text-danger", 2, "font-size", "40px", "font-weight", "bold"], ["mdbTable", ""], [1, "black", "white-text"], ["scope", "col-sm", 4, "ngFor", "ngForOf"], ["mdbTableCol", "", "class", "grey black-text", 4, "ngFor", "ngForOf"], ["scope", "col-sm"], ["mdbTableCol", "", 1, "grey", "black-text"], ["type", "button", "mdbBtn", "", "color", "danger", "mdbWavesEffect", "", 1, "waves-light", 3, "click"]],
       template: function ProductosClientesComponent_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mdb-navbar", 0);
@@ -4322,13 +5024,21 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](17, "div", 11);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](18, "a", 12);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](18, "a", 9);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function ProductosClientesComponent_Template_a_click_18_listener() {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](19, "Comprar");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](20, "div", 11);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](21, "a", 12);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function ProductosClientesComponent_Template_a_click_21_listener() {
             return ctx.Logout();
           });
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](19, "Logout");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](22, "Logout");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -4338,33 +5048,45 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](23, "div", 13);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](24, "img", 14);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](20, "section", 13);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](25, "div", 15);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](21, "h1", 14);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](22, " PRODUCTOS ");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](23, "table", 15);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](24, "thead", 16);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](25, "tr");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](26, ProductosClientesComponent_th_26_Template, 2, 1, "th", 17);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](26);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](27, "tbody");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](28, ProductosClientesComponent_tr_28_Template, 14, 5, "tr", 18);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](27, "section", 16);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](28, "h1", 17);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](29, " PRODUCTOS ");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](30, "table", 18);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](31, "thead", 19);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](32, "tr");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](33, ProductosClientesComponent_th_33_Template, 2, 1, "th", 20);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](34, "tbody");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](35, ProductosClientesComponent_tr_35_Template, 15, 4, "tr", 21);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -4376,7 +5098,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         if (rf & 2) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](7);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](6, _c0));
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](8, _c0));
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
 
@@ -4384,13 +5106,21 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](7, _c1));
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](9, _c1));
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("innerHTML", ctx.habilitacion, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeHtml"]);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](10);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](10, _c2));
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](8);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.contador);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](7);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx.headElements);
 
@@ -4400,7 +5130,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         }
       },
       directives: [angular_bootstrap_md__WEBPACK_IMPORTED_MODULE_3__["NavbarComponent"], angular_bootstrap_md__WEBPACK_IMPORTED_MODULE_3__["LogoComponent"], angular_bootstrap_md__WEBPACK_IMPORTED_MODULE_3__["LinksComponent"], _angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterLinkWithHref"], angular_bootstrap_md__WEBPACK_IMPORTED_MODULE_3__["WavesDirective"], angular_bootstrap_md__WEBPACK_IMPORTED_MODULE_3__["BsDropdownDirective"], angular_bootstrap_md__WEBPACK_IMPORTED_MODULE_3__["MdbBtnDirective"], angular_bootstrap_md__WEBPACK_IMPORTED_MODULE_3__["BsDropdownToggleDirective"], angular_bootstrap_md__WEBPACK_IMPORTED_MODULE_3__["MdbTableDirective"], _angular_common__WEBPACK_IMPORTED_MODULE_4__["NgForOf"]],
-      styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvcHJvZHVjdG9zLWNsaWVudGVzL3Byb2R1Y3Rvcy1jbGllbnRlcy5jb21wb25lbnQuc2NzcyJ9 */"]
+      styles: [".contenedor[_ngcontent-%COMP%] {\n  position: relative;\n  display: inline-block;\n  text-align: center;\n}\n\n.texto-encima[_ngcontent-%COMP%] {\n  position: absolute;\n  color: #052e49;\n  top: 10px;\n  left: 48px;\n}\n\n.centrado[_ngcontent-%COMP%] {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9wcm9kdWN0b3MtY2xpZW50ZXMvRDpcXERvY3VtZW50b3NcXEdpdEh1YlxcQVlEMUc3MVNcXEZyb250ZW5kL3NyY1xcYXBwXFxjb21wb25lbnRzXFxwcm9kdWN0b3MtY2xpZW50ZXNcXHByb2R1Y3Rvcy1jbGllbnRlcy5jb21wb25lbnQuc2NzcyIsInNyYy9hcHAvY29tcG9uZW50cy9wcm9kdWN0b3MtY2xpZW50ZXMvcHJvZHVjdG9zLWNsaWVudGVzLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksa0JBQUE7RUFDQSxxQkFBQTtFQUNBLGtCQUFBO0FDQ0o7O0FEQ0E7RUFDSSxrQkFBQTtFQUNBLGNBQUE7RUFDQSxTQUFBO0VBQ0EsVUFBQTtBQ0VKOztBREFBO0VBQ0ksa0JBQUE7RUFDQSxRQUFBO0VBQ0EsU0FBQTtFQUNBLGdDQUFBO0FDR0oiLCJmaWxlIjoic3JjL2FwcC9jb21wb25lbnRzL3Byb2R1Y3Rvcy1jbGllbnRlcy9wcm9kdWN0b3MtY2xpZW50ZXMuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuY29udGVuZWRvcntcclxuICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcclxuICAgIGRpc3BsYXk6IGlubGluZS1ibG9jaztcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxufVxyXG4udGV4dG8tZW5jaW1he1xyXG4gICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgY29sb3I6IHJnYig1LCA0NiwgNzMpO1xyXG4gICAgdG9wOiAxMHB4O1xyXG4gICAgbGVmdDogNDhweDtcclxufVxyXG4uY2VudHJhZG97XHJcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgICB0b3A6IDUwJTtcclxuICAgIGxlZnQ6IDUwJTtcclxuICAgIHRyYW5zZm9ybTogdHJhbnNsYXRlKC01MCUsIC01MCUpO1xyXG59IiwiLmNvbnRlbmVkb3Ige1xuICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gIGRpc3BsYXk6IGlubGluZS1ibG9jaztcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xufVxuXG4udGV4dG8tZW5jaW1hIHtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICBjb2xvcjogIzA1MmU0OTtcbiAgdG9wOiAxMHB4O1xuICBsZWZ0OiA0OHB4O1xufVxuXG4uY2VudHJhZG8ge1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIHRvcDogNTAlO1xuICBsZWZ0OiA1MCU7XG4gIHRyYW5zZm9ybTogdHJhbnNsYXRlKC01MCUsIC01MCUpO1xufSJdfQ== */"]
     });
     /*@__PURE__*/
 
@@ -4493,35 +5223,56 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         key: "ngOnInit",
         value: function ngOnInit() {}
       }, {
+        key: "userNameCorrecto",
+        value: function userNameCorrecto(username) {
+          if (username.length >= 4 && username.length <= 15) {
+            return 'Cumple con el rango';
+          }
+
+          return 'No cumple con el rango';
+        }
+      }, {
+        key: "correoCorrecto",
+        value: function correoCorrecto(correo) {
+          var exp = /^[_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/;
+
+          if (exp.test(correo)) {
+            return true;
+          }
+
+          return false;
+        }
+      }, {
         key: "registrarse",
         value: function registrarse() {
-          var _this11 = this;
+          var _this13 = this;
 
-          // console.log(this.fechanac);
-          this.user.singup(this.username, this.nombre, this.apellidos, this.correo, this.password, this.genero, this.fechanac).subscribe(function (res) {
-            console.log("ya insertó");
-            console.log(res);
-            alert("USUARIO CREADO CON ÉXITO");
-            _this11.nombre = "";
-            _this11.password = "";
-            _this11.apellidos = "";
-            _this11.correo = "";
-            _this11.genero = "";
-            _this11.fechanac = "";
-            _this11.username = "";
+          if (this.correoCorrecto(this.correo) && this.userNameCorrecto(this.username) == "Cumple con el rango") {
+            this.user.singup(this.username, this.nombre, this.apellidos, this.correo, this.password, this.genero, this.fechanac).subscribe(function (res) {
+              alert("USUARIO CREADO CON ÉXITO");
+              _this13.nombre = "";
+              _this13.password = "";
+              _this13.apellidos = "";
+              _this13.correo = "";
+              _this13.genero = "";
+              _this13.fechanac = "";
+              _this13.username = "";
 
-            _this11.router.navigate(['/']);
-          }, function (err) {
-            alert("NO SE PUDO CREAR EL USUARIO");
-          });
+              _this13.router.navigate(['/']);
+            }, function (err) {
+              alert("NO SE PUDO CREAR EL USUARIO");
+            });
+          }
         }
       }, {
         key: "Genero",
         value: function Genero(tipo) {
           if (tipo == "m") {
             this.genero = 'M';
+            return this.genero;
           } else if (tipo == "f") {
             this.genero = 'F';
+            return this.genero;
           }
         }
       }]);
@@ -5020,7 +5771,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           var ctx_r4 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
-          return ctx_r4.Modifica(vector_r3.id);
+          return ctx_r4.AModificar(vector_r3.id);
         });
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](13, "Detalles");
@@ -5078,65 +5829,62 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(VerProductoComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this12 = this;
+          var _this14 = this;
 
           this.Nombres = localStorage.getItem('Nombres');
           this.habilitacion = localStorage.getItem('Rol');
 
           if (this.habilitacion == "1") {
-            this.habilitacion = "<div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"administrarUsuario\" >Admin Usuarios</a>";
-            this.habilitacion += "<div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"modificarUsuario\" >Modificar mis datos</a>";
-            this.habilitacion += "<div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"verProveedores\" >Ver Proveedores</a>";
-            this.habilitacion += "<div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"registroProveedor\" >Agregar Proveedor</a>";
-            this.habilitacion += "<div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"administrarProveedor\" >Admin Proveedor</a>";
-            this.habilitacion += "<div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"agregarProducto\" >Agregar Producto</a>";
+            this.habilitacion = "<div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"administrarUsuario\" >Admin Usuarios</a>  <div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"modificarUsuario\" >Modificar mis datos</a> <div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"verProveedores\" >Ver Proveedores</a> <div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"registroProveedor\" >Agregar Proveedor</a> <div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"administrarProveedor\" >Admin Proveedor</a> <div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"agregarProducto\" >Agregar Producto</a>";
           } else {
             this.habilitacion = "";
           }
 
           this.Producto.obtenerProductos().subscribe(function (res) {
-            console.log(res);
-            _this12.VectorProductos = res; // console.log(this.Usuarios[0].dpi);
+            _this14.VectorProductos = res; // console.log(this.Usuarios[0].dpi);
           });
         }
       }, {
         key: "Modifica",
         value: function Modifica(id) {
-          var _iterator3 = _createForOfIteratorHelper(this.VectorProductos),
-              _step3;
+          var _iterator11 = _createForOfIteratorHelper(this.VectorProductos),
+              _step11;
 
           try {
-            for (_iterator3.s(); !(_step3 = _iterator3.n()).done;) {
-              var Vector = _step3.value;
+            for (_iterator11.s(); !(_step11 = _iterator11.n()).done;) {
+              var Vector = _step11.value;
 
               if (Vector.id == id) {
-                localStorage.setItem('id_producto', "" + Vector.id);
-                localStorage.setItem('nombre_prod', Vector.nombre_prod);
-                localStorage.setItem('descripcion', Vector.descripcion);
-                localStorage.setItem('cantidad', "" + Vector.cantidad);
-                localStorage.setItem('precio_compra', Vector.precio_compra + "");
-                localStorage.setItem('precio_venta', Vector.precio_venta + "");
-                localStorage.setItem('categoria', Vector.categoria + "");
-                this.router.navigate(['/administrarProducto']); //acá va la página de modificación 
+                this.idc = Vector.id;
+                return true;
               }
             }
           } catch (err) {
-            _iterator3.e(err);
+            _iterator11.e(err);
           } finally {
-            _iterator3.f();
+            _iterator11.f();
+          }
+
+          return false;
+        }
+      }, {
+        key: "AModificar",
+        value: function AModificar(id) {
+          if (this.Modifica(id)) {
+            localStorage.setItem('id_producto', "" + this.VectorProductos[this.idc].id);
+            localStorage.setItem('nombre_prod', this.VectorProductos[this.idc].nombre_prod);
+            localStorage.setItem('descripcion', this.VectorProductos[this.idc].descripcion);
+            localStorage.setItem('cantidad', "" + this.VectorProductos[this.idc].cantidad);
+            localStorage.setItem('precio_compra', this.VectorProductos[this.idc].precio_compra + "");
+            localStorage.setItem('precio_venta', this.VectorProductos[this.idc].precio_venta + "");
+            localStorage.setItem('categoria', this.VectorProductos[this.idc].categoria + "");
+            this.router.navigate(['/administrarProducto']); //acá va la página de modificación 
           }
         }
       }, {
         key: "Logout",
         value: function Logout() {
-          localStorage.removeItem('llave');
-          localStorage.removeItem('CodigoUsuario');
-          localStorage.removeItem('Username');
-          localStorage.removeItem('Nombres');
-          localStorage.removeItem('Apellidos');
-          localStorage.removeItem('Correo');
-          localStorage.removeItem('Password');
-          localStorage.removeItem('Fecha_Nac');
+          localStorage.clear();
           this.router.navigate(['login']);
         }
       }]);
@@ -5459,36 +6207,30 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(VerProveedoresComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this13 = this;
+          var _this15 = this;
 
           this.Nombres = localStorage.getItem('Nombres');
           this.habilitacion = localStorage.getItem('Rol');
 
           if (this.habilitacion == "1") {
-            this.habilitacion = "<div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"administrarUsuario\" >Admin Usuarios</a>";
-            this.habilitacion += "<div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"modificarUsuario\" >Modificar mis datos</a>";
-            this.habilitacion += "<div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"registroProveedor\" >Agregar Proveedor</a>";
-            this.habilitacion += "<div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"administrarProveedor\" >Admin Proveedor</a>";
-            this.habilitacion += "<div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"agregarProducto\" >Agregar Producto</a>";
-            this.habilitacion += "<div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"VerProductosAdmin\" >Admin Producto</a>";
+            this.habilitacion = "<div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"administrarUsuario\" >Admin Usuarios</a> <div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"modificarUsuario\" >Modificar mis datos</a> <div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"registroProveedor\" >Agregar Proveedor</a>  <div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"administrarProveedor\" >Admin Proveedor</a> <div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"agregarProducto\" >Agregar Producto</a> <div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"VerProductosAdmin\" >Admin Producto</a>";
           } else {
             this.habilitacion = "";
           }
 
           this.Proveedores.obtenerProveedores().subscribe(function (res) {
-            console.log(res);
-            _this13.VectorProveedores = res; // console.log(this.Usuarios[0].dpi);
+            _this15.VectorProveedores = res; // console.log(this.Usuarios[0].dpi);
           });
         }
       }, {
         key: "Modifica",
         value: function Modifica(id) {
-          var _iterator4 = _createForOfIteratorHelper(this.VectorProveedores),
-              _step4;
+          var _iterator12 = _createForOfIteratorHelper(this.VectorProveedores),
+              _step12;
 
           try {
-            for (_iterator4.s(); !(_step4 = _iterator4.n()).done;) {
-              var Vector = _step4.value;
+            for (_iterator12.s(); !(_step12 = _iterator12.n()).done;) {
+              var Vector = _step12.value;
 
               if (Vector.id == id) {
                 localStorage.setItem('id_proveedor', "" + Vector.id);
@@ -5500,22 +6242,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               }
             }
           } catch (err) {
-            _iterator4.e(err);
+            _iterator12.e(err);
           } finally {
-            _iterator4.f();
+            _iterator12.f();
           }
         }
       }, {
         key: "Logout",
         value: function Logout() {
-          localStorage.removeItem('llave');
-          localStorage.removeItem('CodigoUsuario');
-          localStorage.removeItem('Username');
-          localStorage.removeItem('Nombres');
-          localStorage.removeItem('Apellidos');
-          localStorage.removeItem('Correo');
-          localStorage.removeItem('Password');
-          localStorage.removeItem('Fecha_Nac');
+          localStorage.clear();
           this.router.navigate(['login']);
         }
       }]);
@@ -5762,12 +6497,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           this.habilitacion = localStorage.getItem('Rol');
 
           if (this.habilitacion == "1") {
-            this.habilitacion = "<div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"administrarUsuario\" >Admin Usuarios</a>";
-            this.habilitacion += "<div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"modificarUsuario\" >Modificar mis datos</a>";
-            this.habilitacion += "<div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"verProveedores\" >Ver Proveedores</a>";
-            this.habilitacion += "<div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"administrarProveedor\" >Admin Proveedor</a>";
-            this.habilitacion += "<div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"agregarProducto\" >Agregar Producto</a>";
-            this.habilitacion += "<div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"VerProductosAdmin\" >Admin Producto</a>";
+            this.habilitacion = "<div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"administrarUsuario\" >Admin Usuarios</a>  <div class=\"dropdown-divider\"></div>   </div><a class=\"dropdown-item\" href=\"modificarUsuario\" >Modificar mis datos</a>  <div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"verProveedores\" >Ver Proveedores</a>  <div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"administrarProveedor\" >Admin Proveedor</a>  <div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"agregarProducto\" >Agregar Producto</a>   <a class=\"dropdown-item\"  href=\"VerProductosAdmin\" >Admin Producto</a> "; //  this.habilitacion+="<div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"VerProductosAdmin\" >Admin Producto</a>";
           } else {
             this.habilitacion = "";
           }
@@ -5775,17 +6505,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "registrarse",
         value: function registrarse() {
-          var _this14 = this;
-
           // console.log(this.fechanac);
           this.proveedor.RegistroProveedor(this.nombre, this.direccion, this.telefono, this.contacto).subscribe(function (res) {
-            console.log("ya insertó");
-            console.log(res);
             alert("PROVEEDOR REGISTRADO CON ÉXITO");
-            _this14.nombre = "";
-            _this14.direccion = "";
-            _this14.telefono = "";
-            _this14.contacto = "";
           }, function (err) {
             alert("NO SE PUDO REGISTRAR EL PROVEEDOR");
           });
@@ -5793,14 +6515,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "Logout",
         value: function Logout() {
-          localStorage.removeItem('llave');
-          localStorage.removeItem('CodigoUsuario');
-          localStorage.removeItem('Username');
-          localStorage.removeItem('Nombres');
-          localStorage.removeItem('Apellidos');
-          localStorage.removeItem('Correo');
-          localStorage.removeItem('Password');
-          localStorage.removeItem('Fecha_Nac');
+          localStorage.clear();
           this.router.navigate(['login']);
         }
       }]);
@@ -6132,9 +6847,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     var rxjs_operators__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
     /*! rxjs/operators */
-    "./node_modules/rxjs/_esm2015/operators/index.js");
+    "./node_modules/rxjs/_esm2015/operators/index.js"); //const baseUrl = 'http://192.168.0.3:3000';
 
-    var baseUrl = 'http://192.168.0.3:3000';
+
+    var baseUrl = 'http://localhost:3000';
 
     var ProductoService = /*#__PURE__*/function () {
       function ProductoService(http) {
@@ -6149,7 +6865,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(ProductoService, [{
         key: "registro",
         value: function registro(producto) {
-          console.log(producto);
           var url = baseUrl + "/products/create";
           return this.http.post(url, producto, {
             headers: this.headers
@@ -6168,7 +6883,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         value: function update(id, nombre, descripcion, cantidad, compra, venta, categoria) {
           var url = baseUrl + "/products/updateProd"; //comienza el put
 
-          console.log("actualizar " + id);
           return this.http.put(url, {
             "id": id,
             "nombre_prod": nombre,
@@ -6186,14 +6900,81 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "delete",
         value: function _delete(id) {
-          console.log("Service delete " + id);
           return this.http["delete"]("".concat(baseUrl, "/products/deleteProd/").concat(id));
         }
       }, {
         key: "obtenerProductos",
         value: function obtenerProductos() {
-          var url = baseUrl + "/products";
+          var url = baseUrl + "/products/";
           return this.http.get(url);
+        } //***************************** VENTAS *********************************************** */
+
+      }, {
+        key: "CrearVenta",
+        value: function CrearVenta(idU) {
+          var url = baseUrl + "/venta/crearVenta"; //comienza el put
+
+          return this.http.post(url, {
+            "CodigoUsuario": idU
+          }, {
+            headers: this.headers
+          }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (data) {
+            return data;
+          }));
+        }
+      }, {
+        key: "DetalleVenta",
+        value: function DetalleVenta(idventa, idp, cantidad) {
+          var url = baseUrl + "/venta/llenarDetalle"; //comienza el put
+
+          return this.http.post(url, {
+            "id_venta": idventa,
+            "id_producto": idp,
+            "cantidad": cantidad
+          }, {
+            headers: this.headers
+          }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (data) {
+            return data;
+          }));
+        }
+      }, {
+        key: "ObtenerUltimaVenta",
+        value: function ObtenerUltimaVenta() {
+          var url = baseUrl + "/venta/last";
+          return this.http.get(url);
+        }
+      }, {
+        key: "ObtenerTotalVenta",
+        value: function ObtenerTotalVenta(idU, idventa) {
+          var url = baseUrl + "/venta/valorTotal";
+          return this.http.post(url, {
+            "CodigoUsuario": idU,
+            "id_venta": idventa
+          }, {
+            headers: this.headers
+          }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (data) {
+            return data;
+          }));
+        }
+        /************************ DIRECCIONES *************************** */
+
+      }, {
+        key: "CrearDireccion",
+        value: function CrearDireccion(idU, direccion) {
+          var url = baseUrl + "/direccion/createDir";
+          return this.http.post(url, {
+            "CodigoUsuario": idU,
+            "direccion": direccion
+          }, {
+            headers: this.headers
+          }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (data) {
+            return data;
+          }));
+        }
+      }, {
+        key: "getDirecciones",
+        value: function getDirecciones(id) {
+          return this.http.get("".concat(baseUrl, "/direccion/?id=").concat(id));
         }
       }]);
 
@@ -6263,17 +7044,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     var rxjs_operators__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
     /*! rxjs/operators */
-    "./node_modules/rxjs/_esm2015/operators/index.js");
+    "./node_modules/rxjs/_esm2015/operators/index.js"); //const baseUrl = 'http://192.168.0.3:3000';
 
-    var baseUrl = 'http://192.168.0.3:3000';
+
+    var baseUrl = 'http://localhost:3000';
 
     var ProveedorService = /*#__PURE__*/function () {
-      //ip2:string="192.168.1.8";
       function ProveedorService(http) {
         _classCallCheck(this, ProveedorService);
 
-        this.http = http;
-        this.ip = "192.168.0.3"; //para comunicarnos con json
+        this.http = http; //para comunicarnos con json
 
         this.headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpHeaders"]({
           "Content-Type": "application/json"
@@ -6284,7 +7064,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         key: "RegistroProveedor",
         value: function RegistroProveedor(nombre, direccion, telefono, nombre_contacto) {
           //console.log(username,password);
-          var url = "http://" + this.ip + ":3000/prov/create"; //comienza el post
+          var url = baseUrl + "/prov/create"; //comienza el post
 
           return this.http.post(url, {
             "nombre": nombre,
@@ -6300,9 +7080,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "update",
         value: function update(id, nombre, direccion, telefono, nombre_contacto) {
-          var url = "http://" + this.ip + ":3000/prov/updateProv"; //comienza el put
+          var url = baseUrl + "/prov/updateProv"; //comienza el put
 
-          console.log("actualizar " + id);
           return this.http.put(url, {
             "id": id,
             "nombre": nombre,
@@ -6318,8 +7097,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "delete",
         value: function _delete(id) {
-          console.log("Service delete " + id);
-          return this.http["delete"]("http://".concat(this.ip, ":3000/prov/deleteProv/").concat(id));
+          return this.http["delete"]("".concat(baseUrl, "/prov/deleteProv/").concat(id));
         }
       }, {
         key: "obtenerProveedores",
@@ -6395,17 +7173,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     var rxjs_operators__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
     /*! rxjs/operators */
-    "./node_modules/rxjs/_esm2015/operators/index.js");
+    "./node_modules/rxjs/_esm2015/operators/index.js"); //const baseUrl = 'http://192.168.0.3:3000';
 
-    var baseUrl = 'http://192.168.0.3:3000';
+
+    var baseUrl = 'http://localhost:3000';
 
     var UsuarioService = /*#__PURE__*/function () {
-      //ip2:string="192.168.1.8";
       function UsuarioService(http) {
         _classCallCheck(this, UsuarioService);
 
-        this.http = http;
-        this.ip = "192.168.0.3"; //para comunicarnos con json
+        this.http = http; //para comunicarnos con json
 
         this.headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpHeaders"]({
           "Content-Type": "application/json"
@@ -6417,7 +7194,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         value: function singup(username, nombre, apellidos, correo, password, genero, fechanac) {
           //console.log(username,password);
           //const url = "http://"+this.puerto+":3000/app/registro";
-          var url = "http://" + this.ip + ":3000/user/create"; //comienza el post
+          var url = baseUrl + "/user/create"; //comienza el post
 
           return this.http.post(url, {
             "Username": username,
@@ -6437,14 +7214,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "update",
         value: function update(username, nombre, apellidos, correo, password, genero, fechanac) {
-          console.log("modificando " + username);
-          console.log("nombre " + nombre);
-          console.log("apellidos " + apellidos);
-          console.log("correo " + correo);
-          console.log("password " + password);
-          console.log("genero " + genero);
-          console.log("fecha de nacimiento " + fechanac);
-          var url = "http://" + this.ip + ":3000/user/update"; //comienza el put
+          var url = baseUrl + "/user/update"; //comienza el put
 
           return this.http.put(url, {
             "Username": username,
@@ -6463,14 +7233,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "delete",
         value: function _delete(Username) {
-          console.log("Service delete " + Username);
-          return this.http["delete"]("http://".concat(this.ip, ":3000/user/delete/").concat(Username)); //return this.http.delete(`http://${this.ip}/user/delete${username}`);
+          return this.http["delete"]("".concat(baseUrl, "/user/delete/").concat(Username)); //return this.http.delete(`http://${this.ip}/user/delete${username}`);
         }
       }, {
         key: "getUsuario",
         value: function getUsuario(username) {
-          console.log("Entro a getUsuario");
-          var url = "http://" + this.ip + ":3000/user/getUsuario"; //comienza el post
+          var url = baseUrl + "/user/getUsuario"; //comienza el post
 
           return this.http.post(url, {
             "Username": username
