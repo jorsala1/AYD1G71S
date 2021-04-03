@@ -22,6 +22,8 @@ export class ComprarComponent implements OnInit {
   habilitacion: string;
   contador:number;
   Producto_Cantidad : number[][] =[]; //id producto, cantidad
+  direccion: string ;
+  listadir = [];
   
   ngOnInit(): void {
     this.Nombres=localStorage.getItem('Nombres');
@@ -39,6 +41,7 @@ export class ComprarComponent implements OnInit {
    // console.log("AAAAA");
     //console.log(this.Producto_Cantidad);
    this.ProductosComprar();
+   this.CargarDirecciones();
   }
   ProductosComprar(){
     for (const productoc of this.Producto_Cantidad) {     
@@ -56,6 +59,7 @@ export class ComprarComponent implements OnInit {
   }
 
   Comprar(){
+    this.RegistrarDireccion(Number(localStorage.getItem("CodigoUsuario")), this.direccion);
     //1. Verifcar que exista la cantidad del producto deseado 
     if(this.VectorPComprar.length==this.VerificarTodos()){ 
       //significa que existen todas las cantidades que se necesitan 
@@ -76,6 +80,26 @@ export class ComprarComponent implements OnInit {
     }else {
       alert("No hay suficiente producto para su compra.");
     }
+  }
+
+  RegistrarDireccion(id:number, direccion:string){
+    if(this.direccion != ""){
+      this.Producto.CrearDireccion(id, direccion)
+      .subscribe((res)=>{  
+        alert("DIRECCIÓN REGISTRADA CON ÉXITO");
+      },
+      err => {alert("NO SE PUDO REGISTRAR LA DIRECCION")}  
+      )
+    } else {
+      alert("Ingrese una dirección de entrega");
+    }
+  }
+
+  CargarDirecciones(){
+    this.Producto.getDirecciones(localStorage.getItem("CodigoUsuario")).subscribe((res:any[])=>{
+      this.listadir=res;
+      console.log(this.listadir);
+    })
   }
 
   FinCompra(idv:number){

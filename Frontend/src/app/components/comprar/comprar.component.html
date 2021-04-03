@@ -43,6 +43,19 @@
   </mdb-navbar>
   <section class="text-center">
   <h1 class="text-danger" style="font-size: 30px; font-weight:bold"> Confirme su compra  </h1>
+  
+ <!-- <input type="checkbox" id="direccion" name="direccion" value="direccion">
+  <label for="direccion">Dirección nueva</label> -->
+  <input  mdbInput  name="txtDireccion" [(ngModel)]="direccion" type="text" id="txtdireccion" placeholder="Ingrese dirección">
+  <br>
+  <div class="md-form form-group">
+  <div class="dropdown-menu">  
+    <a class="dropdown-item" *ngFor="let dire of listadir" > {{dire.direccion}} </a>
+    <div class="dropdown-divider"></div>
+  </div>
+</div>
+  <br>
+
   <table mdbTable >
     <thead class="black white-text">
       <tr>

@@ -59,7 +59,7 @@
             <td>{{vector.cantidad}}</td>
             <td>{{vector.precio_venta}}</td>
             <td><button  (click)="AgregarCarrito(vector.id)" type="button" mdbBtn color="danger" class="waves-light" mdbWavesEffect>Agregar</button></td>
-            <td><button  type="button" mdbBtn color="danger" class="waves-light" mdbWavesEffect>Eliminar</button></td>
+            <td><button  (click)="EliminarDelCarrito(vector.id)" type="button" mdbBtn color="danger" class="waves-light" mdbWavesEffect>Eliminar</button></td>
           </tr>
         </tbody>
       </table>

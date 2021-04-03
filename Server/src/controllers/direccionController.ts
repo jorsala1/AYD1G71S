@@ -9,6 +9,15 @@ class DireccionController{
         res.status(200).json(respuesta);
     }
 
+    public async getDirecciones (req:Request, res:Response){
+        const { id } = req.params;
+        const games = await pool.query('SELECT * FROM direccion WHERE CodigoUsuario = ?', id);
+        if ( games.length > 0 ){
+            return res.json(games[0]);
+        }
+        res.status(404).json({"text": "The user doesn't exists"});
+    }
+
     //agregar direcciones a usuario
     public async createDirection(req:Request, res:Response){
         await pool.query('insert into direccion set ?', [req.body]);
