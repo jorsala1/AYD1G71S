@@ -48,6 +48,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_administrar_producto_administrar_producto_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./components/administrar-producto/administrar-producto.component */ "./src/app/components/administrar-producto/administrar-producto.component.ts");
 /* harmony import */ var _components_ver_producto_ver_producto_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./components/ver-producto/ver-producto.component */ "./src/app/components/ver-producto/ver-producto.component.ts");
 /* harmony import */ var _components_productos_clientes_productos_clientes_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./components/productos-clientes/productos-clientes.component */ "./src/app/components/productos-clientes/productos-clientes.component.ts");
+/* harmony import */ var _components_comprar_comprar_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./components/comprar/comprar.component */ "./src/app/components/comprar/comprar.component.ts");
+
 
 
 
@@ -117,6 +119,10 @@ const routes = [
     {
         path: 'VerProductosCliente',
         component: _components_productos_clientes_productos_clientes_component__WEBPACK_IMPORTED_MODULE_14__["ProductosClientesComponent"],
+    },
+    {
+        path: 'Comprar',
+        component: _components_comprar_comprar_component__WEBPACK_IMPORTED_MODULE_15__["ComprarComponent"],
     }
 ];
 class AppRoutingModule {
@@ -203,6 +209,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_administrar_producto_administrar_producto_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./components/administrar-producto/administrar-producto.component */ "./src/app/components/administrar-producto/administrar-producto.component.ts");
 /* harmony import */ var _components_ver_producto_ver_producto_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./components/ver-producto/ver-producto.component */ "./src/app/components/ver-producto/ver-producto.component.ts");
 /* harmony import */ var _components_productos_clientes_productos_clientes_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./components/productos-clientes/productos-clientes.component */ "./src/app/components/productos-clientes/productos-clientes.component.ts");
+/* harmony import */ var _components_comprar_comprar_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./components/comprar/comprar.component */ "./src/app/components/comprar/comprar.component.ts");
+
 
 
 
@@ -250,7 +258,8 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector
         _components_agregar_producto_agregar_producto_component__WEBPACK_IMPORTED_MODULE_17__["AgregarProductoComponent"],
         _components_administrar_producto_administrar_producto_component__WEBPACK_IMPORTED_MODULE_18__["AdministrarProductoComponent"],
         _components_ver_producto_ver_producto_component__WEBPACK_IMPORTED_MODULE_19__["VerProductoComponent"],
-        _components_productos_clientes_productos_clientes_component__WEBPACK_IMPORTED_MODULE_20__["ProductosClientesComponent"]], imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
+        _components_productos_clientes_productos_clientes_component__WEBPACK_IMPORTED_MODULE_20__["ProductosClientesComponent"],
+        _components_comprar_comprar_component__WEBPACK_IMPORTED_MODULE_21__["ComprarComponent"]], imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
         _app_routing_module__WEBPACK_IMPORTED_MODULE_2__["AppRoutingModule"], angular_bootstrap_md__WEBPACK_IMPORTED_MODULE_4__["MDBRootModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_8__["FormsModule"],
         _angular_common_http__WEBPACK_IMPORTED_MODULE_10__["HttpClientModule"],
         _angular_router__WEBPACK_IMPORTED_MODULE_11__["RouterModule"]] }); })();
@@ -271,7 +280,8 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector
                     _components_agregar_producto_agregar_producto_component__WEBPACK_IMPORTED_MODULE_17__["AgregarProductoComponent"],
                     _components_administrar_producto_administrar_producto_component__WEBPACK_IMPORTED_MODULE_18__["AdministrarProductoComponent"],
                     _components_ver_producto_ver_producto_component__WEBPACK_IMPORTED_MODULE_19__["VerProductoComponent"],
-                    _components_productos_clientes_productos_clientes_component__WEBPACK_IMPORTED_MODULE_20__["ProductosClientesComponent"]
+                    _components_productos_clientes_productos_clientes_component__WEBPACK_IMPORTED_MODULE_20__["ProductosClientesComponent"],
+                    _components_comprar_comprar_component__WEBPACK_IMPORTED_MODULE_21__["ComprarComponent"]
                 ],
                 imports: [
                     _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
@@ -348,11 +358,7 @@ class AdministrarProductoComponent {
         this.Nombres = localStorage.getItem('Nombres');
         this.habilitacion = localStorage.getItem('Rol');
         if (this.habilitacion == "1") {
-            this.habilitacion = "<div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"administrarUsuario\" >Admin Usuarios</a>";
-            this.habilitacion += "<div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"modificarUsuario\" >Modificar mis datos</a>";
-            this.habilitacion += "<div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"verProveedores\" >Ver Proveedores</a>";
-            this.habilitacion += "<div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"registroProveedor\" >Agregar Proveedor</a>";
-            this.habilitacion += "<div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"administrarProveedor\" >Admin Proveedor</a>";
+            this.habilitacion = "<div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"administrarUsuario\" >Admin Usuarios</a> <div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"modificarUsuario\" >Modificar mis datos</a>  <div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"verProveedores\" >Ver Proveedores</a> <div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"registroProveedor\" >Agregar Proveedor</a> <div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"administrarProveedor\" >Admin Proveedor</a>";
         }
         else {
             this.habilitacion = "";
@@ -395,14 +401,7 @@ class AdministrarProductoComponent {
         }, err => console.error(err));
     }
     Logout() {
-        localStorage.removeItem('llave');
-        localStorage.removeItem('CodigoUsuario');
-        localStorage.removeItem('Username');
-        localStorage.removeItem('Nombres');
-        localStorage.removeItem('Apellidos');
-        localStorage.removeItem('Correo');
-        localStorage.removeItem('Password');
-        localStorage.removeItem('Fecha_Nac');
+        localStorage.clear();
         this.router.navigate(['login']);
     }
 }
@@ -613,12 +612,7 @@ class AdministrarProveedorComponent {
         this.Nombres = localStorage.getItem('Nombres');
         this.habilitacion = localStorage.getItem('Rol');
         if (this.habilitacion == "1") {
-            this.habilitacion = "<div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"administrarUsuario\" >Admin Usuarios</a>";
-            this.habilitacion += "<div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"modificarUsuario\" >Modificar mis datos</a>";
-            this.habilitacion += "<div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"verProveedores\" >Ver Proveedores</a>";
-            this.habilitacion += "<div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"registroProveedor\" >Agregar Proveedor</a>";
-            this.habilitacion += "<div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"agregarProducto\" >Agregar Producto</a>";
-            this.habilitacion += "<div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"VerProductosAdmin\" >Admin Producto</a>";
+            this.habilitacion = "<div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"administrarUsuario\" >Admin Usuarios</a> <div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"modificarUsuario\" >Modificar mis datos</a> <div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"verProveedores\" >Ver Proveedores</a> <div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"registroProveedor\" >Agregar Proveedor</a> <div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"agregarProducto\" >Agregar Producto</a> <div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"VerProductosAdmin\" >Admin Producto</a>";
         }
         else {
             this.habilitacion = "";
@@ -645,14 +639,7 @@ class AdministrarProveedorComponent {
         });
     }
     Logout() {
-        localStorage.removeItem('llave');
-        localStorage.removeItem('CodigoUsuario');
-        localStorage.removeItem('Username');
-        localStorage.removeItem('Nombres');
-        localStorage.removeItem('Apellidos');
-        localStorage.removeItem('Correo');
-        localStorage.removeItem('Password');
-        localStorage.removeItem('Fecha_Nac');
+        localStorage.clear();
         this.router.navigate(['login']);
     }
 }
@@ -843,12 +830,7 @@ class AdministrarUsuarioComponent {
         this.Nombres = localStorage.getItem('Nombres');
         this.habilitacion = localStorage.getItem('Rol');
         if (this.habilitacion == "1") {
-            this.habilitacion = "<div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"modificarUsuario\" >Modificar mis datos</a>";
-            this.habilitacion += "<div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"verProveedores\" >Ver Proveedores</a>";
-            this.habilitacion += "<div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"registroProveedor\" >Agregar Proveedor</a>";
-            this.habilitacion += "<div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"administrarProveedor\" >Admin Proveedor</a>";
-            this.habilitacion += "<div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"agregarProducto\" >Agregar Producto</a>";
-            this.habilitacion += "<div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"VerProductosAdmin\" >Admin Producto</a>";
+            this.habilitacion = "<div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"modificarUsuario\" >Modificar mis datos</a> <div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"verProveedores\" >Ver Proveedores</a> <div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"registroProveedor\" >Agregar Proveedor</a> <div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"administrarProveedor\" >Admin Proveedor</a> <div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"agregarProducto\" >Agregar Producto</a> <div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"VerProductosAdmin\" >Admin Producto</a>";
         }
         else {
             this.habilitacion = "";
@@ -870,14 +852,7 @@ class AdministrarUsuarioComponent {
         }
     }
     Logout() {
-        localStorage.removeItem('llave');
-        localStorage.removeItem('CodigoUsuario');
-        localStorage.removeItem('Username');
-        localStorage.removeItem('Nombres');
-        localStorage.removeItem('Apellidos');
-        localStorage.removeItem('Correo');
-        localStorage.removeItem('Password');
-        localStorage.removeItem('Fecha_Nac');
+        localStorage.clear();
         this.router.navigate(['login']);
     }
     buscarUsuario() {
@@ -1161,12 +1136,7 @@ class AgregarProductoComponent {
         this.Nombres = localStorage.getItem('Nombres');
         this.habilitacion = localStorage.getItem('Rol');
         if (this.habilitacion == "1") {
-            this.habilitacion = "<div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"administrarUsuario\" >Admin Usuarios</a>";
-            this.habilitacion += "<div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"modificarUsuario\" >Modificar mis datos</a>";
-            this.habilitacion += "<div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"verProveedores\" >Ver Proveedores</a>";
-            this.habilitacion += "<div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"registroProveedor\" >Agregar Proveedor</a>";
-            this.habilitacion += "<div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"administrarProveedor\" >Admin Proveedor</a>";
-            this.habilitacion += "<div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"VerProductosAdmin\" >Admin Producto</a>";
+            this.habilitacion = "<div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"administrarUsuario\" >Admin Usuarios</a> <div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"verProveedores\" >Ver Proveedores</a> <div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"registroProveedor\" >Agregar Proveedor</a> <div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"administrarProveedor\" >Admin Proveedor</a> <div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"VerProductosAdmin\" >Admin Producto</a>";
         }
         else {
             this.habilitacion = "";
@@ -1188,8 +1158,8 @@ class AgregarProductoComponent {
             this.ProductoEnviar.precio_venta = Number(this.precio_venta);
             this.ProductoEnviar.precio_compra = Number(this.precio_compra);
             this.ProductoEnviar.categoria = Number(this.categoria);
-            console.log(this.Registrar(this.ProductoEnviar));
         }
+        this.Registrar(this.ProductoEnviar);
     }
     Registrar(ProductoEnviar2) {
         this.SProductos.registro(ProductoEnviar2)
@@ -1210,14 +1180,7 @@ class AgregarProductoComponent {
         }
     }
     Logout() {
-        localStorage.removeItem('llave');
-        localStorage.removeItem('CodigoUsuario');
-        localStorage.removeItem('Username');
-        localStorage.removeItem('Nombres');
-        localStorage.removeItem('Apellidos');
-        localStorage.removeItem('Correo');
-        localStorage.removeItem('Password');
-        localStorage.removeItem('Fecha_Nac');
+        localStorage.clear();
         this.router.navigate(['login']);
     }
 }
@@ -1383,6 +1346,314 @@ AgregarProductoComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵ�
                 styleUrls: ['./agregar-producto.component.scss']
             }]
     }], function () { return [{ type: src_app_services_producto_service__WEBPACK_IMPORTED_MODULE_1__["ProductoService"] }, { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] }]; }, null); })();
+
+
+/***/ }),
+
+/***/ "./src/app/components/comprar/comprar.component.ts":
+/*!*********************************************************!*\
+  !*** ./src/app/components/comprar/comprar.component.ts ***!
+  \*********************************************************/
+/*! exports provided: ComprarComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ComprarComponent", function() { return ComprarComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
+/* harmony import */ var src_app_services_producto_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/producto.service */ "./src/app/services/producto.service.ts");
+/* harmony import */ var angular_bootstrap_md__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! angular-bootstrap-md */ "./node_modules/angular-bootstrap-md/__ivy_ngcc__/fesm2015/angular-bootstrap-md.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/__ivy_ngcc__/fesm2015/forms.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js");
+
+
+
+
+
+
+
+function ComprarComponent_a_31_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "a", 28);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const dire_r3 = ctx.$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", dire_r3.direccion, " ");
+} }
+function ComprarComponent_th_37_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "th", 29);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const head_r4 = ctx.$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("", head_r4, " ");
+} }
+function ComprarComponent_tr_39_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "tr", 30);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "td");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "td");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "td");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](6);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "td");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](8);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const vector_r5 = ctx.$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](vector_r5.nombre_prod);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](vector_r5.descripcion);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](vector_r5.cantidad);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](vector_r5.precio_venta);
+} }
+const _c0 = function () { return ["/home"]; };
+const _c1 = function () { return ["/principal"]; };
+class ComprarComponent {
+    constructor(router, Producto) {
+        this.router = router;
+        this.Producto = Producto;
+        this.idventa = 0;
+        this.total = 0;
+        this.VectorPComprar = [];
+        this.VectorProductos2 = [];
+        this.VectorProductos = [];
+        this.headElements = ['Nombre Producto', 'Descripción', 'Cantidad', 'Precio'];
+        this.Producto_Cantidad = []; //id producto, cantidad
+        this.listadir = [];
+    }
+    ngOnInit() {
+        this.Nombres = localStorage.getItem('Nombres');
+        this.habilitacion = localStorage.getItem('Rol');
+        this.contador = Number(localStorage.getItem("contadorp"));
+        if (this.habilitacion == "1") {
+            this.habilitacion = "<div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"administrarUsuario\" >Admin Usuarios</a> <div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"modificarUsuario\" >Modificar mis datos</a> <div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"verProveedores\" >Ver Proveedores</a> <div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"registroProveedor\" >Agregar Proveedor</a> <div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"administrarProveedor\" >Admin Proveedor</a> <div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"agregarProducto\" >Agregar Producto</a>";
+        }
+        else {
+            this.habilitacion = "<div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"modificarUsuario\" >Modificar Datos</a> <div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"VerProductosCliente\" >Productos</a> ";
+        }
+        this.VectorProductos2 = JSON.parse(localStorage.getItem("PRODUCTOS"));
+        this.VectorProductos = JSON.parse(localStorage.getItem("PRODUCTOS"));
+        this.Producto_Cantidad = JSON.parse(localStorage.getItem("VectorProducto_C"));
+        // console.log("AAAAA");
+        //console.log(this.Producto_Cantidad);
+        this.ProductosComprar();
+        this.CargarDirecciones();
+    }
+    ProductosComprar() {
+        for (const productoc of this.Producto_Cantidad) {
+            //console.log(productoc); 
+            for (const p of this.VectorProductos2) {
+                // console.log(p);
+                if (productoc[0] == p.id) {
+                    p.cantidad = productoc[1];
+                    this.VectorPComprar.push(p);
+                    this.total = this.total + productoc[1] * p.precio_venta;
+                    //  console.log(this.VectorPComprar);
+                }
+            }
+        }
+    }
+    Comprar() {
+        this.RegistrarDireccion(Number(localStorage.getItem("CodigoUsuario")), this.direccion);
+        //1. Verifcar que exista la cantidad del producto deseado 
+        if (this.VectorPComprar.length == this.VerificarTodos()) {
+            //significa que existen todas las cantidades que se necesitan 
+            //registramos la venta
+            let id = Number(localStorage.getItem("CodigoUsuario"));
+            this.Producto.CrearVenta(id).subscribe(res => {
+                //alert("Se registró correctamente la venta");
+            }, err => { alert("No se pudo registrar la venta"); });
+            //obtener ultima venta
+            this.Producto.ObtenerUltimaVenta().subscribe((res) => {
+                this.idventa = res.id;
+                this.FinCompra(this.idventa);
+            });
+        }
+        else {
+            alert("No hay suficiente producto para su compra.");
+        }
+    }
+    RegistrarDireccion(id, direccion) {
+        if (this.direccion != "") {
+            this.Producto.CrearDireccion(id, direccion)
+                .subscribe((res) => {
+                alert("DIRECCIÓN REGISTRADA CON ÉXITO");
+            }, err => { alert("NO SE PUDO REGISTRAR LA DIRECCION"); });
+        }
+        else {
+            alert("Ingrese una dirección de entrega");
+        }
+    }
+    CargarDirecciones() {
+        this.Producto.getDirecciones(localStorage.getItem("CodigoUsuario")).subscribe((res) => {
+            this.listadir = res;
+            console.log(this.listadir);
+        });
+    }
+    FinCompra(idv) {
+        // llenar los detalles 
+        let contador = 0;
+        for (const producto of this.VectorPComprar) {
+            console.log("id venta: " + idv + producto.id + producto.nombre_prod + " cantidad: " + producto.cantidad);
+            this.Producto.DetalleVenta(idv, producto.id, producto.cantidad).subscribe(res => {
+            }, err => { contador++; });
+        }
+        console.log(contador);
+        if (contador > 0) {
+            alert("No se pudo registrar la compra");
+        }
+        else {
+            alert("Su compra se registró correctamente");
+        }
+    }
+    VerificarTodos() {
+        let cuenta = 0;
+        for (const prod of this.Producto_Cantidad) {
+            if (this.VerificaCantidadStock(prod[0], prod[1])) {
+                cuenta++;
+            }
+        }
+        return cuenta;
+    }
+    VerificaCantidadStock(id, cantidad) {
+        for (const prod of this.VectorProductos) {
+            if (prod.id == id) {
+                //console.log("hola"+ id + prod.id);  
+                //console.log("stock: "+ prod.cantidad + " cantidad: "+cantidad) ;
+                if (prod.cantidad > cantidad) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+    Logout() {
+        localStorage.clear();
+        this.router.navigate(['login']);
+    }
+}
+ComprarComponent.ɵfac = function ComprarComponent_Factory(t) { return new (t || ComprarComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](src_app_services_producto_service__WEBPACK_IMPORTED_MODULE_2__["ProductoService"])); };
+ComprarComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: ComprarComponent, selectors: [["app-comprar"]], decls: 48, vars: 12, consts: [["SideClass", "navbar navbar-expand-lg #80cbc4 teal lighten-3"], ["href", "#", 1, "navbar-brand", 2, "font-size", "30px", "color", "darkslateblue"], [1, "navbar-nav", "mr-auto"], [1, "nav-item", "active"], ["mdbWavesEffect", "", 1, "nav-link", 3, "routerLink"], ["mdbDropdown", "", 1, "btn-group"], ["type", "button", "mdbBtn", "", "color", "danger", "mdbWavesEffect", "", 1, "waves-light"], ["type", "button", "mdbDropdownToggle", "", "mdbBtn", "", "color", "danger", "mdbWavesEffect", "", 1, "dropdown-toggle", "dropdown-toggle-split", "px-3", "waves-light"], [1, "dropdown-menu"], [1, "dropdown-item", 3, "routerLink"], [3, "innerHTML"], [1, "dropdown-divider"], [1, "dropdown-item", 3, "click"], [1, "contenedor"], ["src", "https://icons.iconarchive.com/icons/graphicloads/100-flat/64/cart-icon.png"], [1, "texto-encima"], [1, "text-center"], [1, "text-danger", 2, "font-size", "30px", "font-weight", "bold"], ["mdbInput", "", "name", "txtDireccion", "type", "text", "id", "txtdireccion", "placeholder", "Ingrese direcci\u00F3n", 3, "ngModel", "ngModelChange"], [1, "md-form", "form-group"], ["class", "dropdown-item", 4, "ngFor", "ngForOf"], ["mdbTable", ""], [1, "black", "white-text"], ["scope", "col-sm", 4, "ngFor", "ngForOf"], ["mdbTableCol", "", "class", "grey black-text", 4, "ngFor", "ngForOf"], [1, "row"], [1, "col-sm-3"], ["type", "button", "mdbBtn", "", "color", "danger", "mdbWavesEffect", "", 1, "waves-light", 3, "click"], [1, "dropdown-item"], ["scope", "col-sm"], ["mdbTableCol", "", 1, "grey", "black-text"]], template: function ComprarComponent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mdb-navbar", 0);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "mdb-navbar-brand");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "a", 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3, " Farma Seven");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "links");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "ul", 2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "li", 3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "a", 4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](8, "Home");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "div", 5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](10, "button", 6);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](11);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](12, "button", 7);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](13, "div", 8);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](14, "a", 9);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](15, "Principal");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](16, "div", 10);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](17, "div", 11);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](18, "a", 12);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function ComprarComponent_Template_a_click_18_listener() { return ctx.Logout(); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](19, "Logout");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](20, "div", 13);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](21, "img", 14);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](22, "div", 15);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](23);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](24, "section", 16);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](25, "h1", 17);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](26, " Confirme su compra ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](27, "input", 18);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("ngModelChange", function ComprarComponent_Template_input_ngModelChange_27_listener($event) { return ctx.direccion = $event; });
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](28, "br");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](29, "div", 19);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](30, "div", 8);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](31, ComprarComponent_a_31_Template, 2, 1, "a", 20);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](32, "div", 11);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](33, "br");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](34, "table", 21);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](35, "thead", 22);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](36, "tr");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](37, ComprarComponent_th_37_Template, 2, 1, "th", 23);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](38, "tbody");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](39, ComprarComponent_tr_39_Template, 9, 4, "tr", 24);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](40, "div", 25);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](41, "div", 26);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](42, "div", 26);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](43, "h4");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](44);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](45, "div", 26);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](46, "button", 27);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function ComprarComponent_Template_button_click_46_listener() { return ctx.Comprar(); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](47, "COMPRAR");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    } if (rf & 2) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](7);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](10, _c0));
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.Nombres);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](11, _c1));
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("innerHTML", ctx.habilitacion, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeHtml"]);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](7);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.contador);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngModel", ctx.direccion);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx.listadir);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](6);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx.headElements);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx.VectorPComprar);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" Su TOTAL es: ", ctx.total, "");
+    } }, directives: [angular_bootstrap_md__WEBPACK_IMPORTED_MODULE_3__["NavbarComponent"], angular_bootstrap_md__WEBPACK_IMPORTED_MODULE_3__["LogoComponent"], angular_bootstrap_md__WEBPACK_IMPORTED_MODULE_3__["LinksComponent"], _angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterLinkWithHref"], angular_bootstrap_md__WEBPACK_IMPORTED_MODULE_3__["WavesDirective"], angular_bootstrap_md__WEBPACK_IMPORTED_MODULE_3__["BsDropdownDirective"], angular_bootstrap_md__WEBPACK_IMPORTED_MODULE_3__["MdbBtnDirective"], angular_bootstrap_md__WEBPACK_IMPORTED_MODULE_3__["BsDropdownToggleDirective"], _angular_forms__WEBPACK_IMPORTED_MODULE_4__["DefaultValueAccessor"], angular_bootstrap_md__WEBPACK_IMPORTED_MODULE_3__["MdbInput"], _angular_forms__WEBPACK_IMPORTED_MODULE_4__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_4__["NgModel"], _angular_common__WEBPACK_IMPORTED_MODULE_5__["NgForOf"], angular_bootstrap_md__WEBPACK_IMPORTED_MODULE_3__["MdbTableDirective"]], styles: [".contenedor[_ngcontent-%COMP%] {\n  position: relative;\n  display: inline-block;\n  text-align: center;\n}\n\n.texto-encima[_ngcontent-%COMP%] {\n  position: absolute;\n  color: #052e49;\n  top: 10px;\n  left: 48px;\n}\n\n.centrado[_ngcontent-%COMP%] {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9jb21wcmFyL0Q6XFxEb2N1bWVudG9zXFxHaXRIdWJcXEFZRDFHNzFTXFxGcm9udGVuZC9zcmNcXGFwcFxcY29tcG9uZW50c1xcY29tcHJhclxcY29tcHJhci5jb21wb25lbnQuc2NzcyIsInNyYy9hcHAvY29tcG9uZW50cy9jb21wcmFyL2NvbXByYXIuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxrQkFBQTtFQUNBLHFCQUFBO0VBQ0Esa0JBQUE7QUNDSjs7QURDQTtFQUNJLGtCQUFBO0VBQ0EsY0FBQTtFQUNBLFNBQUE7RUFDQSxVQUFBO0FDRUo7O0FEQUE7RUFDSSxrQkFBQTtFQUNBLFFBQUE7RUFDQSxTQUFBO0VBQ0EsZ0NBQUE7QUNHSiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvY29tcHJhci9jb21wcmFyLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmNvbnRlbmVkb3J7XHJcbiAgICBwb3NpdGlvbjogcmVsYXRpdmU7XHJcbiAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbn1cclxuLnRleHRvLWVuY2ltYXtcclxuICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICAgIGNvbG9yOiByZ2IoNSwgNDYsIDczKTtcclxuICAgIHRvcDogMTBweDtcclxuICAgIGxlZnQ6IDQ4cHg7XHJcbn1cclxuLmNlbnRyYWRve1xyXG4gICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgdG9wOiA1MCU7XHJcbiAgICBsZWZ0OiA1MCU7XHJcbiAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZSgtNTAlLCAtNTAlKTtcclxufSIsIi5jb250ZW5lZG9yIHtcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xuICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbn1cblxuLnRleHRvLWVuY2ltYSB7XG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgY29sb3I6ICMwNTJlNDk7XG4gIHRvcDogMTBweDtcbiAgbGVmdDogNDhweDtcbn1cblxuLmNlbnRyYWRvIHtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICB0b3A6IDUwJTtcbiAgbGVmdDogNTAlO1xuICB0cmFuc2Zvcm06IHRyYW5zbGF0ZSgtNTAlLCAtNTAlKTtcbn0iXX0= */"] });
+/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](ComprarComponent, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
+        args: [{
+                selector: 'app-comprar',
+                templateUrl: './comprar.component.html',
+                styleUrls: ['./comprar.component.scss']
+            }]
+    }], function () { return [{ type: _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"] }, { type: src_app_services_producto_service__WEBPACK_IMPORTED_MODULE_2__["ProductoService"] }]; }, null); })();
 
 
 /***/ }),
@@ -1584,8 +1855,9 @@ class LoginComponent {
     constructor(service, router) {
         this.service = service;
         this.router = router;
-        this.username = "";
-        this.password = "";
+        this.error = false;
+        this.username = "JorgeS";
+        this.password = "1234";
         this.decoded = [];
         this.respuesta = [];
         this.roles = [];
@@ -1597,34 +1869,54 @@ class LoginComponent {
     }
     ngOnInit() {
     }
+    userNameCorrecto(username) {
+        if (username.length >= 4 && username.length <= 15) {
+            return 'Cumple con el rango';
+        }
+        return 'No cumple con el rango';
+    }
     logearse() {
         this.datos.Username = this.username;
         this.datos.Password = this.password;
-        // console.log(this.datos);
-        this.service.login(this.datos)
-            .subscribe(res => {
-            this.respuesta = res;
-            console.log(this.respuesta);
-            this.token = this.respuesta.token;
-            if (this.respuesta.token != "") {
-                this.decoded = Object(jwt_decode__WEBPACK_IMPORTED_MODULE_1__["default"])(this.respuesta.token);
-                // console.log(this.decoded);
+        if (this.userNameCorrecto(this.username) == "Cumple con el rango") {
+            this.service.login(this.datos)
+                .subscribe(res => {
+                this.respuesta = res;
+                if (this.respuesta.token != "") {
+                    this.error = false;
+                    this.almacenar();
+                }
+            }, err => {
+                this.error = true;
                 this.almacenar();
-                this.router.navigate(['/principal']);
-            }
-        }, err => { alert("USUARIO INCORRECTO"); });
+            });
+        }
+    }
+    ObtenerDatos() {
+        if (!this.error) {
+            this.decoded = Object(jwt_decode__WEBPACK_IMPORTED_MODULE_1__["default"])(this.respuesta.token);
+            return true;
+        }
+        else {
+            return false;
+        }
     }
     almacenar() {
-        localStorage.setItem('llave', this.token);
-        localStorage.setItem('CodigoUsuario', this.decoded.user.CodigoUsuario);
-        localStorage.setItem('Username', this.decoded.user.Username);
-        localStorage.setItem('Nombres', this.decoded.user.Nombres);
-        localStorage.setItem('Apellidos', this.decoded.user.Apellidos);
-        localStorage.setItem('Correo', this.decoded.user.Correo);
-        localStorage.setItem('Password', this.decoded.user.Password);
-        localStorage.setItem('Fecha_Nac', this.decoded.user.Fecha_Nacimiento);
-        localStorage.setItem('Rol', this.decoded.user.rol);
-        //  localStorage.setItem('roles', JSON.stringify(this.roles));
+        if (this.ObtenerDatos()) {
+            // localStorage.setItem('llave',this.token);
+            this.router.navigate(['/principal']);
+            localStorage.setItem('CodigoUsuario', this.decoded.user.CodigoUsuario);
+            localStorage.setItem('Username', this.decoded.user.Username);
+            localStorage.setItem('Nombres', this.decoded.user.Nombres);
+            localStorage.setItem('Apellidos', this.decoded.user.Apellidos);
+            localStorage.setItem('Correo', this.decoded.user.Correo);
+            localStorage.setItem('Password', this.decoded.user.Password);
+            localStorage.setItem('Fecha_Nac', this.decoded.user.Fecha_Nacimiento);
+            localStorage.setItem('Rol', this.decoded.user.rol);
+        }
+        else {
+            alert("USUARIO INCORRECTO");
+        }
     }
 }
 LoginComponent.ɵfac = function LoginComponent_Factory(t) { return new (t || LoginComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](src_app_services_usuario_service__WEBPACK_IMPORTED_MODULE_2__["UsuarioService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"])); };
@@ -1759,6 +2051,7 @@ class ModificarUsuarioComponent {
     }
     ngOnInit() {
         this.username = localStorage.getItem('Username');
+        console.log(this.username);
         if (this.username != "") {
             this.user.getUsuario(this.username).subscribe((res) => {
                 let u = (res['user']);
@@ -1774,12 +2067,7 @@ class ModificarUsuarioComponent {
         this.Nombres = localStorage.getItem('Nombres');
         this.habilitacion = localStorage.getItem('Rol');
         if (this.habilitacion == "1") {
-            this.habilitacion = "<div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"administrarUsuario\" >Admin Usuarios</a>";
-            this.habilitacion += "<div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"verProveedores\" >Ver Proveedores</a>";
-            this.habilitacion += "<div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"registroProveedor\" >Agregar Proveedor</a>";
-            this.habilitacion += "<div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"administrarProveedor\" >Admin Proveedor</a>";
-            this.habilitacion += "<div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"agregarProducto\" >Agregar Producto</a>";
-            this.habilitacion += "<div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"VerProductosAdmin\" >Admin Producto</a>";
+            this.habilitacion = "<div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"administrarUsuario\" >Admin Usuarios</a> <div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"verProveedores\" >Ver Proveedores</a> <div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"registroProveedor\" >Agregar Proveedor</a> <div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"administrarProveedor\" >Admin Proveedor</a> <div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"agregarProducto\" >Agregar Producto</a>  <div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"VerProductosAdmin\" >Admin Producto</a>";
         }
         else {
             this.habilitacion = "";
@@ -1789,8 +2077,8 @@ class ModificarUsuarioComponent {
     modificar() {
         this.user.update(this.username, this.nombre, this.apellidos, this.correo, this.password, this.genero, this.fechanac)
             .subscribe((res) => {
-            console.log("ya modifico");
-            console.log(res);
+            //console.log("ya modifico");
+            //console.log(res);      
         });
     }
     Genero(tipo) {
@@ -1802,14 +2090,7 @@ class ModificarUsuarioComponent {
         }
     }
     Logout() {
-        localStorage.removeItem('llave');
-        localStorage.removeItem('CodigoUsuario');
-        localStorage.removeItem('Username');
-        localStorage.removeItem('Nombres');
-        localStorage.removeItem('Apellidos');
-        localStorage.removeItem('Correo');
-        localStorage.removeItem('Password');
-        localStorage.removeItem('Fecha_Nac');
+        localStorage.clear();
         this.router.navigate(['login']);
     }
 }
@@ -2005,28 +2286,15 @@ class PrincipalComponent {
         this.Nombres = localStorage.getItem('Nombres');
         this.habilitacion = localStorage.getItem('Rol');
         if (this.habilitacion == "1") {
-            this.habilitacion = "<div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"administrarUsuario\" >Admin Usuarios</a>";
-            this.habilitacion += "<div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"modificarUsuario\" >Modificar mis datos</a>";
-            this.habilitacion += "<div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"verProveedores\" >Ver Proveedores</a>";
-            this.habilitacion += "<div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"registroProveedor\" >Agregar Proveedor</a>";
-            this.habilitacion += "<div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"administrarProveedor\" >Admin Proveedor</a>";
-            this.habilitacion += "<div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"agregarProducto\" >Agregar Producto</a>";
-            this.habilitacion += "<div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"VerProductosAdmin\" >Admin Producto</a>";
+            this.habilitacion = "<div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"administrarUsuario\" >Admin Usuarios</a> <div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"modificarUsuario\" >Modificar mis datos</a> <div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"verProveedores\" >Ver Proveedores</a> <div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"registroProveedor\" >Agregar Proveedor</a> <div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"administrarProveedor\" >Admin Proveedor</a> <div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"agregarProducto\" >Agregar Producto</a> <div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"VerProductosAdmin\" >Admin Producto</a>";
         }
         else {
-            this.habilitacion = "<div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"modificarUsuario\" >Modificar Datos</a>";
-            this.habilitacion += "<div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"VerProductosCliente\" >Productos</a>";
+            this.habilitacion = "<div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"modificarUsuario\" >Modificar Datos</a> <div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"VerProductosCliente\" >Productos</a>";
+            localStorage.setItem("contadorp", "0");
         }
     }
     Logout() {
-        localStorage.removeItem('llave');
-        localStorage.removeItem('CodigoUsuario');
-        localStorage.removeItem('Username');
-        localStorage.removeItem('Nombres');
-        localStorage.removeItem('Apellidos');
-        localStorage.removeItem('Correo');
-        localStorage.removeItem('Password');
-        localStorage.removeItem('Fecha_Nac');
+        localStorage.clear();
         this.router.navigate(['login']);
     }
 }
@@ -2115,8 +2383,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-function ProductosClientesComponent_th_26_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "th", 19);
+function ProductosClientesComponent_th_33_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "th", 22);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } if (rf & 2) {
@@ -2124,8 +2392,9 @@ function ProductosClientesComponent_th_26_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("", head_r2, " ");
 } }
-function ProductosClientesComponent_tr_28_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "tr", 20);
+function ProductosClientesComponent_tr_35_Template(rf, ctx) { if (rf & 1) {
+    const _r5 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "tr", 23);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "td");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -2139,11 +2408,15 @@ function ProductosClientesComponent_tr_28_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](8);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "td");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](10);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](10, "button", 24);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function ProductosClientesComponent_tr_35_Template_button_click_10_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r5); const vector_r3 = ctx.$implicit; const ctx_r4 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r4.AgregarCarrito(vector_r3.id); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](11, "Agregar");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](11, "td");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](12, "button", 6);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](13, "Comprar");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](12, "td");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](13, "button", 24);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function ProductosClientesComponent_tr_35_Template_button_click_13_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r5); const vector_r3 = ctx.$implicit; const ctx_r6 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r6.EliminarDelCarrito(vector_r3.id); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](14, "Eliminar");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -2157,53 +2430,100 @@ function ProductosClientesComponent_tr_28_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](vector_r3.cantidad);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](vector_r3.precio_venta);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](vector_r3.precio_compra);
 } }
 const _c0 = function () { return ["/home"]; };
 const _c1 = function () { return ["/principal"]; };
+const _c2 = function () { return ["/Comprar"]; };
 class ProductosClientesComponent {
     constructor(router, Producto) {
         this.router = router;
         this.Producto = Producto;
+        this.Producto_Cantidad = []; //id producto, cantidad
+        this.ProductosElegidos = [];
         this.VectorProductos = [];
-        this.headElements = ['Nombre Producto', 'Descripción', 'Cantidad', 'Precio Venta', 'Precio Compra', 'Comprar'];
+        this.headElements = ['Nombre Producto', 'Descripción', 'Cantidad', 'Precio', 'Agregar al Carrito', 'Eliminar del carrito'];
     }
     ngOnInit() {
         this.Nombres = localStorage.getItem('Nombres');
         this.habilitacion = localStorage.getItem('Rol');
+        this.contador = Number(localStorage.getItem("contadorp"));
         if (this.habilitacion == "1") {
-            this.habilitacion = "<div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"administrarUsuario\" >Admin Usuarios</a>";
-            this.habilitacion += "<div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"modificarUsuario\" >Modificar mis datos</a>";
-            this.habilitacion += "<div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"verProveedores\" >Ver Proveedores</a>";
-            this.habilitacion += "<div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"registroProveedor\" >Agregar Proveedor</a>";
-            this.habilitacion += "<div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"administrarProveedor\" >Admin Proveedor</a>";
-            this.habilitacion += "<div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"agregarProducto\" >Agregar Producto</a>";
+            this.habilitacion = "<div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"administrarUsuario\" >Admin Usuarios</a> <div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"modificarUsuario\" >Modificar mis datos</a> <div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"verProveedores\" >Ver Proveedores</a> <div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"registroProveedor\" >Agregar Proveedor</a> <div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"administrarProveedor\" >Admin Proveedor</a> <div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"agregarProducto\" >Agregar Producto</a>";
         }
         else {
-            this.habilitacion = "";
-            this.habilitacion = "<div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"modificarUsuario\" >Modificar Datos</a>";
+            this.habilitacion = "<div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"modificarUsuario\" >Modificar Datos</a> ";
         }
         this.Producto.obtenerProductos().subscribe((res) => {
-            console.log(res);
             this.VectorProductos = res;
-            // console.log(this.Usuarios[0].dpi);
+            localStorage.setItem('PRODUCTOS', JSON.stringify(this.VectorProductos));
         });
+        this.Producto_Cantidad = JSON.parse(localStorage.getItem("VectorProducto_C"));
+        if (this.Producto_Cantidad == null) {
+            this.Producto_Cantidad = [];
+        }
     }
     Logout() {
-        localStorage.removeItem('llave');
-        localStorage.removeItem('CodigoUsuario');
-        localStorage.removeItem('Username');
-        localStorage.removeItem('Nombres');
-        localStorage.removeItem('Apellidos');
-        localStorage.removeItem('Correo');
-        localStorage.removeItem('Password');
-        localStorage.removeItem('Fecha_Nac');
+        localStorage.clear();
         this.router.navigate(['login']);
+    }
+    AgregarCarrito(id) {
+        this.contador++;
+        let cantidad = 0;
+        localStorage.setItem("contadorp", this.contador + "");
+        if (this.VerificarCantidad(id)) {
+            for (const p of this.Producto_Cantidad) {
+                if (p[0] == id) {
+                    cantidad = p[1];
+                    cantidad++;
+                    p[1] = cantidad;
+                }
+            }
+        }
+        else {
+            this.ProductosElegidos.push(id);
+            this.Producto_Cantidad.push([id, 1]);
+        }
+        // console.log(this.Producto_Cantidad); 
+        localStorage.setItem('VectorProducto_C', JSON.stringify(this.Producto_Cantidad));
+    }
+    EliminarDelCarrito(id) {
+        let cantidad = 0;
+        if (this.VerificarCantidad(id)) {
+            var indice = 0;
+            for (const p of this.Producto_Cantidad) {
+                if (p[0] == id) {
+                    //Globo con cantidad
+                    this.contador--;
+                    localStorage.setItem("contadorp", this.contador + "");
+                    //modificar la cantidad
+                    cantidad = p[1];
+                    cantidad--;
+                    p[1] = cantidad;
+                    if (p[1] == 0) {
+                        this.ProductosElegidos.splice(indice, 1);
+                        this.Producto_Cantidad.splice(indice, 1);
+                    }
+                }
+                indice++;
+            }
+        }
+        else {
+            alert('El producto no existe en el carrito');
+        }
+        // console.log(this.Producto_Cantidad); 
+        localStorage.setItem('VectorProducto_C', JSON.stringify(this.Producto_Cantidad));
+    }
+    VerificarCantidad(id) {
+        for (const prod of this.ProductosElegidos) {
+            if (prod == id) {
+                return true;
+            }
+        }
+        return false;
     }
 }
 ProductosClientesComponent.ɵfac = function ProductosClientesComponent_Factory(t) { return new (t || ProductosClientesComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](src_app_services_producto_service__WEBPACK_IMPORTED_MODULE_2__["ProductoService"])); };
-ProductosClientesComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: ProductosClientesComponent, selectors: [["app-productos-clientes"]], decls: 29, vars: 8, consts: [["SideClass", "navbar navbar-expand-lg #80cbc4 teal lighten-3"], ["href", "#", 1, "navbar-brand", 2, "font-size", "30px", "color", "darkslateblue"], [1, "navbar-nav", "mr-auto"], [1, "nav-item", "active"], ["mdbWavesEffect", "", 1, "nav-link", 3, "routerLink"], ["mdbDropdown", "", 1, "btn-group"], ["type", "button", "mdbBtn", "", "color", "danger", "mdbWavesEffect", "", 1, "waves-light"], ["type", "button", "mdbDropdownToggle", "", "mdbBtn", "", "color", "danger", "mdbWavesEffect", "", 1, "dropdown-toggle", "dropdown-toggle-split", "px-3", "waves-light"], [1, "dropdown-menu"], [1, "dropdown-item", 3, "routerLink"], [3, "innerHTML"], [1, "dropdown-divider"], [1, "dropdown-item", 3, "click"], [1, "text-center"], [1, "text-danger", 2, "font-size", "40px", "font-weight", "bold"], ["mdbTable", ""], [1, "black", "white-text"], ["scope", "col-sm", 4, "ngFor", "ngForOf"], ["mdbTableCol", "", "class", "grey black-text", 4, "ngFor", "ngForOf"], ["scope", "col-sm"], ["mdbTableCol", "", 1, "grey", "black-text"]], template: function ProductosClientesComponent_Template(rf, ctx) { if (rf & 1) {
+ProductosClientesComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: ProductosClientesComponent, selectors: [["app-productos-clientes"]], decls: 36, vars: 11, consts: [["SideClass", "navbar navbar-expand-lg #80cbc4 teal lighten-3"], ["href", "#", 1, "navbar-brand", 2, "font-size", "30px", "color", "darkslateblue"], [1, "navbar-nav", "mr-auto"], [1, "nav-item", "active"], ["mdbWavesEffect", "", 1, "nav-link", 3, "routerLink"], ["mdbDropdown", "", 1, "btn-group"], ["type", "button", "mdbBtn", "", "color", "danger", "mdbWavesEffect", "", 1, "waves-light"], ["type", "button", "mdbDropdownToggle", "", "mdbBtn", "", "color", "danger", "mdbWavesEffect", "", 1, "dropdown-toggle", "dropdown-toggle-split", "px-3", "waves-light"], [1, "dropdown-menu"], [1, "dropdown-item", 3, "routerLink"], [3, "innerHTML"], [1, "dropdown-divider"], [1, "dropdown-item", 3, "click"], [1, "contenedor"], ["src", "https://icons.iconarchive.com/icons/graphicloads/100-flat/64/cart-icon.png"], [1, "texto-encima"], [1, "text-center"], [1, "text-danger", 2, "font-size", "40px", "font-weight", "bold"], ["mdbTable", ""], [1, "black", "white-text"], ["scope", "col-sm", 4, "ngFor", "ngForOf"], ["mdbTableCol", "", "class", "grey black-text", 4, "ngFor", "ngForOf"], ["scope", "col-sm"], ["mdbTableCol", "", 1, "grey", "black-text"], ["type", "button", "mdbBtn", "", "color", "danger", "mdbWavesEffect", "", 1, "waves-light", 3, "click"]], template: function ProductosClientesComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mdb-navbar", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "mdb-navbar-brand");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "a", 1);
@@ -2228,44 +2548,58 @@ ProductosClientesComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["�
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](16, "div", 10);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](17, "div", 11);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](18, "a", 12);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function ProductosClientesComponent_Template_a_click_18_listener() { return ctx.Logout(); });
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](19, "Logout");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](18, "a", 9);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](19, "Comprar");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](20, "div", 11);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](21, "a", 12);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function ProductosClientesComponent_Template_a_click_21_listener() { return ctx.Logout(); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](22, "Logout");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](23, "div", 13);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](24, "img", 14);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](25, "div", 15);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](26);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](20, "section", 13);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](21, "h1", 14);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](22, " PRODUCTOS ");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](23, "table", 15);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](24, "thead", 16);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](25, "tr");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](26, ProductosClientesComponent_th_26_Template, 2, 1, "th", 17);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](27, "tbody");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](28, ProductosClientesComponent_tr_28_Template, 14, 5, "tr", 18);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](27, "section", 16);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](28, "h1", 17);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](29, " PRODUCTOS ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](30, "table", 18);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](31, "thead", 19);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](32, "tr");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](33, ProductosClientesComponent_th_33_Template, 2, 1, "th", 20);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](34, "tbody");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](35, ProductosClientesComponent_tr_35_Template, 15, 4, "tr", 21);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     } if (rf & 2) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](7);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](6, _c0));
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](8, _c0));
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.Nombres);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](7, _c1));
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](9, _c1));
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("innerHTML", ctx.habilitacion, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeHtml"]);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](10);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](10, _c2));
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](8);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.contador);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](7);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx.headElements);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx.VectorProductos);
-    } }, directives: [angular_bootstrap_md__WEBPACK_IMPORTED_MODULE_3__["NavbarComponent"], angular_bootstrap_md__WEBPACK_IMPORTED_MODULE_3__["LogoComponent"], angular_bootstrap_md__WEBPACK_IMPORTED_MODULE_3__["LinksComponent"], _angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterLinkWithHref"], angular_bootstrap_md__WEBPACK_IMPORTED_MODULE_3__["WavesDirective"], angular_bootstrap_md__WEBPACK_IMPORTED_MODULE_3__["BsDropdownDirective"], angular_bootstrap_md__WEBPACK_IMPORTED_MODULE_3__["MdbBtnDirective"], angular_bootstrap_md__WEBPACK_IMPORTED_MODULE_3__["BsDropdownToggleDirective"], angular_bootstrap_md__WEBPACK_IMPORTED_MODULE_3__["MdbTableDirective"], _angular_common__WEBPACK_IMPORTED_MODULE_4__["NgForOf"]], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvcHJvZHVjdG9zLWNsaWVudGVzL3Byb2R1Y3Rvcy1jbGllbnRlcy5jb21wb25lbnQuc2NzcyJ9 */"] });
+    } }, directives: [angular_bootstrap_md__WEBPACK_IMPORTED_MODULE_3__["NavbarComponent"], angular_bootstrap_md__WEBPACK_IMPORTED_MODULE_3__["LogoComponent"], angular_bootstrap_md__WEBPACK_IMPORTED_MODULE_3__["LinksComponent"], _angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterLinkWithHref"], angular_bootstrap_md__WEBPACK_IMPORTED_MODULE_3__["WavesDirective"], angular_bootstrap_md__WEBPACK_IMPORTED_MODULE_3__["BsDropdownDirective"], angular_bootstrap_md__WEBPACK_IMPORTED_MODULE_3__["MdbBtnDirective"], angular_bootstrap_md__WEBPACK_IMPORTED_MODULE_3__["BsDropdownToggleDirective"], angular_bootstrap_md__WEBPACK_IMPORTED_MODULE_3__["MdbTableDirective"], _angular_common__WEBPACK_IMPORTED_MODULE_4__["NgForOf"]], styles: [".contenedor[_ngcontent-%COMP%] {\n  position: relative;\n  display: inline-block;\n  text-align: center;\n}\n\n.texto-encima[_ngcontent-%COMP%] {\n  position: absolute;\n  color: #052e49;\n  top: 10px;\n  left: 48px;\n}\n\n.centrado[_ngcontent-%COMP%] {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9wcm9kdWN0b3MtY2xpZW50ZXMvRDpcXERvY3VtZW50b3NcXEdpdEh1YlxcQVlEMUc3MVNcXEZyb250ZW5kL3NyY1xcYXBwXFxjb21wb25lbnRzXFxwcm9kdWN0b3MtY2xpZW50ZXNcXHByb2R1Y3Rvcy1jbGllbnRlcy5jb21wb25lbnQuc2NzcyIsInNyYy9hcHAvY29tcG9uZW50cy9wcm9kdWN0b3MtY2xpZW50ZXMvcHJvZHVjdG9zLWNsaWVudGVzLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksa0JBQUE7RUFDQSxxQkFBQTtFQUNBLGtCQUFBO0FDQ0o7O0FEQ0E7RUFDSSxrQkFBQTtFQUNBLGNBQUE7RUFDQSxTQUFBO0VBQ0EsVUFBQTtBQ0VKOztBREFBO0VBQ0ksa0JBQUE7RUFDQSxRQUFBO0VBQ0EsU0FBQTtFQUNBLGdDQUFBO0FDR0oiLCJmaWxlIjoic3JjL2FwcC9jb21wb25lbnRzL3Byb2R1Y3Rvcy1jbGllbnRlcy9wcm9kdWN0b3MtY2xpZW50ZXMuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuY29udGVuZWRvcntcclxuICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcclxuICAgIGRpc3BsYXk6IGlubGluZS1ibG9jaztcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxufVxyXG4udGV4dG8tZW5jaW1he1xyXG4gICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgY29sb3I6IHJnYig1LCA0NiwgNzMpO1xyXG4gICAgdG9wOiAxMHB4O1xyXG4gICAgbGVmdDogNDhweDtcclxufVxyXG4uY2VudHJhZG97XHJcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgICB0b3A6IDUwJTtcclxuICAgIGxlZnQ6IDUwJTtcclxuICAgIHRyYW5zZm9ybTogdHJhbnNsYXRlKC01MCUsIC01MCUpO1xyXG59IiwiLmNvbnRlbmVkb3Ige1xuICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gIGRpc3BsYXk6IGlubGluZS1ibG9jaztcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xufVxuXG4udGV4dG8tZW5jaW1hIHtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICBjb2xvcjogIzA1MmU0OTtcbiAgdG9wOiAxMHB4O1xuICBsZWZ0OiA0OHB4O1xufVxuXG4uY2VudHJhZG8ge1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIHRvcDogNTAlO1xuICBsZWZ0OiA1MCU7XG4gIHRyYW5zZm9ybTogdHJhbnNsYXRlKC01MCUsIC01MCUpO1xufSJdfQ== */"] });
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](ProductosClientesComponent, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
         args: [{
@@ -2313,29 +2647,43 @@ class RegistroComponent {
     }
     ngOnInit() {
     }
+    userNameCorrecto(username) {
+        if (username.length >= 4 && username.length <= 15) {
+            return 'Cumple con el rango';
+        }
+        return 'No cumple con el rango';
+    }
+    correoCorrecto(correo) {
+        const exp = /^[_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/;
+        if (exp.test(correo)) {
+            return true;
+        }
+        return false;
+    }
     registrarse() {
-        // console.log(this.fechanac);
-        this.user.singup(this.username, this.nombre, this.apellidos, this.correo, this.password, this.genero, this.fechanac)
-            .subscribe((res) => {
-            console.log("ya insertó");
-            console.log(res);
-            alert("USUARIO CREADO CON ÉXITO");
-            this.nombre = "";
-            this.password = "";
-            this.apellidos = "";
-            this.correo = "";
-            this.genero = "";
-            this.fechanac = "";
-            this.username = "";
-            this.router.navigate(['/']);
-        }, err => { alert("NO SE PUDO CREAR EL USUARIO"); });
+        if (this.correoCorrecto(this.correo) && (this.userNameCorrecto(this.username) == "Cumple con el rango")) {
+            this.user.singup(this.username, this.nombre, this.apellidos, this.correo, this.password, this.genero, this.fechanac)
+                .subscribe((res) => {
+                alert("USUARIO CREADO CON ÉXITO");
+                this.nombre = "";
+                this.password = "";
+                this.apellidos = "";
+                this.correo = "";
+                this.genero = "";
+                this.fechanac = "";
+                this.username = "";
+                this.router.navigate(['/']);
+            }, err => { alert("NO SE PUDO CREAR EL USUARIO"); });
+        }
     }
     Genero(tipo) {
         if (tipo == "m") {
             this.genero = 'M';
+            return this.genero;
         }
         else if (tipo == "f") {
             this.genero = 'F';
+            return this.genero;
         }
     }
 }
@@ -2564,7 +2912,7 @@ function VerProductoComponent_tr_28_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](11, "td");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](12, "button", 21);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function VerProductoComponent_tr_28_Template_button_click_12_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r5); const vector_r3 = ctx.$implicit; const ctx_r4 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r4.Modifica(vector_r3.id); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function VerProductoComponent_tr_28_Template_button_click_12_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r5); const vector_r3 = ctx.$implicit; const ctx_r4 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r4.AModificar(vector_r3.id); });
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](13, "Detalles");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -2595,18 +2943,12 @@ class VerProductoComponent {
         this.Nombres = localStorage.getItem('Nombres');
         this.habilitacion = localStorage.getItem('Rol');
         if (this.habilitacion == "1") {
-            this.habilitacion = "<div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"administrarUsuario\" >Admin Usuarios</a>";
-            this.habilitacion += "<div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"modificarUsuario\" >Modificar mis datos</a>";
-            this.habilitacion += "<div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"verProveedores\" >Ver Proveedores</a>";
-            this.habilitacion += "<div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"registroProveedor\" >Agregar Proveedor</a>";
-            this.habilitacion += "<div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"administrarProveedor\" >Admin Proveedor</a>";
-            this.habilitacion += "<div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"agregarProducto\" >Agregar Producto</a>";
+            this.habilitacion = "<div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"administrarUsuario\" >Admin Usuarios</a>  <div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"modificarUsuario\" >Modificar mis datos</a> <div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"verProveedores\" >Ver Proveedores</a> <div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"registroProveedor\" >Agregar Proveedor</a> <div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"administrarProveedor\" >Admin Proveedor</a> <div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"agregarProducto\" >Agregar Producto</a>";
         }
         else {
             this.habilitacion = "";
         }
         this.Producto.obtenerProductos().subscribe((res) => {
-            console.log(res);
             this.VectorProductos = res;
             // console.log(this.Usuarios[0].dpi);
         });
@@ -2614,26 +2956,26 @@ class VerProductoComponent {
     Modifica(id) {
         for (const Vector of this.VectorProductos) {
             if (Vector.id == id) {
-                localStorage.setItem('id_producto', "" + Vector.id);
-                localStorage.setItem('nombre_prod', Vector.nombre_prod);
-                localStorage.setItem('descripcion', Vector.descripcion);
-                localStorage.setItem('cantidad', "" + Vector.cantidad);
-                localStorage.setItem('precio_compra', Vector.precio_compra + "");
-                localStorage.setItem('precio_venta', Vector.precio_venta + "");
-                localStorage.setItem('categoria', Vector.categoria + "");
-                this.router.navigate(['/administrarProducto']); //acá va la página de modificación 
+                this.idc = Vector.id;
+                return true;
             }
+        }
+        return false;
+    }
+    AModificar(id) {
+        if (this.Modifica(id)) {
+            localStorage.setItem('id_producto', "" + this.VectorProductos[this.idc].id);
+            localStorage.setItem('nombre_prod', this.VectorProductos[this.idc].nombre_prod);
+            localStorage.setItem('descripcion', this.VectorProductos[this.idc].descripcion);
+            localStorage.setItem('cantidad', "" + this.VectorProductos[this.idc].cantidad);
+            localStorage.setItem('precio_compra', this.VectorProductos[this.idc].precio_compra + "");
+            localStorage.setItem('precio_venta', this.VectorProductos[this.idc].precio_venta + "");
+            localStorage.setItem('categoria', this.VectorProductos[this.idc].categoria + "");
+            this.router.navigate(['/administrarProducto']); //acá va la página de modificación 
         }
     }
     Logout() {
-        localStorage.removeItem('llave');
-        localStorage.removeItem('CodigoUsuario');
-        localStorage.removeItem('Username');
-        localStorage.removeItem('Nombres');
-        localStorage.removeItem('Apellidos');
-        localStorage.removeItem('Correo');
-        localStorage.removeItem('Password');
-        localStorage.removeItem('Fecha_Nac');
+        localStorage.clear();
         this.router.navigate(['login']);
     }
 }
@@ -2784,18 +3126,12 @@ class VerProveedoresComponent {
         this.Nombres = localStorage.getItem('Nombres');
         this.habilitacion = localStorage.getItem('Rol');
         if (this.habilitacion == "1") {
-            this.habilitacion = "<div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"administrarUsuario\" >Admin Usuarios</a>";
-            this.habilitacion += "<div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"modificarUsuario\" >Modificar mis datos</a>";
-            this.habilitacion += "<div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"registroProveedor\" >Agregar Proveedor</a>";
-            this.habilitacion += "<div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"administrarProveedor\" >Admin Proveedor</a>";
-            this.habilitacion += "<div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"agregarProducto\" >Agregar Producto</a>";
-            this.habilitacion += "<div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"VerProductosAdmin\" >Admin Producto</a>";
+            this.habilitacion = "<div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"administrarUsuario\" >Admin Usuarios</a> <div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"modificarUsuario\" >Modificar mis datos</a> <div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"registroProveedor\" >Agregar Proveedor</a>  <div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"administrarProveedor\" >Admin Proveedor</a> <div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"agregarProducto\" >Agregar Producto</a> <div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"VerProductosAdmin\" >Admin Producto</a>";
         }
         else {
             this.habilitacion = "";
         }
         this.Proveedores.obtenerProveedores().subscribe((res) => {
-            console.log(res);
             this.VectorProveedores = res;
             // console.log(this.Usuarios[0].dpi);
         });
@@ -2813,14 +3149,7 @@ class VerProveedoresComponent {
         }
     }
     Logout() {
-        localStorage.removeItem('llave');
-        localStorage.removeItem('CodigoUsuario');
-        localStorage.removeItem('Username');
-        localStorage.removeItem('Nombres');
-        localStorage.removeItem('Apellidos');
-        localStorage.removeItem('Correo');
-        localStorage.removeItem('Password');
-        localStorage.removeItem('Fecha_Nac');
+        localStorage.clear();
         this.router.navigate(['login']);
     }
 }
@@ -2936,12 +3265,8 @@ class RegistroProveedorComponent {
         this.Nombres = localStorage.getItem('Nombres');
         this.habilitacion = localStorage.getItem('Rol');
         if (this.habilitacion == "1") {
-            this.habilitacion = "<div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"administrarUsuario\" >Admin Usuarios</a>";
-            this.habilitacion += "<div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"modificarUsuario\" >Modificar mis datos</a>";
-            this.habilitacion += "<div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"verProveedores\" >Ver Proveedores</a>";
-            this.habilitacion += "<div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"administrarProveedor\" >Admin Proveedor</a>";
-            this.habilitacion += "<div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"agregarProducto\" >Agregar Producto</a>";
-            this.habilitacion += "<div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"VerProductosAdmin\" >Admin Producto</a>";
+            this.habilitacion = "<div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"administrarUsuario\" >Admin Usuarios</a>  <div class=\"dropdown-divider\"></div>   </div><a class=\"dropdown-item\" href=\"modificarUsuario\" >Modificar mis datos</a>  <div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"verProveedores\" >Ver Proveedores</a>  <div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"administrarProveedor\" >Admin Proveedor</a>  <div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"agregarProducto\" >Agregar Producto</a>   <a class=\"dropdown-item\"  href=\"VerProductosAdmin\" >Admin Producto</a> ";
+            //  this.habilitacion+="<div class=\"dropdown-divider\"></div>    <a class=\"dropdown-item\"  href=\"VerProductosAdmin\" >Admin Producto</a>";
         }
         else {
             this.habilitacion = "";
@@ -2951,24 +3276,11 @@ class RegistroProveedorComponent {
         // console.log(this.fechanac);
         this.proveedor.RegistroProveedor(this.nombre, this.direccion, this.telefono, this.contacto)
             .subscribe((res) => {
-            console.log("ya insertó");
-            console.log(res);
             alert("PROVEEDOR REGISTRADO CON ÉXITO");
-            this.nombre = "";
-            this.direccion = "";
-            this.telefono = "";
-            this.contacto = "";
         }, err => { alert("NO SE PUDO REGISTRAR EL PROVEEDOR"); });
     }
     Logout() {
-        localStorage.removeItem('llave');
-        localStorage.removeItem('CodigoUsuario');
-        localStorage.removeItem('Username');
-        localStorage.removeItem('Nombres');
-        localStorage.removeItem('Apellidos');
-        localStorage.removeItem('Correo');
-        localStorage.removeItem('Password');
-        localStorage.removeItem('Fecha_Nac');
+        localStorage.clear();
         this.router.navigate(['login']);
     }
 }
@@ -3124,7 +3436,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const baseUrl = 'http://192.168.0.3:3000';
+//const baseUrl = 'http://192.168.0.3:3000';
+const baseUrl = 'http://localhost:3000';
 class ProductoService {
     constructor(http) {
         this.http = http;
@@ -3133,7 +3446,6 @@ class ProductoService {
         });
     }
     registro(producto) {
-        console.log(producto);
         const url = baseUrl + "/products/create";
         return this.http.post(url, producto, {
             headers: this.headers
@@ -3146,7 +3458,6 @@ class ProductoService {
     update(id, nombre, descripcion, cantidad, compra, venta, categoria) {
         const url = baseUrl + "/products/updateProd";
         //comienza el put
-        console.log("actualizar " + id);
         return this.http.put(url, {
             "id": id,
             "nombre_prod": nombre,
@@ -3160,12 +3471,58 @@ class ProductoService {
         }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(data => data));
     }
     delete(id) {
-        console.log("Service delete " + id);
         return this.http.delete(`${baseUrl}/products/deleteProd/${id}`);
     }
     obtenerProductos() {
-        const url = baseUrl + "/products";
+        const url = baseUrl + "/products/";
         return this.http.get(url);
+    }
+    //***************************** VENTAS *********************************************** */
+    CrearVenta(idU) {
+        const url = baseUrl + "/venta/crearVenta";
+        //comienza el put
+        return this.http.post(url, {
+            "CodigoUsuario": idU
+        }, {
+            headers: this.headers
+        }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(data => data));
+    }
+    DetalleVenta(idventa, idp, cantidad) {
+        const url = baseUrl + "/venta/llenarDetalle";
+        //comienza el put
+        return this.http.post(url, {
+            "id_venta": idventa,
+            "id_producto": idp,
+            "cantidad": cantidad
+        }, {
+            headers: this.headers
+        }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(data => data));
+    }
+    ObtenerUltimaVenta() {
+        const url = baseUrl + "/venta/last";
+        return this.http.get(url);
+    }
+    ObtenerTotalVenta(idU, idventa) {
+        const url = baseUrl + "/venta/valorTotal";
+        return this.http.post(url, {
+            "CodigoUsuario": idU,
+            "id_venta": idventa
+        }, {
+            headers: this.headers
+        }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(data => data));
+    }
+    /************************ DIRECCIONES *************************** */
+    CrearDireccion(idU, direccion) {
+        const url = baseUrl + "/direccion/createDir";
+        return this.http.post(url, {
+            "CodigoUsuario": idU,
+            "direccion": direccion
+        }, {
+            headers: this.headers
+        }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(data => data));
+    }
+    getDirecciones(id) {
+        return this.http.get(`${baseUrl}/direccion/?id=${id}`);
     }
 }
 ProductoService.ɵfac = function ProductoService_Factory(t) { return new (t || ProductoService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"])); };
@@ -3198,12 +3555,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const baseUrl = 'http://192.168.0.3:3000';
+//const baseUrl = 'http://192.168.0.3:3000';
+const baseUrl = 'http://localhost:3000';
 class ProveedorService {
-    //ip2:string="192.168.1.8";
     constructor(http) {
         this.http = http;
-        this.ip = "192.168.0.3";
         //para comunicarnos con json
         this.headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpHeaders"]({
             "Content-Type": "application/json"
@@ -3211,7 +3567,7 @@ class ProveedorService {
     }
     RegistroProveedor(nombre, direccion, telefono, nombre_contacto) {
         //console.log(username,password);
-        const url = "http://" + this.ip + ":3000/prov/create";
+        const url = baseUrl + "/prov/create";
         //comienza el post
         return this.http.post(url, {
             "nombre": nombre,
@@ -3223,9 +3579,8 @@ class ProveedorService {
         }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(data => data));
     }
     update(id, nombre, direccion, telefono, nombre_contacto) {
-        const url = "http://" + this.ip + ":3000/prov/updateProv";
+        const url = baseUrl + "/prov/updateProv";
         //comienza el put
-        console.log("actualizar " + id);
         return this.http.put(url, {
             "id": id,
             "nombre": nombre,
@@ -3237,8 +3592,7 @@ class ProveedorService {
         }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(data => data));
     }
     delete(id) {
-        console.log("Service delete " + id);
-        return this.http.delete(`http://${this.ip}:3000/prov/deleteProv/${id}`);
+        return this.http.delete(`${baseUrl}/prov/deleteProv/${id}`);
     }
     obtenerProveedores() {
         const url = baseUrl + "/prov/";
@@ -3275,12 +3629,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const baseUrl = 'http://192.168.0.3:3000';
+//const baseUrl = 'http://192.168.0.3:3000';
+const baseUrl = 'http://localhost:3000';
 class UsuarioService {
-    //ip2:string="192.168.1.8";
     constructor(http) {
         this.http = http;
-        this.ip = "192.168.0.3";
         //para comunicarnos con json
         this.headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpHeaders"]({
             "Content-Type": "application/json"
@@ -3289,7 +3642,7 @@ class UsuarioService {
     singup(username, nombre, apellidos, correo, password, genero, fechanac) {
         //console.log(username,password);
         //const url = "http://"+this.puerto+":3000/app/registro";
-        const url = "http://" + this.ip + ":3000/user/create";
+        const url = baseUrl + "/user/create";
         //comienza el post
         return this.http.post(url, {
             "Username": username,
@@ -3305,14 +3658,7 @@ class UsuarioService {
         }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(data => data));
     }
     update(username, nombre, apellidos, correo, password, genero, fechanac) {
-        console.log("modificando " + username);
-        console.log("nombre " + nombre);
-        console.log("apellidos " + apellidos);
-        console.log("correo " + correo);
-        console.log("password " + password);
-        console.log("genero " + genero);
-        console.log("fecha de nacimiento " + fechanac);
-        const url = "http://" + this.ip + ":3000/user/update";
+        const url = baseUrl + "/user/update";
         //comienza el put
         return this.http.put(url, {
             "Username": username,
@@ -3327,13 +3673,11 @@ class UsuarioService {
         }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(data => data));
     }
     delete(Username) {
-        console.log("Service delete " + Username);
-        return this.http.delete(`http://${this.ip}:3000/user/delete/${Username}`);
+        return this.http.delete(`${baseUrl}/user/delete/${Username}`);
         //return this.http.delete(`http://${this.ip}/user/delete${username}`);
     }
     getUsuario(username) {
-        console.log("Entro a getUsuario");
-        const url = "http://" + this.ip + ":3000/user/getUsuario";
+        const url = baseUrl + "/user/getUsuario";
         //comienza el post
         return this.http.post(url, {
             "Username": username
