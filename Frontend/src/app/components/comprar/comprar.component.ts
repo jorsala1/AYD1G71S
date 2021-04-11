@@ -24,6 +24,8 @@ export class ComprarComponent implements OnInit {
   Producto_Cantidad : number[][] =[]; //id producto, cantidad
   direccion: string ;
   listadir = [];
+  d = "Elige tu dirección...";
+  existeDireccion = false;
   
   ngOnInit(): void {
     this.Nombres=localStorage.getItem('Nombres');
@@ -59,7 +61,9 @@ export class ComprarComponent implements OnInit {
   }
 
   Comprar(){
-    this.RegistrarDireccion(Number(localStorage.getItem("CodigoUsuario")), this.direccion);
+    if(this.existeDireccion == false){
+      this.RegistrarDireccion(Number(localStorage.getItem("CodigoUsuario")), this.direccion);
+    }
     //1. Verifcar que exista la cantidad del producto deseado 
     if(this.VectorPComprar.length==this.VerificarTodos()){ 
       //significa que existen todas las cantidades que se necesitan 
@@ -144,6 +148,22 @@ export class ComprarComponent implements OnInit {
   Logout(){
     localStorage.clear();
     this.router.navigate(['login']);
+  }
+
+  EligeDireccion(iddireccion){
+    this.direccion = iddireccion ;
+    for (const x of this.listadir) {
+      if(x.id==iddireccion){
+        this.d=x.direccion;
+        this.existeDireccion = true;
+        console.log("Cambio direccion: "+ true);
+      }
+    }
+  }
+
+  cambiarTexto(){
+    this.existeDireccion = false;
+    console.log("Cambio direccion: "+ false);
   }
 
 }

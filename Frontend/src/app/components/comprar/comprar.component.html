@@ -46,14 +46,22 @@
   
  <!-- <input type="checkbox" id="direccion" name="direccion" value="direccion">
   <label for="direccion">Dirección nueva</label> -->
-  <input  mdbInput  name="txtDireccion" [(ngModel)]="direccion" type="text" id="txtdireccion" placeholder="Ingrese dirección">
+  <input  mdbInput  name="txtDireccion" [(ngModel)]="direccion" (change)="cambiarTexto()" type="text" id="txtdireccion" placeholder="Ingrese una dirección nueva">
   <br>
-  <div class="md-form form-group">
-  <div class="dropdown-menu">  
-    <a class="dropdown-item" *ngFor="let dire of listadir" > {{dire.direccion}} </a>
-    <div class="dropdown-divider"></div>
-  </div>
-</div>
+
+  
+    <div class="md-form form-group">
+        <div class="btn-group" mdbDropdown>
+          <button type="button" mdbBtn color="secondary" class="waves-light" mdbWavesEffect>{{d}}</button>
+          <button type="button" mdbDropdownToggle mdbBtn color="secondary" class="dropdown-toggle dropdown-toggle-split px-3 waves-light"
+            mdbWavesEffect></button>
+          <div class="dropdown-menu">  
+            <a class="dropdown-item" *ngFor="let dire of listadir" (click)="EligeDireccion(dire.id)" > {{dire.direccion}} </a>
+            <div class="dropdown-divider"></div>
+          </div>
+        </div>               
+    </div>
+  
   <br>
 
   <table mdbTable >
