@@ -18,7 +18,7 @@ export class AdministrarProductoComponent implements OnInit {
   habilitacion: string;
   nombre_prod :string="";
   descripcion: string="";
-  cantidad:  number;
+  cantidad:  number=0;
   precio_compra: number;
   precio_venta:  number;
   categoria:  number;
@@ -47,14 +47,14 @@ export class AdministrarProductoComponent implements OnInit {
     }
 
     this.SProductos.obtenerCategorias().subscribe((res:any[])=>{
-      console.log(res);
+    //  console.log(res);
       this.listacat=res;
     })
 
     this.id = localStorage.getItem('id_producto');
     this.nombre_prod = localStorage.getItem('nombre_prod');
     this.descripcion = localStorage.getItem('descripcion');
-    this.cantidad = Number(localStorage.getItem('cantidad'));
+    this.cantidad =Number(localStorage.getItem('cantidad'));
     this.precio_compra = Number(localStorage.getItem('precio_compra'));
     this.precio_venta = Number(localStorage.getItem('precio_venta'));
     this.categoria = Number(localStorage.getItem('categoria'));

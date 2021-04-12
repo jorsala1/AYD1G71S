@@ -42,6 +42,7 @@ export class RegistroComponent implements OnInit {
     }
     return false;
   }
+  
   registrarse(){
     if(this.correoCorrecto(this.correo)&&(this.userNameCorrecto(this.username)=="Cumple con el rango"))
     {

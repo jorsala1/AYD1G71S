@@ -43,7 +43,7 @@ export class AdministrarUsuarioComponent implements OnInit {
   modificar(){
     this.user.update(this.username,this.nombre,this.apellidos,this.correo,this.password,this.genero, this.fechanac)
     .subscribe((res)=>{
-      console.log("ya modifico");
+      alert("Se modificó con éxito.");
       console.log(res);      
     })
   }

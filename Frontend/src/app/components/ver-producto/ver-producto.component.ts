@@ -15,7 +15,9 @@ export class VerProductoComponent implements OnInit {
   headElements = ['Nombre Producto', 'Descripción', 'Cantidad','Precio Venta','Precio Compra','Detalles'];
   habilitacion: string;
   idc: number;
+  pos: number=0;
   ngOnInit(): void {
+   
     this.Nombres=localStorage.getItem('Nombres');
     this.habilitacion=localStorage.getItem('Rol');
 
@@ -27,30 +29,35 @@ export class VerProductoComponent implements OnInit {
       this.habilitacion="";
     }
 
-    this.Producto.obtenerPedidos().subscribe((res:any[])=>{
+    this.Producto.obtenerProductos().subscribe((res:any[])=>{
       this.VectorProductos=res;
+      console.log(res);
      // console.log(this.Usuarios[0].dpi);
     })
   }
   Modifica(id : number):boolean{
+    console.log(id);
+   
     for (const Vector of this.VectorProductos) {
-      if(Vector.id==id){
+      
+      if(Vector.id==id){        
         this.idc=Vector.id;
         return true;
       }
+      this.pos++;
     }
     return false;
   }
 
   AModificar(id: number){
     if(this.Modifica(id)){
-      localStorage.setItem('id_producto',""+this.VectorProductos[this.idc].id);
-      localStorage.setItem('nombre_prod',this.VectorProductos[this.idc].nombre_prod);
-      localStorage.setItem('descripcion',this.VectorProductos[this.idc].descripcion);
-      localStorage.setItem('cantidad',""+this.VectorProductos[this.idc].cantidad);
-      localStorage.setItem('precio_compra',this.VectorProductos[this.idc].precio_compra+"");
-      localStorage.setItem('precio_venta',this.VectorProductos[this.idc].precio_venta+"");
-      localStorage.setItem('categoria',this.VectorProductos[this.idc].categoria+"");
+      localStorage.setItem('id_producto',""+this.VectorProductos[this.pos].id);
+      localStorage.setItem('nombre_prod',this.VectorProductos[this.pos].nombre_prod);
+      localStorage.setItem('descripcion',this.VectorProductos[this.pos].descripcion);
+      localStorage.setItem('cantidad',""+this.VectorProductos[this.pos].cantidad);
+      localStorage.setItem('precio_compra',this.VectorProductos[this.pos].precio_compra+"");
+      localStorage.setItem('precio_venta',this.VectorProductos[this.pos].precio_venta+"");
+      localStorage.setItem('categoria',this.VectorProductos[this.pos].categoria+"");
       this.router.navigate(['/administrarProducto']); //acá va la página de modificación 
     }
   }
