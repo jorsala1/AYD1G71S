@@ -69,7 +69,7 @@ export class ComprarComponent implements OnInit {
       //significa que existen todas las cantidades que se necesitan 
       //registramos la venta
       let id: number = Number(localStorage.getItem("CodigoUsuario"));
-      this.Producto.CrearVenta(id).subscribe( res => {
+      this.Producto.CrearVenta(id, this.direccion).subscribe( res => {
         //alert("Se registró correctamente la venta");
          },
          err => {  alert("No se pudo registrar la venta"); }      
@@ -151,11 +151,12 @@ export class ComprarComponent implements OnInit {
   }
 
   EligeDireccion(iddireccion){
-    this.direccion = iddireccion ;
+    //this.direccion = iddireccion ;
     for (const x of this.listadir) {
       if(x.id==iddireccion){
         this.d=x.direccion;
         this.existeDireccion = true;
+        this.direccion = this.d;
         console.log("Cambio direccion: "+ true);
       }
     }

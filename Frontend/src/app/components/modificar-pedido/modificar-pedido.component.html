@@ -1,0 +1,149 @@
+<!--Navbar-->
+<mdb-navbar SideClass="navbar navbar-expand-lg #80cbc4 teal lighten-3">
+
+    <!-- Navbar brand -->
+    <mdb-navbar-brand><a class="navbar-brand " style="font-size:30px ; color:darkslateblue " href="#"> Farma Seven</a>
+    </mdb-navbar-brand>
+  
+  
+    <!-- Collapsible content -->
+    <links>
+  
+      <!-- Links -->
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" mdbWavesEffect [routerLink]="['/home']">Home</a>
+        </li>
+  
+        <div class="btn-group" mdbDropdown>
+            <button type="button" mdbBtn color="danger" class="waves-light" mdbWavesEffect>{{Nombres}}</button>
+            <button type="button" mdbDropdownToggle mdbBtn color="danger" class="dropdown-toggle dropdown-toggle-split px-3 waves-light"
+              mdbWavesEffect></button>
+            <div class="dropdown-menu">  
+              <a class="dropdown-item"  [routerLink]="['/principal']">Principal</a>
+              <div [innerHTML]="habilitacion"></div>
+              
+              <div class="dropdown-divider"></div>   
+              <a class="dropdown-item"   (click)="Logout()">Logout</a>
+            </div>
+          </div>
+      </ul>
+      <!-- Links -->
+  
+      
+    </links>
+    <!-- Collapsible content -->
+  
+  </mdb-navbar>
+    
+    <div class="row ">
+      <div class="col-12">
+        <h3 align=center class="p-3 text "  style="font-size: 30px; font-weight:bold; color:darkslateblue "> Modificar Estado de Pedido </h3>
+      </div>
+    </div>
+    
+    <!-- Extended material form grid -->
+    
+    <div class="container">
+      <div class="row ">
+        <div class="col-md-3 col-1">
+    
+        </div>
+        <div class="col-md-6 col-10">
+          <form>
+            <!-- Grid row -->
+            <div class="form-row">
+              <!-- Grid column -->
+              <div class="col-md-6 col-12">
+                <!-- Material input -->
+                <div class="md-form form-group">
+                  <label for="inputEmail4MD">Numero de pedido: {{this.id}}</label>
+                </div>
+              </div>
+              <!-- Grid column -->
+            </div>
+            <!-- Grid row -->
+
+            <!-- Grid row -->
+            <div class="form-row">
+              <!-- Grid column -->
+              <div class="col-md-6 col-12">
+                <div class="md-form form-group">
+                  <label for="inputAddressMD">Username: {{this.username}}</label>
+                </div>
+              
+              </div>
+              <!-- Grid column -->
+            </div>
+            <!-- Grid row -->
+
+            <!-- Grid row -->
+            <div class="form-row">
+              <!-- Grid column -->
+              <div class="col-md-6 col-12">
+                <div class="md-form form-group">
+                  <label for="inputAddressMD">Nombres: {{this.nombres}}</label>
+                </div>
+              
+              </div>
+              <!-- Grid column -->
+            </div>
+            <!-- Grid row -->
+
+            <!-- Grid row -->
+            <div class="form-row">
+              <!-- Grid column -->
+              <div class="col-md-6 col-12">
+                <div class="md-form form-group">
+                  <label for="inputAddressMD">Apellidos: {{this.apellidos}}</label>
+                </div>
+              
+              </div>
+              <!-- Grid column -->
+            </div>
+            <!-- Grid row -->
+
+            <!-- Grid row -->
+            <div class="form-row">
+              <!-- Grid column -->
+              <div class=" col-12">
+                <div class="md-form form-group">
+                  <label for="inputAddressMD">Fecha Venta: {{this.fecha_venta}}</label>
+                </div>
+              
+              </div>
+              <!-- Grid column -->
+            </div>
+            <!-- Grid row -->
+    
+    
+          <!-- Grid row -->
+          <div class="row">
+            <!-- Grid column -->
+            <div class="col-md-6 col-12">
+                <div class="md-form form-group">
+                    <div class="btn-group" mdbDropdown>
+                      <button type="button" mdbBtn color="secondary" class="waves-light" mdbWavesEffect>{{est}}</button>
+                      <button type="button" mdbDropdownToggle mdbBtn color="secondary" class="dropdown-toggle dropdown-toggle-split px-3 waves-light"
+                        mdbWavesEffect></button>
+                      <div class="dropdown-menu">  
+                        <a class="dropdown-item" *ngFor="let estado of listaestados" (click)="EligeEstado(estado.id)" > {{estado.estado}} </a>
+                        <div class="dropdown-divider"></div>
+                      </div>
+                    </div>               
+                </div>
+            </div>
+            <!-- Grid column -->
+          </div>
+            <!-- Grid row -->
+    
+         
+            <!-- Grid row -->
+            <button (click)="Actualizar()"  type="submit" mdbBtn color="secondary">Actualizar</button>
+          </form>
+        </div>
+  
+      </div>
+    </div>
+    
+    <!-- Extended material form grid -->

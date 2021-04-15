@@ -11,6 +11,10 @@ export interface Categoria {
     id: number;
     categoria: string;
 }
+export interface Estado {
+    id: number;
+    estado: string;
+}
 export interface UltimaV {
     id: number;
 }

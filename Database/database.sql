@@ -96,12 +96,25 @@ create table direccion(
 );
 
 -- insert into direccion values (1,'direccion1',1);
+create table EstadoPedido(
+    id int not null auto_increment primary key,
+    estado varchar(30)
+);
+
+insert into EstadoPedido(estado) values ('Bodega');
+insert into EstadoPedido(estado) values ('Preparado');
+insert into EstadoPedido(estado) values ('Ruta');
+insert into EstadoPedido(estado) values ('Entregado');
+insert into EstadoPedido(estado) values ('Cancelada');
 
 -- tablas relacionadas a las ventas
 create table ventas(
 	id int not null auto_increment primary key,
     CodigoUsuario int not null,
     Fecha_Venta timestamp default current_timestamp not null, 
+    DireccionEntrega varchar(255) not null,
+    estado int not null DEFAULT 1,
+    foreign key (estado) references EstadoPedido(id),
     foreign key (CodigoUsuario) references Usuario(CodigoUsuario)
 );
 
@@ -146,3 +159,24 @@ and v.CodigoUsuario  = u.CodigoUsuario
 and  u.CodigoUsuario = 1
 and v.id = 6
 group by u.CodigoUsuario;*/
+
+-- consulta de pedidos
+SELECT v.id as numero_pedido, u.Username, u.Nombres, u.apellidos, v.Fecha_Venta, e.estado  
+FROM ventas v INNER JOIN Usuario u ON v.CodigoUsuario = u.CodigoUsuario
+INNER JOIN EstadoPedido e ON v.estado = e.id
+ORDER BY numero_pedido DESC;
+
+SELECT v.id as numero_pedido, u.Username, u.Nombres, u.apellidos, v.Fecha_Venta, e.estado , n.monto 
+FROM ventas v INNER JOIN Usuario u ON v.CodigoUsuario = u.CodigoUsuario
+INNER JOIN EstadoPedido e ON v.estado = e.id
+INNER JOIN (
+    SELECT id_venta as venta, SUM(monto_producto) as monto 
+    FROM detalle_venta
+    GROUP BY id_venta
+) n ON v.id = n.venta
+WHERE v.CodigoUsuario = 2
+ORDER BY numero_pedido DESC;
+
+SELECT id_venta as venta, SUM(monto_producto) as monto 
+FROM detalle_venta
+GROUP BY id_venta;

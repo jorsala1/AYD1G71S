@@ -26,7 +26,8 @@ class VentaController {
     create(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const usuario = req.body.CodigoUsuario;
-            yield database_1.default.query(`insert into ventas ( CodigoUsuario ) values (${usuario});`);
+            const direccion = req.body.Direccion;
+            yield database_1.default.query(`insert into ventas ( CodigoUsuario, DireccionEntrega ) values (${usuario}, '${direccion}');`);
             res.status(200).json({ respuesta: 'Se creo una nueva venta' });
         });
     }
@@ -66,6 +67,39 @@ class VentaController {
         and v.id = ${id_venta}
         group by u.CodigoUsuario;`);
             res.status(200).json(respuesta);
+        });
+    }
+    //mostrar los estados
+    estados(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const respuesta = yield database_1.default.query('select * from EstadoPedido');
+            res.json(respuesta);
+        });
+    }
+    //mostrar los pedidos
+    pedidos(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const respuesta = yield database_1.default.query('SELECT v.id as numero_pedido, u.Username, u.Nombres, u.apellidos as Apellidos, v.Fecha_Venta, e.estado   FROM ventas v INNER JOIN Usuario u ON v.CodigoUsuario = u.CodigoUsuario INNER JOIN EstadoPedido e ON v.estado = e.id ORDER BY numero_pedido DESC');
+            res.json(respuesta);
+        });
+    }
+    //mostrar los pedidos por cliente
+    pedidosCliente(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const id = yield req.body['CodigoUsuario'];
+            const respuesta = yield database_1.default.query('SELECT v.id as numero_pedido, u.Username, u.Nombres, u.apellidos as Apellidos, v.Fecha_Venta, e.estado , n.monto FROM ventas v INNER JOIN Usuario u ON v.CodigoUsuario = u.CodigoUsuario INNER JOIN EstadoPedido e ON v.estado = e.id INNER JOIN ( SELECT id_venta as venta, SUM(monto_producto) as monto FROM detalle_venta GROUP BY id_venta ) n ON v.id = n.venta WHERE v.CodigoUsuario = ' + id + ' ORDER BY numero_pedido DESC');
+            res.json(respuesta);
+        });
+    }
+    //update del pedido
+    updatePedido(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const id = yield req.body['id'];
+            const estado = yield req.body['estado'];
+            let u = req.body['id'];
+            console.log(u);
+            yield database_1.default.query('update ventas set estado = ' + estado + ' where id = ' + id);
+            res.json({ message: "El pedido fue actualizado" });
         });
     }
 }
