@@ -62,13 +62,14 @@ export class ProductoService {
 
   //***************************** VENTAS *********************************************** */
 
-  CrearVenta(idU: number) { 
+  CrearVenta(idU: number, direccion:string) { 
     const url = baseUrl +"/venta/crearVenta";
     //comienza el put
     return this.http.post(
       url,
       {
-        "CodigoUsuario": idU
+        "CodigoUsuario": idU,
+        "Direccion": direccion
       },
       {
         headers: this.headers
@@ -110,6 +111,45 @@ export class ProductoService {
       }
     ).pipe(map(data => data));
   }
+
+  obtenerPedidos(){
+    const url= baseUrl+"/venta/pedidos";
+    return this.http.get(url);
+  }
+
+  obtenerPedidoCliente(id:number){
+    const url= baseUrl+"/venta/misPedidos";
+    return this.http.post(
+      url,
+      {
+        "CodigoUsuario":id     
+      },
+      {
+        headers: this.headers
+      }
+    ).pipe(map(data => data));
+  }
+
+  obtenerEstados(){
+    const url= baseUrl+"/venta/getEstadoPedidos";
+    return this.http.get(url);
+  }
+
+  updatePedido(id : string, estado:Number) { 
+    const url = baseUrl +"/venta/updatePedido";
+    //comienza el put
+    return this.http.put(
+      url,
+      {
+        "id": id,
+        "estado": estado
+      },
+      {
+        headers: this.headers
+      }
+    ).pipe(map(data => data));
+  }
+
   /************************ DIRECCIONES *************************** */
   CrearDireccion(idU:number, direccion:string){
     const url = baseUrl + "/direccion/createDir";

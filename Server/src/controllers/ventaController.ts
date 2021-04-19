@@ -12,7 +12,8 @@ class VentaController{
     // crear una nueva venta
     public async create (req:Request,res:Response):Promise<void>{
         const usuario = req.body.CodigoUsuario;
-        await pool.query(`insert into ventas ( CodigoUsuario ) values (${usuario});`)
+        const direccion = req.body.Direccion;
+        await pool.query(`insert into ventas ( CodigoUsuario, DireccionEntrega ) values (${usuario}, '${direccion}');`)
         res.status(200).json({respuesta: 'Se creo una nueva venta'});
     }
 
@@ -50,6 +51,35 @@ class VentaController{
         and v.id = ${id_venta}
         group by u.CodigoUsuario;`);
         res.status(200).json(respuesta);
+    }
+
+    //mostrar los estados
+    public async estados (req:Request, res:Response){
+        const respuesta = await pool.query('select * from EstadoPedido');
+        res.json(respuesta);
+    }
+
+    //mostrar los pedidos
+    public async pedidos (req:Request, res:Response){
+        const respuesta = await pool.query('SELECT v.id as numero_pedido, u.Username, u.Nombres, u.apellidos as Apellidos, v.Fecha_Venta, e.estado   FROM ventas v INNER JOIN Usuario u ON v.CodigoUsuario = u.CodigoUsuario INNER JOIN EstadoPedido e ON v.estado = e.id ORDER BY numero_pedido DESC');
+        res.json(respuesta);
+    }
+
+    //mostrar los pedidos por cliente
+    public async pedidosCliente (req:Request, res:Response){
+        const id = await  req.body['CodigoUsuario'];
+        const respuesta = await pool.query('SELECT v.id as numero_pedido, u.Username, u.Nombres, u.apellidos as Apellidos, v.Fecha_Venta, e.estado , n.monto FROM ventas v INNER JOIN Usuario u ON v.CodigoUsuario = u.CodigoUsuario INNER JOIN EstadoPedido e ON v.estado = e.id INNER JOIN ( SELECT id_venta as venta, SUM(monto_producto) as monto FROM detalle_venta GROUP BY id_venta ) n ON v.id = n.venta WHERE v.CodigoUsuario = ' + id + ' ORDER BY numero_pedido DESC');
+        res.json(respuesta);
+    }
+
+    //update del pedido
+    public async updatePedido(req:Request,res:Response){
+        const id = await  req.body['id'];
+        const estado = await  req.body['estado'];
+      let u = req.body['id']
+      console.log(u)
+      await pool.query('update ventas set estado = ' + estado + ' where id = ' + id);        
+      res.json({message:"El pedido fue actualizado"});
     }
 }
 

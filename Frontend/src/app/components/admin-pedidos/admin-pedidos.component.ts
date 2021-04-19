@@ -1,20 +1,24 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductoService } from 'src/app/services/producto.service';
-import { Producto } from 'src/app/models/producto';
 import { Router } from '@angular/router';
+
+import { ProductoService } from 'src/app/services/producto.service';
+import { Pedido } from 'src/app/models/pedido';
+
 @Component({
-  selector: 'app-ver-producto',
-  templateUrl: './ver-producto.component.html',
-  styleUrls: ['./ver-producto.component.scss']
+  selector: 'app-admin-pedidos',
+  templateUrl: './admin-pedidos.component.html',
+  styleUrls: ['./admin-pedidos.component.scss']
 })
-export class VerProductoComponent implements OnInit {
+export class AdminPedidosComponent implements OnInit {
 
   constructor(public router:Router, public Producto:ProductoService) { }
+
   Nombres: string;
-  VectorProductos: Producto[] =[];
-  headElements = ['Nombre Producto', 'Descripción', 'Cantidad','Precio Venta','Precio Compra','Detalles'];
+  VectorPedidos: Pedido[] =[];
+  headElements = ['Numero Pedido', 'Username', 'Nombres','Apellidos','Fecha Pedido','Estado', 'Ver Pedido'];
   habilitacion: string;
   idc: number;
+
   ngOnInit(): void {
     this.Nombres=localStorage.getItem('Nombres');
     this.habilitacion=localStorage.getItem('Rol');
@@ -26,32 +30,38 @@ export class VerProductoComponent implements OnInit {
     }
 
     this.Producto.obtenerPedidos().subscribe((res:any[])=>{
-      this.VectorProductos=res;
+      this.VectorPedidos=res;
+      console.log(res);
      // console.log(this.Usuarios[0].dpi);
     })
   }
+
   Modifica(id : number):boolean{
-    for (const Vector of this.VectorProductos) {
-      if(Vector.id==id){
-        this.idc=Vector.id;
+    var i = 0;
+    for (const Vector of this.VectorPedidos) {
+      if(Vector.numero_pedido==id){
+        //this.idc = Vector.numero_pedido;
+        this.idc = i;
         return true;
       }
+      i++;
     }
     return false;
   }
 
   AModificar(id: number){
+    alert("modificar " + id);
     if(this.Modifica(id)){
-      localStorage.setItem('id_producto',""+this.VectorProductos[this.idc].id);
-      localStorage.setItem('nombre_prod',this.VectorProductos[this.idc].nombre_prod);
-      localStorage.setItem('descripcion',this.VectorProductos[this.idc].descripcion);
-      localStorage.setItem('cantidad',""+this.VectorProductos[this.idc].cantidad);
-      localStorage.setItem('precio_compra',this.VectorProductos[this.idc].precio_compra+"");
-      localStorage.setItem('precio_venta',this.VectorProductos[this.idc].precio_venta+"");
-      localStorage.setItem('categoria',this.VectorProductos[this.idc].categoria+"");
-      this.router.navigate(['/administrarProducto']); //acá va la página de modificación 
+      localStorage.setItem('numero_pedido',""+id);
+      localStorage.setItem('nombres',""+this.VectorPedidos[this.idc].Nombres);
+      localStorage.setItem('apellidos',""+this.VectorPedidos[this.idc].Apellidos);
+      localStorage.setItem('username',""+this.VectorPedidos[this.idc].Username);
+      localStorage.setItem('fecha_venta',""+this.VectorPedidos[this.idc].Fecha_Venta);
+      localStorage.setItem('estado',""+this.VectorPedidos[this.idc].estado);
+      this.router.navigate(['/modificarPedido']); //acá va la página de modificación 
     }
   }
+
   Logout(){
     localStorage.clear();
     this.router.navigate(['login']);
