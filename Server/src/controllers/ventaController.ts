@@ -95,7 +95,7 @@ class VentaController{
     
 // crear una datos venta
     public async create_DatosV (req:Request,res:Response):Promise<void>{
-    const venta = req.body.CodigoUsuario;
+    const venta = req.body.venta;
     const direccion = req.body.Direccion;
     const Nit = req.body.nit;
     const nombrefact = req.body.nombrefact;
