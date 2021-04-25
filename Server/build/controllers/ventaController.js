@@ -138,7 +138,7 @@ class VentaController {
             }
             const Numero = resultado.join('');
             const Referencia = 0;
-            yield database_1.default.query(`insert into AutorizacionElectronica ( Venta, Direccion,NumeroNIt,NombreFact ) values (${venta}, '${Serie}', '${Numero}', '${Referencia}', '${UUID}');`);
+            yield database_1.default.query(`insert into AutorizacionElectronica ( Venta, Serie,Numero,NUmeroReferencia,UUID ) values (${venta}, '${Serie}', '${Numero}', '${Referencia}', '${UUID}');`);
             res.status(200).json({ respuesta: 'Documento Asociado Correctamente' });
         });
     }

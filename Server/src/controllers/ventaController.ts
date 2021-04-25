@@ -83,53 +83,54 @@ class VentaController{
     }
 
     // crear una Asociación
-    public async create_Asociacion (req:Request,res:Response):Promise<void>{
-        const venta = req.body.venta;
-            
-            var result           = [];
-            var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-            var charactersLength = characters.length;
-            for ( var i = 0; i < 8; i++ ) {
-              result.push(characters.charAt(Math.floor(Math.random() *  charactersLength)));
-            }
-    
-        const Serie = result.join('');
+
+public async create_Asociacion (req:Request,res:Response):Promise<void>{
+    const venta = req.body.venta;
         
-        result.push('-')
-        for ( var i = 0; i < 4; i++ ) {
-            result.push(characters.charAt(Math.floor(Math.random() *  charactersLength)));
-          }
-        
-        result.push('-')
-        for ( var i = 0; i < 4; i++ ) {
-            result.push(characters.charAt(Math.floor(Math.random() *  charactersLength)));
-          }
+        var result           = [];
+        var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        var charactersLength = characters.length;
+        for ( var i = 0; i < 8; i++ ) {
+          result.push(characters.charAt(Math.floor(Math.random() *  charactersLength)));
+        }
+
+    const Serie = result.join('');
     
-        result.push('-')
-        for ( var i = 0; i < 4; i++ ) {
-            result.push(characters.charAt(Math.floor(Math.random() *  charactersLength)));
-          }
+    result.push('-')
+    for ( var i = 0; i < 4; i++ ) {
+        result.push(characters.charAt(Math.floor(Math.random() *  charactersLength)));
+      }
     
-        result.push('-')
-        for ( var i = 0; i < 12; i++ ) {
-            result.push(characters.charAt(Math.floor(Math.random() *  charactersLength)));
-          }
+    result.push('-')
+    for ( var i = 0; i < 4; i++ ) {
+        result.push(characters.charAt(Math.floor(Math.random() *  charactersLength)));
+      }
+
+    result.push('-')
+    for ( var i = 0; i < 4; i++ ) {
+        result.push(characters.charAt(Math.floor(Math.random() *  charactersLength)));
+      }
+
+    result.push('-')
+    for ( var i = 0; i < 12; i++ ) {
+        result.push(characters.charAt(Math.floor(Math.random() *  charactersLength)));
+      }
+
+    const UUID = result.join('');
+
+        var resultado           = [];
+        var numeros       = '0123456789';
+        var numerosLength = characters.length;
+        for ( var i = 0; i < 10; i++ ) {
+            resultado.push(numeros.charAt(Math.floor(Math.random() *  numerosLength)));
+        }
+
+    const Numero = resultado.join('');
+
+    const Referencia=0;
     
-        const UUID = result.join('');
-    
-            var resultado           = [];
-            var numeros       = '0123456789';
-            var numerosLength = characters.length;
-            for ( var i = 0; i < 10; i++ ) {
-                resultado.push(numeros.charAt(Math.floor(Math.random() *  numerosLength)));
-            }
-    
-        const Numero = resultado.join('');
-    
-        const Referencia=0;
-        
-        await pool.query(`insert into AutorizacionElectronica ( Venta, Direccion,NumeroNIt,NombreFact ) values (${venta}, '${Serie}', '${Numero}', '${Referencia}', '${UUID}');`)
-        res.status(200).json({respuesta: 'Documento Asociado Correctamente'});
+    await pool.query(`insert into AutorizacionElectronica ( Venta, Serie,Numero,NUmeroReferencia,UUID ) values (${venta}, '${Serie}', '${Numero}', '${Referencia}', '${UUID}');`)
+    res.status(200).json({respuesta: 'Documento Asociado Correctamente'});
  }
     
 // crear una datos venta
@@ -141,7 +142,6 @@ class VentaController{
         await pool.query(`insert into DatosFActuracion ( Venta, Direccion,NumeroNIt,NombreFact ) values (${venta}, '${direccion}', '${Nit}', '${nombrefact}');`)
         res.status(200).json({respuesta: 'Datos Facturación creados'});
     }
+
 }
-
-
 export const ventaController = new VentaController();
