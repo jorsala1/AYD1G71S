@@ -26,6 +26,8 @@ export class ComprarComponent implements OnInit {
   listadir = [];
   d = "Elige tu dirección...";
   existeDireccion = false;
+  nombrefact = "Consumidor final";
+  nitfact = "CF";
   
   ngOnInit(): void {
     this.Nombres=localStorage.getItem('Nombres');
@@ -79,6 +81,10 @@ export class ComprarComponent implements OnInit {
       this.Producto.ObtenerUltimaVenta().subscribe((res:UltimaV)=>{       
         this.idventa =res.id;
         this.FinCompra(this.idventa);
+
+        this.Producto.Facturar(this.idventa, this.nombrefact, this.nitfact, this.direccion);
+        this.Producto.Facturar2(this.idventa);
+
       });
       
     }else {

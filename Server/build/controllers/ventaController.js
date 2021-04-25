@@ -102,5 +102,28 @@ class VentaController {
             res.json({ message: "El pedido fue actualizado" });
         });
     }
+    // crear una Asociación
+    create_Asociación(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const venta = req.body.CodigoUsuario;
+            const Serie = req.body.Serie;
+            const Numero = req.body.Numero;
+            const Referencia = req.body.Referencia;
+            const UUID = req.body.UUID;
+            yield database_1.default.query(`insert into DatosFActuracion ( Venta, Direccion,NumeroNIt,NombreFact ) values (${venta}, '${Serie}', '${Numero}', '${Referencia}', '${UUID}');`);
+            res.status(200).json({ respuesta: 'Datos Facturación creados' });
+        });
+    }
+    // crear una datos venta
+    create_DatosV(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const venta = req.body.CodigoUsuario;
+            const direccion = req.body.Direccion;
+            const Nit = req.body.nit;
+            const nombrefact = req.body.nombrefact;
+            yield database_1.default.query(`insert into DatosFActuracion ( Venta, Direccion,NumeroNIt,NombreFact ) values (${venta}, '${direccion}', '${Nit}', '${nombrefact}');`);
+            res.status(200).json({ respuesta: 'Datos Facturación creados' });
+        });
+    }
 }
 exports.ventaController = new VentaController();

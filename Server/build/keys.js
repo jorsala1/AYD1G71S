@@ -4,7 +4,7 @@ exports.default = {
     database: {
         host: 'localhost',
         user: 'root',
-        password: 'Jangofet.1',
+        password: 'password',
         database: 'ayd1g7'
     }
 };

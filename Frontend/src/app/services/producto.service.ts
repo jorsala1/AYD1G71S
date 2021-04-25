@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { map } from 'rxjs/operators';
 
-const baseUrl = 'http://192.168.0.4:3000';
-//const baseUrl = 'http://localhost:3000';
+//const baseUrl = 'http://192.168.0.4:3000';
+const baseUrl = 'http://localhost:3000';
 @Injectable({
   providedIn: 'root'
 })
@@ -148,6 +148,41 @@ export class ProductoService {
         headers: this.headers
       }
     ).pipe(map(data => data));
+  }
+
+  /************************ FACTURAR *************************** */
+  Facturar(codigoVenta:number, nombre: string, nit:string , direccion:string) { 
+
+    const url = baseUrl +"/venta/DatosF";
+    //comienza el put
+    return this.http.post(
+      url,
+      {
+        "CodigoVenta": codigoVenta,
+        "nombrefact": nombre,
+        "nit": nit,
+        "Direccion": direccion
+      },
+      {
+        headers: this.headers
+      }
+    ).pipe(map(data => data));
+    
+  }
+
+  Facturar2(codigoVenta: number) { 
+    const url = baseUrl +"/venta/DatosF";
+    //comienza el put
+    return this.http.post(
+      url,
+      {
+        "CodigoVenta": codigoVenta
+      },
+      {
+        headers: this.headers
+      }
+    ).pipe(map(data => data));
+    
   }
 
   /************************ DIRECCIONES *************************** */

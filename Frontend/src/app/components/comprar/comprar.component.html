@@ -46,6 +46,10 @@
   
  <!-- <input type="checkbox" id="direccion" name="direccion" value="direccion">
   <label for="direccion">Dirección nueva</label> -->
+  <input  mdbInput  name="txtNombreFact" [(ngModel)]="nombrefact" type="text" id="nombrefact" placeholder="Ingrese nombre de facturacion">
+  <br>
+  <input  mdbInput  name="nitFact" [(ngModel)]="nitfact" type="text" id="nitfact" placeholder="Ingrese nit de facturación">
+  <br>
   <input  mdbInput  name="txtDireccion" [(ngModel)]="direccion" (change)="cambiarTexto()" type="text" id="txtdireccion" placeholder="Ingrese una dirección nueva">
   <br>
 
