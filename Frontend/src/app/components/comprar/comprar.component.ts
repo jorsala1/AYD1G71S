@@ -10,7 +10,7 @@ import { ProductoService } from 'src/app/services/producto.service';
 })
 export class ComprarComponent implements OnInit {
 
-  constructor(public router:Router, public Producto:ProductoService) { }
+  constructor(public router:Router, public Producto:ProductoService, public p:ProductoService) { }
 
   idventa : number=0;
   total : number=0;
@@ -81,15 +81,27 @@ export class ComprarComponent implements OnInit {
       this.Producto.ObtenerUltimaVenta().subscribe((res:UltimaV)=>{       
         this.idventa =res.id;
         this.FinCompra(this.idventa);
-
-        this.Producto.Facturar(this.idventa, this.nombrefact, this.nitfact, this.direccion);
-        this.Producto.Facturar2(this.idventa);
+        this.facturar(this.idventa);
+        
 
       });
-      
     }else {
       alert("No hay suficiente producto para su compra.");
     }
+  }
+
+  facturar(idv:number){
+    this.p.Facturar(this.idventa, this.nombrefact, this.nitfact, this.direccion).subscribe((res)=>{
+    },
+    err => {
+      alert(err);
+    });
+    //this.p.Facturar2(this.idventa);
+    this.p.Facturar2(this.idventa).subscribe((res)=>{
+    },
+    err => {
+      alert(err);
+    });
   }
 
   RegistrarDireccion(id:number, direccion:string){

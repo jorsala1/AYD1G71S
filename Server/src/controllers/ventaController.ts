@@ -83,7 +83,7 @@ class VentaController{
     }
 
     // crear una Asociación
-    public async create_Asociación (req:Request,res:Response):Promise<void>{
+    public async create_Asociacion (req:Request,res:Response):Promise<void>{
         const venta = req.body.venta;
             
             var result           = [];
@@ -134,15 +134,13 @@ class VentaController{
     
 // crear una datos venta
     public async create_DatosV (req:Request,res:Response):Promise<void>{
-    const venta = req.body.venta;
-    const direccion = req.body.Direccion;
-    const Nit = req.body.nit;
-    const nombrefact = req.body.nombrefact;
-    await pool.query(`insert into DatosFActuracion ( Venta, Direccion,NumeroNIt,NombreFact ) values (${venta}, '${direccion}', '${Nit}', '${nombrefact}');`)
-    res.status(200).json({respuesta: 'Datos Facturación creados'});
-}
-
-    
+        const venta = req.body.venta;
+        const direccion = req.body.Direccion;
+        const Nit = req.body.nit;
+        const nombrefact = req.body.nombrefact;
+        await pool.query(`insert into DatosFActuracion ( Venta, Direccion,NumeroNIt,NombreFact ) values (${venta}, '${direccion}', '${Nit}', '${nombrefact}');`)
+        res.status(200).json({respuesta: 'Datos Facturación creados'});
+    }
 }
 
 

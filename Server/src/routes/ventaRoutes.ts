@@ -20,7 +20,7 @@ class VentaRoutes{
        this.router.put('/updatePedido', ventaController.updatePedido);
        this.router.post('/misPedidos', ventaController.pedidosCliente);
        this.router.post('/DatosF', ventaController.create_DatosV);
-       this.router.post('/Asociar', ventaController.create_Asociación);
+       this.router.post('/Asociar', ventaController.create_Asociacion);
    }
 }
 

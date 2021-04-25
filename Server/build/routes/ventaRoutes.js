@@ -18,7 +18,7 @@ class VentaRoutes {
         this.router.put('/updatePedido', ventaController_1.ventaController.updatePedido);
         this.router.post('/misPedidos', ventaController_1.ventaController.pedidosCliente);
         this.router.post('/DatosF', ventaController_1.ventaController.create_DatosV);
-        this.router.post('/Asociar', ventaController_1.ventaController.create_Asociación);
+        this.router.post('/Asociar', ventaController_1.ventaController.create_Asociacion);
     }
 }
 const ventaRoutes = new VentaRoutes();

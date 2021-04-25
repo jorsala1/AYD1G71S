@@ -103,21 +103,49 @@ class VentaController {
         });
     }
     // crear una Asociación
-    create_Asociación(req, res) {
+    create_Asociacion(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            const venta = req.body.CodigoUsuario;
-            const Serie = req.body.Serie;
-            const Numero = req.body.Numero;
-            const Referencia = req.body.Referencia;
-            const UUID = req.body.UUID;
-            yield database_1.default.query(`insert into DatosFActuracion ( Venta, Direccion,NumeroNIt,NombreFact ) values (${venta}, '${Serie}', '${Numero}', '${Referencia}', '${UUID}');`);
-            res.status(200).json({ respuesta: 'Datos Facturación creados' });
+            const venta = req.body.venta;
+            var result = [];
+            var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+            var charactersLength = characters.length;
+            for (var i = 0; i < 8; i++) {
+                result.push(characters.charAt(Math.floor(Math.random() * charactersLength)));
+            }
+            const Serie = result.join('');
+            result.push('-');
+            for (var i = 0; i < 4; i++) {
+                result.push(characters.charAt(Math.floor(Math.random() * charactersLength)));
+            }
+            result.push('-');
+            for (var i = 0; i < 4; i++) {
+                result.push(characters.charAt(Math.floor(Math.random() * charactersLength)));
+            }
+            result.push('-');
+            for (var i = 0; i < 4; i++) {
+                result.push(characters.charAt(Math.floor(Math.random() * charactersLength)));
+            }
+            result.push('-');
+            for (var i = 0; i < 12; i++) {
+                result.push(characters.charAt(Math.floor(Math.random() * charactersLength)));
+            }
+            const UUID = result.join('');
+            var resultado = [];
+            var numeros = '0123456789';
+            var numerosLength = characters.length;
+            for (var i = 0; i < 10; i++) {
+                resultado.push(numeros.charAt(Math.floor(Math.random() * numerosLength)));
+            }
+            const Numero = resultado.join('');
+            const Referencia = 0;
+            yield database_1.default.query(`insert into AutorizacionElectronica ( Venta, Direccion,NumeroNIt,NombreFact ) values (${venta}, '${Serie}', '${Numero}', '${Referencia}', '${UUID}');`);
+            res.status(200).json({ respuesta: 'Documento Asociado Correctamente' });
         });
     }
     // crear una datos venta
     create_DatosV(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            const venta = req.body.CodigoUsuario;
+            const venta = req.body.venta;
             const direccion = req.body.Direccion;
             const Nit = req.body.nit;
             const nombrefact = req.body.nombrefact;
