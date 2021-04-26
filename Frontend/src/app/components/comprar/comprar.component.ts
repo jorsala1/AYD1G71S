@@ -21,7 +21,7 @@ export class ComprarComponent implements OnInit {
   headElements = ['Nombre Producto', 'Descripción', 'Cantidad','Precio'];
   habilitacion: string;
   contador:number;
-  Producto_Cantidad : number[][] =[]; //id producto, cantidad
+//  Producto_Cantidad : number[][] =[]; //id producto, cantidad
   direccion: string ;
   listadir = [];
   d = "Elige tu dirección...";
@@ -41,13 +41,13 @@ export class ComprarComponent implements OnInit {
     
     this.VectorProductos2 =JSON.parse(localStorage.getItem("PRODUCTOS"));
     this.VectorProductos =JSON.parse(localStorage.getItem("PRODUCTOS"));
-    this.Producto_Cantidad =JSON.parse(localStorage.getItem("VectorProducto_C"));
+  //  this.Producto_Cantidad =JSON.parse(localStorage.getItem("VectorProducto_C"));
    // console.log("AAAAA");
     //console.log(this.Producto_Cantidad);
    this.ProductosComprar();
    this.CargarDirecciones();
   }
-  ProductosComprar(){
+  ProductosComprar(){ /*
     for (const productoc of this.Producto_Cantidad) {     
       //console.log(productoc); 
       for (const p of this.VectorProductos2) {
@@ -59,7 +59,7 @@ export class ComprarComponent implements OnInit {
           //  console.log(this.VectorPComprar);
           }
       }
-    }
+    }*/
   }
 
   Comprar(){
@@ -128,11 +128,12 @@ export class ComprarComponent implements OnInit {
   }
   VerificarTodos():number{
     let cuenta:number=0;
-    for (const prod of this.Producto_Cantidad) {
+
+   /* for (const prod of this.Producto_Cantidad) {
       if(this.VerificaCantidadStock(prod[0],prod[1])){
         cuenta++;
       }
-    }
+    }*/
     return cuenta;
   }
   VerificaCantidadStock(id:number, cantidad: number):boolean{
