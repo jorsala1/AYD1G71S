@@ -81,6 +81,68 @@ class VentaController{
       await pool.query('update ventas set estado = ' + estado + ' where id = ' + id);        
       res.json({message:"El pedido fue actualizado"});
     }
+
+    // crear una Asociación
+    public async create_Asociación (req:Request,res:Response):Promise<void>{
+    const venta = req.body.venta;
+        
+        var result           = [];
+        var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        var charactersLength = characters.length;
+        for ( var i = 0; i < 8; i++ ) {
+          result.push(characters.charAt(Math.floor(Math.random() *  charactersLength)));
+        }
+
+    const Serie = result.join('');
+    
+    result.push('-')
+    for ( var i = 0; i < 4; i++ ) {
+        result.push(characters.charAt(Math.floor(Math.random() *  charactersLength)));
+      }
+    
+    result.push('-')
+    for ( var i = 0; i < 4; i++ ) {
+        result.push(characters.charAt(Math.floor(Math.random() *  charactersLength)));
+      }
+
+    result.push('-')
+    for ( var i = 0; i < 4; i++ ) {
+        result.push(characters.charAt(Math.floor(Math.random() *  charactersLength)));
+      }
+
+    result.push('-')
+    for ( var i = 0; i < 12; i++ ) {
+        result.push(characters.charAt(Math.floor(Math.random() *  charactersLength)));
+      }
+
+    const UUID = result.join('');
+
+        var resultado           = [];
+        var numeros       = '0123456789';
+        var numerosLength = characters.length;
+        for ( var i = 0; i < 10; i++ ) {
+            resultado.push(numeros.charAt(Math.floor(Math.random() *  numerosLength)));
+        }
+
+    const Numero = resultado.join('');
+
+    const Referencia=0;
+    
+    await pool.query(`insert into AutorizacionElectronica ( Venta, Serie,Numero,NUmeroReferencia,UUID ) values (${venta}, '${Serie}', '${Numero}', '${Referencia}', '${UUID}');`)
+    res.status(200).json({respuesta: 'Documento Asociado Correctamente'});
+ }
+    
+// crear una datos venta
+    public async create_DatosV (req:Request,res:Response):Promise<void>{
+    const venta = req.body.CodigoUsuario;
+    const direccion = req.body.Direccion;
+    const Nit = req.body.nit;
+    const nombrefact = req.body.nombrefact;
+    await pool.query(`insert into DatosFActuracion ( Venta, Direccion,NumeroNIt,NombreFact ) values (${venta}, '${direccion}', '${Nit}', '${nombrefact}');`)
+    res.status(200).json({respuesta: 'Datos Facturación creados'});
+}
+
+    
 }
 
 

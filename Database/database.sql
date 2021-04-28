@@ -180,3 +180,25 @@ ORDER BY numero_pedido DESC;
 SELECT id_venta as venta, SUM(monto_producto) as monto 
 FROM detalle_venta
 GROUP BY id_venta;
+
+
+Create Table DatosFActuracion(
+	correlativo			int not null auto_increment primary key,
+	Venta				int not null,
+    Direccion			varchar(50) not null,
+    NumeroNIt			varchar(20) not null,
+    NombreFact			varchar(50) not null,
+	foreign key (Venta) references ventas(id)
+);
+
+
+Create Table AutorizacionElectronica(
+	correlativo			int not null auto_increment primary key,
+	Venta				int not null,
+    Serie 				varchar(50) not null,
+    Numero				decimal(9) not null,
+    NUmeroReferencia	decimal(17) not null,
+    UUID				varchar(50) not null,
+    FechaAnulacion		decimal(8) null,
+	foreign key (Venta) references ventas(id)
+); 
