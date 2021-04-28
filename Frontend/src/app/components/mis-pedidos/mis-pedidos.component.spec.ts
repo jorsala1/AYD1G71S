@@ -1,5 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RouterTestingModule } from '@angular/router/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { MisPedidosComponent } from './mis-pedidos.component';
 
 describe('MisPedidosComponent', () => {
@@ -8,7 +10,11 @@ describe('MisPedidosComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MisPedidosComponent ]
+      declarations: [ MisPedidosComponent ],
+      imports: [
+        HttpClientTestingModule, RouterTestingModule.withRoutes([]),
+        ReactiveFormsModule, FormsModule
+      ]
     })
     .compileComponents();
   }));
