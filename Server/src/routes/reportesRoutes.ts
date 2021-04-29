@@ -11,6 +11,9 @@ class VentaRoutes{
 
    config():void{
        this.router.get('/ventasmes',reporteController.verVentasMes);
+       this.router.get('/gananciaTotal', reporteController.gananciasTotales);
+       this.router.get('/gananciaDetalle', reporteController.gananciasDetalle);
+       this.router.get('/gananciaFiltrada', reporteController.gananciaFiltrada);
    }
 }
 
