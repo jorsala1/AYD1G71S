@@ -8,10 +8,10 @@ class VentaRoutes {
         this.config();
     }
     config() {
-        this.router.get('/ventasmes', reportesController_1.reporteController.verVentasMes);
-        this.router.get('/gananciaTotal', reportesController_1.reporteController.gananciasTotales);
-        this.router.get('/gananciaDetalle', reportesController_1.reporteController.gananciasDetalle);
-        this.router.get('/gananciaFiltrada', reportesController_1.reporteController.gananciaFiltrada);
+        this.router.post('/ventasmes', reportesController_1.reporteController.verVentasMes);
+        this.router.post('/gananciaTotal', reportesController_1.reporteController.gananciasTotales);
+        this.router.post('/gananciaDetalle', reportesController_1.reporteController.gananciasDetalle);
+        this.router.post('/gananciaFiltrada', reportesController_1.reporteController.gananciaFiltrada);
     }
 }
 const ventaRoutes = new VentaRoutes();

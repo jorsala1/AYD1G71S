@@ -158,7 +158,19 @@ export class ProductoService {
     return this.http.get(url);
   }
   //  producto mas vendido por mes
-  
+  ProductoMasVendidoMes(mes: number, anio:number){
+    const url= baseUrl+"/reporte/ventasmes";
+    return this.http.post(
+      url,
+      {
+        "mes":mes,
+        "anio":anio  
+      },
+      {
+        headers: this.headers
+      }
+    ).pipe(map(data => data));
+  }
   /************************ DIRECCIONES *************************** */
   CrearDireccion(idU:number, direccion:string){
     const url = baseUrl + "/direccion/createDir";

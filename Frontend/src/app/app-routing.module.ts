@@ -20,6 +20,7 @@ import { AdminPedidosComponent } from './components/admin-pedidos/admin-pedidos.
 import { ModificarPedidoComponent } from './components/modificar-pedido/modificar-pedido.component';
 import { MisPedidosComponent } from './components/mis-pedidos/mis-pedidos.component';
 import { ReporteStockComponent } from './components/reporte-stock/reporte-stock.component';
+import { ReporteMasVendidoComponent } from './components/reporte-mas-vendido/reporte-mas-vendido.component';
 
 
 const routes: Routes = [
@@ -94,6 +95,10 @@ const routes: Routes = [
   {
     path: 'ReporteStock',
     component: ReporteStockComponent  ,
+  },
+  {
+    path: 'ProductoMasVendido',
+    component: ReporteMasVendidoComponent  ,
   }
 
 ];

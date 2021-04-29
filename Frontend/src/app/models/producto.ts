@@ -15,6 +15,12 @@ export interface StockProducto {
     precio_venta: number;
 }
 
+export interface ProductoVendido {
+    Codigo_producto: number;
+    Nombre_Producto: string;    
+    Cantidad_Vendida: number;
+    Total_Percibido: number;
+}
 
 export interface Categoria {
     id: number;

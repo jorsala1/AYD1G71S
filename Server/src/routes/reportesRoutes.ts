@@ -10,10 +10,10 @@ class VentaRoutes{
    }
 
    config():void{
-       this.router.get('/ventasmes',reporteController.verVentasMes);
-       this.router.get('/gananciaTotal', reporteController.gananciasTotales);
-       this.router.get('/gananciaDetalle', reporteController.gananciasDetalle);
-       this.router.get('/gananciaFiltrada', reporteController.gananciaFiltrada);
+       this.router.post('/ventasmes',reporteController.verVentasMes);
+       this.router.post('/gananciaTotal', reporteController.gananciasTotales);
+       this.router.post('/gananciaDetalle', reporteController.gananciasDetalle);
+       this.router.post('/gananciaFiltrada', reporteController.gananciaFiltrada);
    }
 }
 

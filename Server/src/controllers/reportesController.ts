@@ -9,8 +9,8 @@ class ReporteController{
         const mes = req.body.mes;
 
         const respuesta = JSON.parse(JSON.stringify(await pool.query(`
-        select  producto.id as 'Codigo producto', producto.nombre_prod as 'Nombre Producto', sum(detalle_venta.cantidad) as 'Cantidad Vendida',
-        sum(detalle_venta.monto_producto) as 'Total Percibido' 
+        select  producto.id as 'Codigo_producto', producto.nombre_prod as 'Nombre_Producto', sum(detalle_venta.cantidad) as 'Cantidad_Vendida',
+        sum(detalle_venta.monto_producto) as 'Total_Percibido' 
         from ventas, detalle_venta, producto
         where producto.id = detalle_venta.id_producto
         and ventas.id = detalle_venta.id_venta
