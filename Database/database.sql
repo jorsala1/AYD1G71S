@@ -147,6 +147,7 @@ BEGIN
     values(id_venta,id_producto,cantidad,
 	(select precio_venta from producto where id = id_producto ), 
     (select precio_venta * cantidad  from producto where id = id_producto ));
+    update producto set  producto.cantidad = producto.cantidad - cantidad WHERE producto.id = id_producto;
 END$$
 DELIMITER ;
 
@@ -180,3 +181,53 @@ ORDER BY numero_pedido DESC;
 SELECT id_venta as venta, SUM(monto_producto) as monto 
 FROM detalle_venta
 GROUP BY id_venta;
+
+
+Create Table DatosFActuracion(
+	correlativo			int not null auto_increment primary key,
+	Venta				int not null,
+    Direccion			varchar(50) not null,
+    NumeroNIt			varchar(20) not null,
+    NombreFact			varchar(50) not null,
+	foreign key (Venta) references ventas(id)
+);
+
+
+Create Table AutorizacionElectronica(
+	correlativo			int not null auto_increment primary key,
+	Venta				int not null,
+    Serie 				varchar(50) not null,
+    Numero				decimal(9) not null,
+    NUmeroReferencia	decimal(17) not null,
+    UUID				varchar(50) not null,
+    FechaAnulacion		decimal(8) null,
+	foreign key (Venta) references ventas(id)
+); 
+
+-- consulta de reportes
+/**Consulta de producto mas vendido por mes y año */
+select  producto.id as 'Codigo producto', producto.nombre_prod as 'Nombre Producto', sum(detalle_venta.cantidad) as 'Cantidad Vendida' from ventas, detalle_venta, producto
+where producto.id = detalle_venta.id_producto
+and ventas.id = detalle_venta.id_venta
+and MONTH(ventas.Fecha_Venta) = 3
+and YEAR(ventas.Fecha_Venta) = 2021
+group by producto.id, producto.nombre_prod
+order by sum(detalle_venta.cantidad) desc  
+limit 1;
+
+/***Para total percibido en ganancias**/
+create or replace view Ganancias
+as
+select  producto.id as 'Codigo producto', producto.nombre_prod as 'Nombre Producto',
+sum(detalle_venta.cantidad) as 'Cantidad Vendida' ,
+sum(detalle_venta.monto_producto) as 'Total Percibido', 
+(select producto.precio_compra * sum(detalle_venta.cantidad)) as 'Costo', 
+(sum(detalle_venta.monto_producto) - (select producto.precio_compra * sum(detalle_venta.cantidad)))  as 'Ganancia' 
+ from ventas, detalle_venta, producto
+where producto.id = detalle_venta.id_producto
+and ventas.id = detalle_venta.id_venta
+group by producto.id, producto.nombre_prod;
+
+select sum(Ganancia) from Ganancias;
+
+/*Filtrando*/
