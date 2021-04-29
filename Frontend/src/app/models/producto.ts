@@ -7,6 +7,15 @@ export interface Producto {
     precio_venta: number;
     categoria: number;
 }
+
+export interface StockProducto {
+    nombre_prod: string;
+    cantidad: number;
+    precio_compra: number;
+    precio_venta: number;
+}
+
+
 export interface Categoria {
     id: number;
     categoria: string;
